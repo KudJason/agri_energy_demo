@@ -1,0 +1,40 @@
+@prefix : <http://example.org/agri-energy/core#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ccev: <http://data.europa.eu/m8g/> .
+
+# 1. Base Shape: Farm Profile Validity
+:FarmProfileShape
+    a sh:NodeShape ;
+    sh:targetClass :FarmProfile ;
+    
+    # Must have a size
+    sh:property [
+        sh:path :hasSizeHa ;
+        sh:datatype xsd:float ;
+        sh:minCount 1 ;
+        sh:message "Farm must have a defined size in Hectares." ;
+    ] ;
+    
+    # Must have a region
+    sh:property [
+        sh:path :locatedIn ;
+        sh:class :Region ;
+        sh:minCount 1 ;
+        sh:message "Farm must be located in a valid Region." ;
+    ] .
+
+# 2. Rule Shape: Example Eligibility Logic (Agrivoltaics)
+# "If farm > 100 Ha AND distance < 5km -> Eligible"
+# Note: In real CCEV, this is done via SPARQL or more complex rules. 
+# Here we use SHACL Advanced Features (SPARQL-based constraints) or simple property checks.
+
+:AgrivoltaicsEligibilityShape
+    a sh:NodeShape ;
+    sh:targetClass :FarmProfile ;
+    sh:property [
+        sh:path :hasSizeHa ;
+        sh:minInclusive 20 ; # Simplified rule: Must be at least 20 Ha
+        sh:severity sh:Warning ; # Valid warning if not met
+        sh:message "Opportunity Recommendation: Farm is too small for standard Agrivoltaics (< 20 Ha)." ;
+    ] .

@@ -1,0 +1,29 @@
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+
+# Flanders Opportunities
+
+# 1. Ecoregeling: Ecologisch Graslandbeheer
+# Source: Ecoregelingen 2025 (Simulated)
+core:Flanders_EcoScheme_Grassland a core:Opportunity ;
+    core:region "Belgium (Flanders)" ;
+    core:hasRevenuePerHa "300.0"^^xsd:float ; # Base subsidy
+    core:produces agrovoc:c_5625 ; # Pasture/Grassland
+    core:description "Subsidie voor ecologisch beheer van grasland (geen pesticiden, beperkte bemesting)."@nl .
+
+# 2. VLIF Innovatie Steun (Agri-PV focus)
+# Source: VLIF Innovatie 2025 (Simulated)
+core:Flanders_VLIF_AgriPV a core:Opportunity ;
+    core:region "Belgium (Flanders)" ;
+    core:hasSizeHa "5.0"^^xsd:float ; # Min size for viability in this model
+    core:hasRevenuePerHa "4200.0"^^xsd:float ; # Estimated benefit (energy + investment support amortized)
+    core:description "Investeringssteun voor innovatieve dual-use agrivoltaics projecten."@nl ;
+    core:requires "Innovative Character" .
+
+# 3. Ecoregeling: Bufferstroken
+core:Flanders_EcoScheme_Buffers a core:Opportunity ;
+    core:region "Belgium (Flanders)" ;
+    core:hasRevenuePerHa "1500.0"^^xsd:float ; # Simplified per ha of buffer strip
+    core:description "Aanleg en onderhoud van bufferstroken langs waterlopen."@nl .

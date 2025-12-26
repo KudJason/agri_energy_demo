@@ -1,0 +1,15 @@
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://example.org/form/cerfa_12345> a core:Form ;
+    core:label "Declarations de Surfaces 2025" ;
+    core:containsField <http://example.org/form/cerfa_12345/field_3b>,
+                       <http://example.org/form/cerfa_12345/field_region> .
+
+<http://example.org/form/cerfa_12345/field_3b> a core:FormField ;
+    core:label "Total Arable Area (ha)" ;
+    core:mapsToVariable "Farm Size" .
+
+<http://example.org/form/cerfa_12345/field_region> a core:FormField ;
+    core:label "Department Code" ;
+    core:mapsToVariable "Region" .

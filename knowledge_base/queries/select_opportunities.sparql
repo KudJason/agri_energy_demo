@@ -1,0 +1,15 @@
+PREFIX core: <http://example.org/agri-energy/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?opp (SAMPLE(?label) as ?nameEn) (SAMPLE(?labelFr) as ?nameFr) ?validFrom ?sourceDoc (GROUP_CONCAT(DISTINCT ?tag_safe; separator=", ") as ?tags)
+WHERE {
+    ?opp a core:Opportunity .
+    OPTIONAL { ?opp rdfs:label ?label . FILTER(lang(?label) = 'en') }
+    OPTIONAL { ?opp rdfs:label ?labelFr . FILTER(lang(?labelFr) = 'fr') }
+    OPTIONAL { ?opp core:validFrom ?validFrom }
+    OPTIONAL { ?opp core:definedBy ?sourceDoc }
+    
+    OPTIONAL { ?opp core:hasTag ?tag }
+    BIND(COALESCE(?tag, "") AS ?tag_safe)
+}
+GROUP BY ?opp ?validFrom ?sourceDoc

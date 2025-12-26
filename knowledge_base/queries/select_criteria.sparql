@@ -1,0 +1,18 @@
+PREFIX core: <http://example.org/agri-energy/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+SELECT ?crit ?var ?op ?val ?raw_criterion
+WHERE {
+    # Structured Criteria (e.g. from France data)
+    {
+        ?opp core:hasEligibilityCriteria ?crit .
+        ?crit core:hasVariable ?var ;
+              core:hasOperator ?op ;
+              rdf:value ?val .
+    } 
+    UNION 
+    # Unstructured/Simple Criteria (e.g. from current Belgium extraction)
+    {
+        ?opp core:requiresCriterion ?raw_criterion .
+    }
+}

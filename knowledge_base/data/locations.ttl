@@ -1,0 +1,34 @@
+@prefix : <http://example.org/agri-energy/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+#################################################################
+#    Location Hierarchies for Demo
+#################################################################
+
+###  Countries
+:Belgium rdf:type :Region ;
+    rdfs:label "Belgium"@en, "Belgique"@fr, "België"@nl .
+
+:France rdf:type :Region ;
+    rdfs:label "France"@en, "France"@fr .
+
+###  Regions (Belgium)
+:Wallonia rdf:type :Region ;
+    rdfs:label "Wallonia"@en, "Wallonie"@fr ;
+    :partOf :Belgium .
+
+:Flanders rdf:type :Region ;
+    rdfs:label "Flanders"@en, "Flandre"@fr, "Vlaanderen"@nl ;
+    :partOf :Belgium .
+
+:BrusselsCapital rdf:type :Region ;
+    rdfs:label "Brussels-Capital"@en, "Bruxelles-Capitale"@fr, "Brussels Hoofdstedelijk"@nl ;
+    :partOf :Belgium .
+
+###  Object Property for Hierarchy
+:partOf rdf:type owl:ObjectProperty ;
+    rdfs:domain :Region ;
+    rdfs:range :Region ;
+    rdfs:label "part of"@en .

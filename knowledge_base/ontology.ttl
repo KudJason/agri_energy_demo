@@ -1,0 +1,51 @@
+@prefix : <http://example.org/agri-energy#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Classes
+:Farm a rdfs:Class .
+:Crop a rdfs:Class .
+:Region a rdfs:Class .
+:Certification a rdfs:Class .
+:Opportunity a rdfs:Class .
+
+# Properties
+:hasSize a rdf:Property ;
+    rdfs:domain :Farm ;
+    rdfs:range xsd:float .
+
+:locatedIn a rdf:Property ;
+    rdfs:domain :Farm ;
+    rdfs:range :Region .
+
+:grows a rdf:Property ;
+    rdfs:domain :Farm ;
+    rdfs:range :Crop .
+
+:hasCertification a rdf:Property ;
+    rdfs:domain :Farm ;
+    rdfs:range :Certification .
+
+:distanceToSubstation a rdf:Property ;
+    rdfs:domain :Farm ;
+    rdfs:range xsd:float . # in km
+
+# Opportunity Properties
+:minSizeRequired a rdf:Property .
+:maxDistanceRequired a rdf:Property .
+:requiresCertification a rdf:Property .
+:validForCrop a rdf:Property .
+:estimatedRevenuePerHa a rdf:Property .
+:description a rdf:Property .
+
+# Individuals (for Dropdowns)
+:France a :Region .
+:Germany a :Region .
+
+:Wheat a :Crop .
+:Corn a :Crop .
+:Pasture a :Crop .
+
+:HVE3 a :Certification .
+:Organic a :Certification .

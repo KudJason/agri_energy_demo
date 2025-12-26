@@ -1,0 +1,479 @@
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/opportunity/fr/mock_agripv> a core:Opportunity ;
+    core:hasDistanceToGridKm "5.0"^^xsd:float ;
+    core:hasSizeHa "1.0"^^xsd:float ;
+    core:produces agrovoc:c_15976,
+        agrovoc:c_5625 .
+
+<http://example.org/opportunity/fr/mock_biogas> a core:Opportunity ;
+    core:hasSizeHa "50.0"^^xsd:float ;
+    core:produces agrovoc:c_12332 .
+
+<http://example.org/opportunity/fr/mock_hve3> a core:Opportunity ;
+    core:hasSizeHa "0.0"^^xsd:float .
+
+<http://example.org/opportunity/fr/annexe_-_les_éléments_topographiques_dans_la_pac_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Favorable Elements for Biodiversity"@en,
+        "Éléments favorables à la biodiversité"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexe_-_les_éléments_topographiques_dans_la_pac_pdf> ;
+    core:description "Access to the eco-scheme pathway requiring a minimal share of agroecological infrastructures or fallow lands, with sustainable management of hedges eligible for a specific 'bonus haies'."@en ;
+    core:requiresCriterion "{'variable': 'ratio_IAE', 'operator': '>=', 'value': 'minimal'}" .
+
+<http://example.org/opportunity/fr/annexe_-_les_éléments_topographiques_dans_la_pac_pdf_c0_1> a core:Opportunity ;
+    rdfs:label "Hedge Bonus"@en,
+        "Bonus « haies »"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexe_-_les_éléments_topographiques_dans_la_pac_pdf> ;
+    core:description "Specific bonus in the eco-scheme for sustainable management of hedges."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_0> a core:Opportunity ;
+    rdfs:label "Aid for conversion to organic farming - CAB Mainland"@en,
+        "Aide à la conversion à l’agriculture biologique - CAB Hexagone"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for conversion to organic agriculture in mainland France."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_1> a core:Opportunity ;
+    rdfs:label "Aid for conversion to organic farming - CAB transition 2021-2022"@en,
+        "Aide à la conversion à l'agriculture biologique - CAB transition 2021-2022"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for organic conversion transition in 2021-2022."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_10> a core:Opportunity ;
+    rdfs:label "MAEC Species preservation"@en,
+        "MAEC Préservation des espèces"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on species preservation."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_11> a core:Opportunity ;
+    rdfs:label "MAEC Biodiversity maintenance through habitat opening - DFCI"@en,
+        "MAEC Maintien de la biodiversité par l'ouverture de milieux - DFCI"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on biodiversity via habitat opening."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_12> a core:Opportunity ;
+    rdfs:label "MAEC Sustainable maintenance of agro-ecological infrastructures"@en,
+        "MAEC Entretien durable des infrastructures agro-écologiques"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for sustainable maintenance of agro-ecological infrastructures."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_13> a core:Opportunity ;
+    rdfs:label "Lump-sum MAEC \"Practice Transition\""@en,
+        "MAEC forfaitaire \"Transition des pratiques\""@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Regional additional financing for MAEC on practice transition in IDF."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_14> a core:Opportunity ;
+    rdfs:label "Management commitment - PRM"@en,
+        "Engagement de gestion - PRM"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Additional financing for management commitments in MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_15> a core:Opportunity ;
+    rdfs:label "On-farm productive investments"@en,
+        "Investissements productifs on farm"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for on-farm productive investments in specified regions."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_16> a core:Opportunity ;
+    rdfs:label "Non-productive agricultural investments"@en,
+        "Investissements agricoles non-productifs"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for non-productive agricultural investments."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_17> a core:Opportunity ;
+    rdfs:label "Support for off-farm economic activities"@en,
+        "Soutien aux activités économiques des entreprises off farm"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for off-farm enterprise economic activities."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_18> a core:Opportunity ;
+    rdfs:label "Preservation and restoration of natural and forest heritage including Natura 2000 sites"@en,
+        "Préservation et restauration du patrimoine naturel et forestier dont sites Natura 2000"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for natural and forest heritage preservation."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_19> a core:Opportunity ;
+    rdfs:label "Improvement of basic services and infrastructure in rural areas"@en,
+        "Amélioration des services de base et infrastructures dans les zones rurales"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for rural basic services and infrastructure."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_2> a core:Opportunity ;
+    rdfs:label "Aid for conversion to organic farming - CAB Corsica"@en,
+        "Aide à la conversion à l’agriculture biologique - CAB Corse"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for organic conversion in Corsica."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_20> a core:Opportunity ;
+    rdfs:label "Aid for agricultural hydraulic infrastructure on territories"@en,
+        "Aides aux infrastructures hydrauliques agricoles sur les territoires"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for agricultural water infrastructure."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_21> a core:Opportunity ;
+    rdfs:label "Investments related to farm protection against predation"@en,
+        "Investissements liés à la protection des exploitations contre la prédation"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for investments protecting farms from predation."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_22> a core:Opportunity ;
+    rdfs:label "On-farm productive investments dedicated to young farmers"@en,
+        "Investissements productifs on farm dédiés aux JA"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for young farmers' on-farm investments."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_23> a core:Opportunity ;
+    rdfs:label "Aid for farm installation"@en,
+        "Aides à l’installation en agriculture"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for agricultural installation in MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_24> a core:Opportunity ;
+    rdfs:label "Aid for takeover and creation of rural enterprises"@en,
+        "Aides à la reprise et à la création d’entreprises rurales"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for rural enterprise creation/takeover in PACA."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_25> a core:Opportunity ;
+    rdfs:label "DJA RDR3 balance"@en,
+        "Solde DJA RDR3"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for DJA RDR3 balance in MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_26> a core:Opportunity ;
+    rdfs:label "New farm settler"@en,
+        "Nouvel installé en agriculture"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for new agricultural settlers in MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_27> a core:Opportunity ;
+    rdfs:label "Insurance premium payments"@en,
+        "Paiement des primes d’assurance"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for insurance premiums in Hexagone and Corse."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_28> a core:Opportunity ;
+    rdfs:label "LEADER"@en,
+        "LEADER"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for LEADER rural development in specified regions."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_29> a core:Opportunity ;
+    rdfs:label "Other cooperation projects meeting PAC objectives"@en,
+        "Autres projets de coopération répondant aux objectifs de la PAC"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for PAC-aligned cooperation projects in MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_3> a core:Opportunity ;
+    rdfs:label "Livestock protection scheme against predation"@en,
+        "Dispositif de protection des troupeaux contre la prédation"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for protecting livestock from predation."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_30> a core:Opportunity ;
+    rdfs:label "Support for pilot projects, new products, practices, processes and techniques in French outermost regions"@en,
+        "Soutien aux projets pilotes, développement de nouveaux produits, pratiques, procédés et techniques dans les RUP françaises"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for pilot projects in French RUP (MAY)."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_31> a core:Opportunity ;
+    rdfs:label "Access to training, advice; knowledge dissemination and exchange actions"@en,
+        "Accès à la formation, au conseil ; actions de diffusion et échanges de connaissances et d’informations"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for training, advice and knowledge exchange in NAQ, MAY."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_4> a core:Opportunity ;
+    rdfs:label "MAEC Water quality and quantitative management for arable crops"@en,
+        "MAEC Qualité et gestion quantitative de l'eau pour les grandes cultures"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on water management in arable crops."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_5> a core:Opportunity ;
+    rdfs:label "MAEC Water quality and quantitative management for perennial crops"@en,
+        "MAEC Qualité et gestion quantitative de l'eau pour les cultures pérennes"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on water management in perennial crops."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_6> a core:Opportunity ;
+    rdfs:label "MAEC Soil quality and protection"@en,
+        "MAEC Qualité et protection du sol"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on soil quality and protection."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_7> a core:Opportunity ;
+    rdfs:label "MAEC Climate, animal welfare and feed autonomy for livestock"@en,
+        "MAEC Climat, bien-être animal et autonomie alimentaire des élevages"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on climate, animal welfare and livestock autonomy."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_8> a core:Opportunity ;
+    rdfs:label "MAEC Preservation of agro-ecological balance and biodiversity in specific habitats"@en,
+        "MAEC Préservation de l'équilibre agro-écologique et de la biodiversité de milieux spécifiques"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on biodiversity preservation in specific environments."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c2_9> a core:Opportunity ;
+    rdfs:label "MAEC Creation of biodiversity covers, especially for pollinators"@en,
+        "MAEC Création de couverts d'intérêt pour la biodiversité, en particulier les pollinisateurs"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "National additional financing for MAEC on creating pollinator-friendly covers."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme"@en,
+        "Écorégime"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Aide représentant 25% des aides directes du premier pilier (1 684 M€ en 2023) pour rémunérer les pratiques favorables à l’environnement et au climat, telles que diversification des cultures, couverture végétale, certification environnementale, agriculture biologique, et préservation d’infrastructures agro-écologiques."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_1> a core:Opportunity ;
+    rdfs:label "Aid for conversion to organic farming - Mainland France"@en,
+        "Aide à la conversion à l’agriculture biologique - CAB Hexagone"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Soutien renforcé de 36% pour accompagner la conversion à l’agriculture biologique, visant à doubler les surfaces à 18% de la SAU en 2027."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_2> a core:Opportunity ;
+    rdfs:label "Complementary income aid for young farmers"@en,
+        "Aide complémentaire au revenu pour les JA"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Aide au revenu pour les jeunes agriculteurs dans le cadre du renouvellement des générations."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_3> a core:Opportunity ;
+    rdfs:label "Dotation to young farmers (DJA)"@en,
+        "Dotation aux jeunes agriculteurs (DJA)"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Soutien FEADER pour l’installation des jeunes agriculteurs, décentralisé aux régions."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_4> a core:Opportunity ;
+    rdfs:label "Coupled aid for seed legumes and forage legumes"@en,
+        "Aide couplée aux légumineuses à graines et aux légumineuses fourragères"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Aide couplée renforcée (+100 M€ en 2027) pour soutenir les revenus viables et le développement des protéines végétales."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c3_5> a core:Opportunity ;
+    rdfs:label "Coupled aid for market gardening"@en,
+        "Aide couplée au maraîchage"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Nouvelle aide (10 M€) pour développer une production diversifiée et localisée de petit maraîchage."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c7_0> a core:Opportunity ;
+    rdfs:label "Aid for conversion to organic farming"@en,
+        "Aide à la conversion à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Aide annuelle pour accompagner la conversion à l’agriculture biologique avec un objectif de 18% de la SAU en bio d’ici 2027."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c7_1> a core:Opportunity ;
+    rdfs:label "Eco-scheme for crop diversification"@en,
+        "Écorégime diversification des assolements"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Rémunère la diversification accrue des assolements via rotation minimale et grands groupes agronomiques pour favoriser biodiversité et réduction des PPP."@en .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c7_2> a core:Opportunity ;
+    rdfs:label "Eco-scheme for agro-ecological infrastructures"@en,
+        "Écorégime infrastructures agro-écologiques"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Accès dédié pour au moins 7% d’IAE et jachères, bonus pour 6% de haies gérées durablement."@en ;
+    core:requiresCriterion "{'variable': 'IAE_jacheres', 'operator': '>=', 'value': '7%'}",
+        "{'variable': 'haies', 'operator': '>=', 'value': '6%'}" .
+
+<http://example.org/opportunity/fr/annexes_et_appendices_pdf_c7_3> a core:Opportunity ;
+    rdfs:label "MAEC systems"@en,
+        "MAEC systèmes"@fr ;
+    core:definedBy <http://example.org/doc/fr/annexes_et_appendices_pdf> ;
+    core:description "Engagement sur 5 ans pour pratiques favorables comme lutte biologique, réduction PPP et intrants, pour divers systèmes (eau, banane, canne, etc.)."@en ;
+    core:requiresCriterion "{'variable': 'engagement', 'operator': '=', 'value': '5 ans'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_notice_elements-biodiversite_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Pathway for biodiversity-friendly elements"@en,
+        "Écorégime - Voie des éléments favorables à la biodiversité"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_notice_elements-biodiversite_pdf> ;
+    core:description "Aide de la PAC valorisant les éléments topographiques (haies, mares, etc.) et incitant à leur développement, avec seuils sur SAU admissible et bonus haies."@en ;
+    core:requiresCriterion "{'variable': 'IAE_ou_jachères', 'operator': '>=', 'value': '10%', 'note': 'niveau supérieur'}",
+        "{'variable': 'IAE_ou_jachères', 'operator': '>=', 'value': '7%'}",
+        "{'variable': 'haies_gérées_durablement', 'operator': '>=', 'value': '6%', 'note': 'bonus haies sur terres arables et SAU admissible'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme"@en,
+        "Écorégime"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Aide forfaitaire pour pratiques bénéfiques au climat et environnement avec voies: éléments favorables à la biodiversité (taux >7% base, >10% supérieur), pratiques, certification environnementale; bonus haies compatible avec certaines voies."@en ;
+    core:requiresCriterion "{'variable': 'biodiversity_elements_rate', 'operator': '>', 'value': '10%'}",
+        "{'variable': 'biodiversity_elements_rate', 'operator': '>', 'value': '7%'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_1> a core:Opportunity ;
+    rdfs:label "Redistributive complementary income aid"@en,
+        "Aide redistributive complémentaire au revenu"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Aide découplée pour petites et moyennes exploitations sur 52 premiers hectares admissibles avec DPB."@en ;
+    core:requiresCriterion "{'variable': 'eligible_ha', 'operator': '<=', 'value': '52'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_2> a core:Opportunity ;
+    rdfs:label "Complementary income aid for young farmers"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Aide pour jeunes agriculteurs de moins de 41 ans, premiers chefs d'exploitation avec diplôme agricole."@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '41'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_3> a core:Opportunity ;
+    rdfs:label "Natural handicap compensation allowance"@en,
+        "ICHN"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Indemnité compensatoire de handicaps naturels, conditionnée à effectif minimal (5 UGB, 3 en Corse)."@en ;
+    core:requiresCriterion "{'variable': 'UGB', 'operator': '>=', 'value': '5'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_4> a core:Opportunity ;
+    rdfs:label "Organic farming aid"@en,
+        "Aide à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Aides CAB (conversion) et MAB (maintien) pour programmations 2015-2022 et 2023-2027."@en .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf_c0_5> a core:Opportunity ;
+    rdfs:label "Agro-environmental and climate measures"@en,
+        "MAEC"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux_pdf> ;
+    core:description "Mesures agroenvironnementales et climatiques pour engagements 2015-2022 et 2023-2027."@en .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf_c1_0> a core:Opportunity ;
+    rdfs:label "ICHN"@en,
+        "ICHN"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf> ;
+    core:description "Indemnité Compensatoire de Handicap Naturel pour cultures éligibles, nécessitant commercialisation pour ICHN végétale ou autoconsommation pour céréales en ICHN animale, particulièrement en zones de montagne."@en ;
+    core:requiresCriterion "{'variable': 'culture', 'operator': 'in', 'value': 'céréales, cultures éligibles ICHN'}",
+        "{'variable': 'zone', 'operator': 'contains', 'value': 'zone défavorisée de montagne'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf_c1_1> a core:Opportunity ;
+    rdfs:label "Ploughing Eco-scheme"@en,
+        "Écorégime Labour"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf> ;
+    core:description "Écorégime pour prairies permanentes labourables en métropole, déclaration de labour entre septembre 2024 et août 2025."@en ;
+    core:requiresCriterion "{'variable': 'location', 'operator': '=', 'value': 'Métropole'}",
+        "{'variable': 'parcelle_type', 'operator': '=', 'value': 'prairie permanente labourable'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf_c1_2> a core:Opportunity ;
+    rdfs:label "Inter-rows Eco-scheme"@en,
+        "Écorégime Inter-rangs"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf> ;
+    core:description "Écorégime pour couverture inter-rangs sur cultures permanentes en métropole."@en ;
+    core:requiresCriterion "{'variable': 'culture', 'operator': '=', 'value': 'culture permanente avec inter-rangs'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Métropole'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf_c1_3> a core:Opportunity ;
+    rdfs:label "Organic Farming Aid"@en,
+        "Aide à l'Agriculture Biologique"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf> ;
+    core:description "Déclaration de parcelles en agriculture biologique avec année de conversion (C1,C2,C3) ou certifié AB, engagements via étape RPG MAEC/Bio."@en ;
+    core:requiresCriterion "{'variable': 'parcelle', 'operator': '=', 'value': 'conduite en AB'}" .
+
+<http://example.org/opportunity/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf_c1_4> a core:Opportunity ;
+    rdfs:label "MAEC"@en,
+        "MAEC"@fr ;
+    core:definedBy <http://example.org/doc/fr/dossier-pac-2025_telepac_rpg_modalites-de-declaration_pdf> ;
+    core:description "Mesures AgroEnvironnementales et Climatiques pour systèmes herbagers, élevages monogastriques, parcelles cibles identifiées au RPG, engagements via étape RPG MAEC/Bio."@en ;
+    core:requiresCriterion "{'variable': 'parcelle', 'operator': 'in', 'value': 'parcelle cible MAEC systèmes herbagers ou parc monogastiques'}" .
+
+<http://example.org/opportunity/fr/exploitation_demande-attribution-numero-pacage_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Basic Payment Entitlements (BPE)"@en,
+        "Droits à paiement de base (DPB)"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_demande-attribution-numero-pacage_pdf> ;
+    core:description "Modalités d’attribution des droits à paiement de base (DPB) à la nouvelle exploitation par transfert via formulaires avec d’autres exploitations."@en .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Aid for sugar cane"@en,
+        "Aide à la canne à sucre"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Aide spécifique aux productions agricoles locales (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_1> a core:Opportunity ;
+    rdfs:label "Aids for the banana sector"@en,
+        "Aides en faveur de la filière banane"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Aide spécifique aux productions agricoles locales (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_2> a core:Opportunity ;
+    rdfs:label "Development and maintenance of suckler herd"@en,
+        "ADMCA"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Aide animale pour développement et maintien du cheptel allaitant (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_3> a core:Opportunity ;
+    rdfs:label "Slaughter premium"@en,
+        "PAB"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Prime à l’abattage (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_4> a core:Opportunity ;
+    rdfs:label "Premium for small ruminants"@en,
+        "PPR"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Prime aux petits ruminants (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_5> a core:Opportunity ;
+    rdfs:label "Area aids in Mayotte"@en,
+        "Aides surfaces à Mayotte"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Aides pour surfaces à Mayotte (MFPAL) sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_6> a core:Opportunity ;
+    rdfs:label "Natural handicap compensatory allowance"@en,
+        "ICHN"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Indemnité compensatoire de handicaps naturels du second pilier PAC sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_7> a core:Opportunity ;
+    rdfs:label "Aids for organic agriculture"@en,
+        "Aides à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Aides à l’agriculture biologique du second pilier PAC sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/exploitation_notice_eligibilite_demandeur_dom_pdf_c0_8> a core:Opportunity ;
+    rdfs:label "Agro-environmental and climate measures"@en,
+        "MAEC"@fr ;
+    core:definedBy <http://example.org/doc/fr/exploitation_notice_eligibilite_demandeur_dom_pdf> ;
+    core:description "Certaines mesures agroenvironnementales et climatiques (MAEC) du second pilier PAC sous condition d'être agriculteur actif."@en ;
+    core:requiresCriterion "{'variable': 'status', 'operator': '=', 'value': 'agriculteur actif'}" .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_0> a core:Opportunity ;
+    rdfs:label "Basic Income Support for Sustainability"@en,
+        "Aide de base au revenu pour un développement durable"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "Basic direct payment under FEAGA for sustainable development."@en .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_1> a core:Opportunity ;
+    rdfs:label "Complementary Redistributive Income Support for Sustainability"@en,
+        "Aide redistributive complémentaire au revenu pour un développement durable"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "Redistributive payment targeting smaller farms under FEAGA."@en .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_2> a core:Opportunity ;
+    rdfs:label "Complementary Income Support for Young Farmers"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "Support for young farmers under FEAGA direct payments."@en .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_3> a core:Opportunity ;
+    rdfs:label "Climate and Environment Programmes"@en,
+        "Programmes pour le climat et l'environnement"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "Eco-schemes under FEAGA for climate and environmental practices."@en .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_4> a core:Opportunity ;
+    rdfs:label "Organic Farming Aids (Mainland)"@en,
+        "Aides à l'Agriculture Biologique (Hexagone)"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "FEADER support for organic agriculture in mainland France."@en .
+
+<http://example.org/opportunity/fr/plan_financier_indicatif_détaillé_pdf_c0_5> a core:Opportunity ;
+    rdfs:label "Agri-Environmental Climate Measures"@en,
+        "MAEC"@fr ;
+    core:definedBy <http://example.org/doc/fr/plan_financier_indicatif_détaillé_pdf> ;
+    core:description "FEADER measures for agri-environmental and climate commitments."@en .
+

@@ -1,0 +1,174 @@
+@prefix : <http://example.org/agri-energy/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix ccev: <http://data.europa.eu/m8g/> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+<http://example.org/agri-energy/core> rdf:type owl:Ontology ;
+                                       dcterms:title "Agri-Energy Core Ontology"@en ;
+                                       dcterms:description "A core ontology connecting Policy (ELI), Criteria (CCEV), and Agriculture (AGROVOC)."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/agri-energy/core#definedBy
+:definedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Opportunity ;
+           rdfs:range eli:LegalResource ;
+           rdfs:label "defined by"@en, "défini par"@fr ;
+           rdfs:comment "Links an Opportunity to the Legal Resource (PDF/Text) that defines it."@en .
+
+###  http://example.org/agri-energy/core#invokedBy
+:invokedBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Opportunity ;
+           rdfs:range ccev:Criterion ;
+           rdfs:comment "Links an Opportunity to the CCEV Criterion that must be satisfied."@en .
+
+###  http://example.org/agri-energy/core#produces
+:produces rdf:type owl:ObjectProperty ;
+          rdfs:domain :FarmProfile ;
+          rdfs:range agrovoc:c_330834 ; # 'Crop' concept in AGROVOC (generalized)
+          rdfs:comment "Specifies the crops produced by the farm."@en .
+
+###  http://example.org/agri-energy/core#providesEvidence
+:providesEvidence rdf:type owl:ObjectProperty ;
+                  rdfs:domain :FarmProfile ;
+                  rdfs:range ccev:Evidence ;
+                  rdfs:comment "Links the Farm Profile to specific pieces of Evidence (data points)."@en .
+
+###  http://example.org/agri-energy/core#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :FarmProfile ;
+           rdfs:range :Region .
+
+###  http://example.org/agri-energy/core#hasEligibilityCriteria
+:hasEligibilityCriteria rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Opportunity ;
+                        rdfs:range :EligibilityCriteria .
+
+###  http://example.org/agri-energy/core#hasPaymentRule
+:hasPaymentRule rdf:type owl:ObjectProperty ;
+                rdfs:domain :Opportunity ;
+                rdfs:range :PaymentRule .
+
+###  http://example.org/agri-energy/core#replaces
+:replaces rdf:type owl:ObjectProperty ;
+          rdfs:domain :Opportunity ;
+          rdfs:range :Opportunity ;
+          rdfs:comment "Links a new opportunity to the one it replaces/updates"@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+###  http://example.org/agri-energy/core#hasSizeHa
+:hasSizeHa rdf:type owl:DatatypeProperty ;
+           rdfs:domain :FarmProfile ;
+           rdfs:range xsd:float .
+
+###  http://example.org/agri-energy/core#hasDistanceToGridKm
+:hasDistanceToGridKm rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :FarmProfile ;
+                     rdfs:range xsd:float .
+
+###  http://example.org/agri-energy/core#hasValue
+:hasValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :PaymentRule ;
+          rdfs:range xsd:float .
+
+###  http://example.org/agri-energy/core#hasUnit
+:hasUnit rdf:type owl:DatatypeProperty ;
+         rdfs:domain :PaymentRule ;
+         rdfs:range xsd:string .
+
+###  http://example.org/agri-energy/core#hasOperator
+:hasOperator rdf:type owl:DatatypeProperty ;
+             rdfs:domain :EligibilityCriteria ;
+             rdfs:range xsd:string .
+
+###  http://example.org/agri-energy/core#hasVariable
+:hasVariable rdf:type owl:DatatypeProperty ;
+             rdfs:domain :EligibilityCriteria ;
+             rdfs:range xsd:string .
+
+###  http://example.org/agri-energy/core#validFrom
+:validFrom rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Opportunity ;
+           rdfs:range xsd:gYear ;
+           rdfs:comment "Year this opportunity becomes active"@en .
+
+###  http://example.org/agri-energy/core#validTo
+:validTo rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Opportunity ;
+         rdfs:range xsd:gYear ;
+         rdfs:comment "Year this opportunity expires"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/agri-energy/core#FarmProfile
+:FarmProfile rdf:type owl:Class ;
+             rdfs:label "Farm Profile"@en, "Profil Agricole"@fr ;
+             rdfs:comment "Digital Twin of a Farm application/status."@en .
+
+###  http://example.org/agri-energy/core#Opportunity
+:Opportunity rdf:type owl:Class ;
+             rdfs:label "Opportunity"@en, "Opportunité"@fr ;
+             rdfs:comment "A subsidy, grant, or compliance requirement."@en .
+
+###  http://example.org/agri-energy/core#Region
+
+
+###  http://example.org/agri-energy/core#EligibilityCriteria
+:EligibilityCriteria rdf:type owl:Class ;
+                     rdfs:subClassOf ccev:Criterion ;
+                     rdfs:label "Eligibility Criteria"@en, "Critères d'éligibilité"@fr .
+
+###  http://example.org/agri-energy/core#PaymentRule
+:PaymentRule rdf:type owl:Class ;
+             rdfs:label "Payment Rule"@en, "Règle de paiement"@fr .
+
+###  http://example.org/agri-energy/core#Region
+:Region rdf:type owl:Class .
+
+###  IMPORTED STUBS (Representing external standard classes)
+eli:LegalResource rdf:type owl:Class .
+ccev:Criterion rdf:type owl:Class .
+ccev:Evidence rdf:type owl:Class .
+agrovoc:c_330834 rdf:type owl:Class ; rdfs:label "Crop"@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/agri-energy/core#Form
+:Form rdf:type owl:Class ;
+      rdfs:label "Administrative Form"@en, "Formulaire Administratif"@fr .
+
+###  http://example.org/agri-energy/core#FormField
+:FormField rdf:type owl:Class ;
+           rdfs:label "Form Field"@en, "Champ du formulaire"@fr .
+
+###  http://example.org/agri-energy/core#containsField
+:containsField rdf:type owl:ObjectProperty ;
+               rdfs:domain :Form ;
+               rdfs:range :FormField .
+
+###  http://example.org/agri-energy/core#mapsToVariable
+:mapsToVariable rdf:type owl:ObjectProperty ;
+                rdfs:domain :FormField ;
+                rdfs:comment "Links a physical form field to a logical variable in the RDF graph."@en .
+
+#################################################################
+#    Individuals
+#################################################################
+
+:France rdf:type :Region .
+:Germany rdf:type :Region .

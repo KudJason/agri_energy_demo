@@ -1,0 +1,21 @@
+Dossier-PAC-2025_autorisation-signature-electronique-Gaec.pdf
+Dossier-PAC-2025_autorisation-signature-electronique-Gaec_delegation.pdf
+Dossier-PAC-2025_delegation-teledeclaration-suivi-administratif_presentation.pdf
+Dossier-PAC-2025_gestion-OS-delegation-teledeclaration-suivi-administratif.pdf
+Dossier-PAC-2025_guide-admissibilite.pdf
+Dossier-PAC-2025_notice_cultures-precisions.pdf
+Dossier-PAC-2025_notice_elements-biodiversite.pdf
+Dossier-PAC-2025_notice_generalites.pdf
+Dossier-PAC-2025_telepac_RPG_modalites-de-declaration.pdf
+Dossier-PAC-2025_telepac_RPG_outils-de-navigation-et-de-manipulation.pdf
+Dossier-PAC-2025_telepac_presentation-MAEC-BIO.pdf
+Dossier-PAC-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux.pdf
+Dossier-PAC-2025_telepac_presentation-generale.pdf
+Exploitation_declaration-modification-exploitation.pdf
+Exploitation_demande-attribution-numero-pacage.pdf
+Exploitation_identification-statuts-coordonnees_telepac_presentation.pdf
+Exploitation_modification-exploitation-ou-demande-numero-pacage_notice.pdf
+Exploitation_notice_eligibilite_demandeur_DOM.pdf
+Exploitation_notice_eligibilite_demandeur_metropole.pdf
+Exploitation_reference-bancaire_telepac_presentation.pdf
+Annexes et appendices.pdf

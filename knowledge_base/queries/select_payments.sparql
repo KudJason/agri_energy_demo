@@ -1,0 +1,11 @@
+PREFIX core: <http://example.org/agri-energy/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?val ?unit ?label
+WHERE {
+    ?opp core:hasPaymentRule ?rule .
+    ?rule core:hasValue ?val .
+    
+    OPTIONAL { ?rule core:hasUnit ?unit }
+    OPTIONAL { ?rule rdfs:label ?label }
+}

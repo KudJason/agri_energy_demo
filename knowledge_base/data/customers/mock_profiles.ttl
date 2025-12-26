@@ -1,0 +1,17 @@
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/customer/farmer_john> a core:FarmProfile ;
+    core:locatedIn core:France ;
+    core:hasSizeHa "50"^^xsd:float ;
+    core:produces <http://aims.fao.org/aos/agrovoc/c_330834> ; # Generic Crop
+    core:hasDistanceToGridKm "2.5"^^xsd:float ;
+    # Simulated variables mapped from "Form Input"
+    core:hasVariable "Organic (AB)", "Young Farmer" .
+
+<http://example.org/customer/gaia_agri_corp> a core:FarmProfile ;
+    core:locatedIn core:France ;
+    core:hasSizeHa "200"^^xsd:float ;
+    core:hasDistanceToGridKm "15.0"^^xsd:float ;
+    core:hasVariable "HVE Level 3" .

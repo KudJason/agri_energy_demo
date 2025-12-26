@@ -1,0 +1,60 @@
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/opportunity/dossier-pac-2025_guide-admissibilite> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_guide-admissibilite> ;
+    core:maxDensityPerHa "100.0"^^xsd:float ;
+    core:minDurationYears "5.0"^^xsd:float ;
+    core:requiresCertification core:AgriPV .
+
+<http://example.org/opportunity/dossier-pac-2025_notice_cultures-precisions> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_notice_cultures-precisions> ;
+    core:minDurationYears "6.0"^^xsd:float .
+
+<http://example.org/opportunity/dossier-pac-2025_notice_elements-biodiversite> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_notice_elements-biodiversite> ;
+    core:minDurationYears "5.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_notice_generalites> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_notice_generalites> ;
+    core:minDurationYears "5.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux> ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_telepac_presentation-generale> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-generale> ;
+    core:minDurationYears "67.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_telepac_presentation-maec-bio> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-maec-bio> ;
+    core:minDurationYears "5.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_telepac_rpg_modalites-de-declaration> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_telepac_rpg_modalites-de-declaration> ;
+    core:maxDensityPerHa "100.0"^^xsd:float ;
+    core:minDurationYears "5.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/dossier-pac-2025_telepac_rpg_outils-de-navigation-et-de-manipulation> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/dossier-pac-2025_telepac_rpg_outils-de-navigation-et-de-manipulation> ;
+    core:minDurationYears "5.0"^^xsd:float .
+
+<http://example.org/opportunity/exploitation_identification-statuts-coordonnees_telepac_presentation> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/exploitation_identification-statuts-coordonnees_telepac_presentation> ;
+    core:minDurationYears "67.0"^^xsd:float .
+
+<http://example.org/opportunity/exploitation_notice_eligibilite_demandeur_dom> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/exploitation_notice_eligibilite_demandeur_dom> ;
+    core:requiresCertification core:Organic .
+
+<http://example.org/opportunity/exploitation_notice_eligibilite_demandeur_metropole> a core:Opportunity ;
+    core:definedBy <http://example.org/doc/fr/2025/exploitation_notice_eligibilite_demandeur_metropole> ;
+    core:minDurationYears "67.0"^^xsd:float ;
+    core:requiresCertification core:Organic .
+

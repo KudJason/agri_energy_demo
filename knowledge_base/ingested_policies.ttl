@@ -1,0 +1,105 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_autorisation-signature-electronique-gaec> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_autorisation-signature-electronique-Gaec.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 autorisation signature electronique Gaec"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_autorisation-signature-electronique-gaec_delegation> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_autorisation-signature-electronique-Gaec_delegation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 autorisation signature electronique Gaec delegation"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_delegation-teledeclaration-suivi-administratif_presentation> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_delegation-teledeclaration-suivi-administratif_presentation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 delegation teledeclaration suivi administratif presentation"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_gestion-os-delegation-teledeclaration-suivi-administratif> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_gestion-OS-delegation-teledeclaration-suivi-administratif.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 gestion OS delegation teledeclaration suivi administratif"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_guide-admissibilite> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_guide-admissibilite.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 guide admissibilite"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_notice_cultures-precisions> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_notice_cultures-precisions.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 notice cultures precisions"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_notice_elements-biodiversite> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_notice_elements-biodiversite.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 notice elements biodiversite"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_notice_generalites> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_notice_generalites.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 notice generalites"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_telepac_presentation-demande-aides-ecoregime-effectifs-animaux.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 telepac presentation demande aides ecoregime effectifs animaux"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-generale> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_telepac_presentation-generale.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 telepac presentation generale"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_telepac_presentation-maec-bio> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_telepac_presentation-MAEC-BIO.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 telepac presentation MAEC BIO"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_telepac_rpg_modalites-de-declaration> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_telepac_RPG_modalites-de-declaration.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 telepac RPG modalites de declaration"@fr .
+
+<http://example.org/doc/fr/2025/dossier-pac-2025_telepac_rpg_outils-de-navigation-et-de-manipulation> a eli:LegalResource ;
+    eli:title_alternative "Dossier-PAC-2025_telepac_RPG_outils-de-navigation-et-de-manipulation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Dossier PAC 2025 telepac RPG outils de navigation et de manipulation"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_declaration-modification-exploitation> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_declaration-modification-exploitation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation declaration modification exploitation"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_demande-attribution-numero-pacage> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_demande-attribution-numero-pacage.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation demande attribution numero pacage"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_identification-statuts-coordonnees_telepac_presentation> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_identification-statuts-coordonnees_telepac_presentation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation identification statuts coordonnees telepac presentation"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_modification-exploitation-ou-demande-numero-pacage_notice> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_modification-exploitation-ou-demande-numero-pacage_notice.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation modification exploitation ou demande numero pacage notice"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_notice_eligibilite_demandeur_dom> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_notice_eligibilite_demandeur_DOM.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation notice eligibilite demandeur DOM"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_notice_eligibilite_demandeur_metropole> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_notice_eligibilite_demandeur_metropole.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation notice eligibilite demandeur metropole"@fr .
+
+<http://example.org/doc/fr/2025/exploitation_reference-bancaire_telepac_presentation> a eli:LegalResource ;
+    eli:title_alternative "Exploitation_reference-bancaire_telepac_presentation.pdf" ;
+    dcterms:date "2025-12-26"^^xsd:date ;
+    dcterms:title "Exploitation reference bancaire telepac presentation"@fr .
+
+@prefix eli: <http://data.europa.eu/eli/ontology#> . @prefix dcterms: <http://purl.org/dc/terms/> . <http://example.org/doc/be/fl/2025/ecoregelingen> a eli:LegalResource ; dcterms:title 'Overzicht Ecoregelingen 2025 Vlaanderen'@nl ; dcterms:date '2025-01-01' .
