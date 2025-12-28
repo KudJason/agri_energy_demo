@@ -1,6 +1,769 @@
 @prefix core: <http://example.org/agri-energy/core#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c0_0> a core:Opportunity ;
+    rdfs:label "Complementary Income Support for Young Farmers"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Annual decoupled payment per eligible hectare to support young farmers' income, with higher rates for first 50 ha, maximum 100 ha per farm or per eligible person."@en ;
+    core:hasTag "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '41'}",
+        "{'variable': 'farmer_type', 'operator': '=', 'value': 'active'}",
+        "{'variable': 'hectares', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'installation_years', 'operator': '<', 'value': '5'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c10_0> a core:Opportunity ;
+    rdfs:label "372 - Cooperation in the tourism sector"@en,
+        "372 – Coopération dans le domaine du tourisme"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Financial support for transcommunal structures to develop rural tourism services focused on natural/cultural heritage and priority identities (authenticity/culture or nature/escape), through project calls."@en ;
+    core:hasTag "Cooperation"@en,
+        "Rural"@en,
+        "Tourism"@en ;
+    core:requiresCriterion "{'variable': 'scope', 'operator': '=', 'value': 'regional'}",
+        "{'variable': 'structure', 'operator': '=', 'value': 'transcommunal recognised by CGT or German-speaking ministry'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c17_0> a core:Opportunity ;
+    rdfs:label "Long Soil Cover Eco-scheme"@en,
+        "éco-régime couverture longue du sol"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Voluntary one-year commitment to cover soil from 1 January to 15 February on prairies, winter crops, intercultures, arable lands with cover regrowth, and permanent crops with inter-row vegetation. Payment based on coverage thresholds: Entry (70%+), Intermediate (80%+), Optimal (90%+), adjusted by weighting of prairies and similar covers."@en ;
+    core:hasTag "Environment"@en,
+        "Soil Cover"@en ;
+    core:requiresCriterion "{'variable': 'coverage_percentage', 'operator': '>=', 'value': '70 + (10 * weighting_prairies)'}",
+        "{'variable': 'coverage_percentage', 'operator': '>=', 'value': '80 + (10 * weighting_prairies)'}",
+        "{'variable': 'coverage_percentage', 'operator': '>=', 'value': '90 + (5 * weighting_prairies)'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c1_0> a core:Opportunity ;
+    rdfs:label "Access to the reserve of basic payment entitlements"@en,
+        "Accès à la réserve de droits au paiement de base"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Attribution de nouveaux droits au paiement de base pour jeunes ou nouveaux agriculteurs récemment installés, avec valeur égale à la moyenne régionale."@en ;
+    core:hasTag "New Farmer"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': 'young', 'value': 'farmer'}",
+        "{'variable': 'installation_date', 'operator': 'within', 'value': '5 years'}",
+        "{'variable': 'status', 'operator': 'is', 'value': 'new farmer'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c20_0> a core:Opportunity ;
+    rdfs:label "Long Soil Cover Eco-scheme"@en,
+        "Eco-régime couverture longue du sol"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Voluntary annual commitment to maintain soil cover from January 1 to February 15 on a proportion of the farm's total area, with three coverage thresholds (entry, intermediate, superior) offering different payment levels."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Cover Crops"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'coverage_ratio', 'operator': '>=', 'value': 'threshold (70-90% + adjustment)'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'active'}",
+        "{'variable': 'location', 'operator': 'in', 'value': 'Wallonia'}",
+        "{'variable': 'sigec_identified', 'operator': '=', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c20_1> a core:Opportunity ;
+    rdfs:label "Environmentally Favorable Crops Eco-scheme"@en,
+        "Eco-régime cultures favorables à l’environnement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Annual cultivation of specific low-input crops (leguminous forages, spring cereals, or mixtures) on arable land with variants and sub-variants, minimum 1 ha per parcel, no insecticides."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Cereals"@en,
+        "Legumes"@en,
+        "Low-input"@en ;
+    core:requiresCriterion "{'variable': 'farmer_status', 'operator': '=', 'value': 'active'}",
+        "{'variable': 'location', 'operator': 'in', 'value': 'Wallonia'}",
+        "{'variable': 'min_surface', 'operator': '>=', 'value': '1 ha'}",
+        "{'variable': 'parcel_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'sigec_identified', 'operator': '=', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c21_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme Ecological Network"@en,
+        "Éco-régime maillage écologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Paiement pour les surfaces environnementales converties en hectares environnementaux (HE) incluant éléments du paysage, jachères, bandes bordures et prairies Natura 2000, avec bonus SEP dans certaines zones."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Fallow"@en,
+        "Landscape Elements"@en,
+        "Natura 2000"@en ;
+    core:requiresCriterion "{'variable': 'HE_total', 'operator': '<=', 'value': '40% of SAU'}",
+        "{'variable': 'agricultural_surface', 'operator': 'exists', 'value': 'true'}",
+        "{'variable': 'excluded_schemes', 'operator': 'not_in', 'value': 'MAEC MB5, MC7, MB12'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c21_1> a core:Opportunity ;
+    rdfs:label "Eco-scheme Permanent Grasslands Conditioned to Livestock Density"@en,
+        "Éco-régime prairies permanentes conditionnée à la charge en bétail"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide de base fixe par ha de prairie + aide supplémentaire dégressive selon la charge en bétail (UGB/SF), visant à préserver les prairies et limiter les charges élevées."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Grasslands"@en,
+        "Livestock"@en,
+        "Low Input"@en ;
+    core:requiresCriterion "{'variable': 'active_farmer', 'operator': '=', 'value': 'true'}",
+        "{'variable': 'livestock_charge', 'operator': '>', 'value': '0.6 UGB/SF'}",
+        "{'variable': 'prairie_ha', 'operator': '>', 'value': '1'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c21_2> a core:Opportunity ;
+    rdfs:label "Eco-scheme Reduction of Inputs"@en,
+        "Éco-régime réduction d'intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Prime pour engagement à ne pas appliquer une liste de produits phytopharmaceutiques sur les parcelles (détails incomplets dans le chunk)."@en ;
+    core:hasTag "Low Input"@en,
+        "Phytosanitary Reduction"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c22_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme Input Reduction"@en,
+        "Eco-régime réduction d’intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aid to compensate economic risk for farmers not using prohibited phytopharmaceutical products on arable land and permanent crops, promoting resilient production with reduced dependency on such products."@en ;
+    core:hasTag "Arable Land"@en,
+        "Permanent Crops"@en,
+        "Phytopharmaceuticals"@en,
+        "Reduced Inputs"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonia'}",
+        "{'variable': 'no_cumulation', 'operator': '=', 'value': 'with ER CFE certain variants'}",
+        "{'variable': 'not_organic', 'operator': '=', 'value': 'true'}",
+        "{'variable': 'parcel_type', 'operator': 'in', 'value': 'arable land or permanent crops (excl. exceptions)'}",
+        "{'variable': 'production_unit', 'operator': 'exists', 'value': 'Belgium territory'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'active farmer'}",
+        "{'variable': 'system', 'operator': '=', 'value': 'SIGEC identified'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c23_0> a core:Opportunity ;
+    rdfs:label "Public intervention"@en,
+        "Intervention publique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "L'Organisme payeur de Wallonie achète et stocke du beurre, lait écrémé en poudre, céréales ou viande bovine à prix fixe ou par adjudication pour stabiliser les marchés en cas de crise."@en ;
+    core:hasTag "Beef"@en,
+        "Cereals"@en,
+        "Dairy"@en,
+        "Market support"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c23_1> a core:Opportunity ;
+    rdfs:label "Private storage aid"@en,
+        "Aide au stockage privé"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide octroyée aux opérateurs qui retirent des produits du marché (beurre, lait écrémé, fromage, sucre, viandes, fibres de lin, huile d'olive) pendant une période déterminée en cas de crise."@en ;
+    core:hasTag "Dairy"@en,
+        "Market support"@en,
+        "Meat"@en,
+        "Sugar"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c24_0> a core:Opportunity ;
+    rdfs:label "European School Fruit, Vegetables and Milk Programme"@en,
+        "Programme Européen à destination des écoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Programme promoting healthy eating in schools through free distribution of fruits, vegetables, and dairy products, with educational activities. Subsidies cover distributions up to 10€ TVAC per pupil per volet."@en ;
+    core:hasTag "Dairy"@en,
+        "Fruits"@en,
+        "Schools"@en,
+        "Vegetables"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c24_1> a core:Opportunity ;
+    rdfs:label "Forage Autonomy MAEC - MB13"@en,
+        "MAEC Autonomie fourragère - MB13"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Agro-environmental measure to reduce livestock density and maintain permanent pastures, increasing forage autonomy for herbivores."@en ;
+    core:hasTag "Climate"@en,
+        "Livestock"@en,
+        "Permanent Pastures"@en ;
+    core:requiresCriterion "{'variable': 'livestock_density', 'operator': '<=', 'value': '1.4'}",
+        "{'variable': 'livestock_density', 'operator': '<=', 'value': '1.8'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c24_2> a core:Opportunity ;
+    rdfs:label "Standing Cereals MAEC - MB12"@en,
+        "MAEC Céréales sur pied - MB12"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Measure to leave eligible cereal crops standing until end of February to provide winter food for threatened bird species."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Birds"@en,
+        "Cereals"@en ;
+    core:requiresCriterion "{'variable': 'parcel_size', 'operator': 'between', 'value': '0.02-0.5'}",
+        "{'variable': 'total_ha', 'operator': '<=', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c24_3> a core:Opportunity ;
+    rdfs:label "Holding of Threatened Local Breeds MAEC - MB11"@en,
+        "MAEC Détention d’animaux de races locales menacées - MB11"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Support for maintaining threatened local breeds of horses, cattle, sheep, and pigs to preserve genetic and cultural heritage."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Heritage"@en,
+        "Livestock"@en,
+        "Local Breeds"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c25_0> a core:Opportunity ;
+    rdfs:label "MAEC 'Holding of threatened local breeds'"@en,
+        "MAEC « Détention de races locales menacées »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Agro-environmental payment to compensate income losses and additional costs for holding threatened local breeds of cattle, sheep, horses, and pigs."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Livestock"@en,
+        "Local Breeds"@en ;
+    core:requiresCriterion "{'variable': 'animal_age', 'operator': '>=', 'value': '2 years (bovins/equins); 6 months (ovins); 1 year (porcins)'}",
+        "{'variable': 'animals', 'operator': '>=', 'value': 'minimum engaged number'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'Article 3 §1 Règlement (UE) 2021/2115'}",
+        "{'variable': 'registry', 'operator': '=', 'value': 'Main or annex section of genealogical book'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c25_1> a core:Opportunity ;
+    rdfs:label "MAEC Arranged Plots - MC7"@en,
+        "MAEC Parcelles aménagées - MC7"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Targeted measure replacing arable land with environmentally friendly covers without fertilizers or pesticides, based on expert advice for local environmental issues."@en ;
+    core:hasTag "Arable Land"@en,
+        "Biodiversity"@en,
+        "Erosion Control"@en,
+        "Water Protection"@en ;
+    core:requiresCriterion "{'variable': 'expert_advice', 'operator': '=', 'value': 'required'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable land'}",
+        "{'variable': 'plot_size', 'operator': 'between', 'value': '0.02-1.50 ha'}",
+        "{'variable': 'total_engagement', 'operator': '>=', 'value': '0.20 ha'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c25_2> a core:Opportunity ;
+    rdfs:label "MAEC Agro-environmental Action Plan - MC10"@en,
+        "MAEC Plan d’action agro-environnemental - MC10"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Comprehensive farm-level action plan with expert diagnosis and tailored agro-environmental actions to address territorial priorities, complementing other MAEC and eco-schemes."@en ;
+    core:hasTag "Comprehensive"@en,
+        "Environmental Management"@en,
+        "Farm Plan"@en ;
+    core:requiresCriterion "{'variable': 'expert_plan', 'operator': '=', 'value': 'required agro-environmental action plan'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'Article 3 §1 Règlement (UE) 2021/2115'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c26_0> a core:Opportunity ;
+    rdfs:label "Natural Meadow MAEC - MB2"@en,
+        "MAEC Prairie naturelle - MB2"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Measure to conserve and extensively manage natural meadows through late mowing or grazing to protect fauna and flora."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Prairie"@en ;
+    core:requiresCriterion "{'variable': 'exploitation_surface', 'operator': '<=', 'value': '50% (first 10ha exempt)'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'EU 2021/2115 Art 3 §1'}",
+        "{'variable': 'min_exploitation_area', 'operator': '>=', 'value': '0.45'}",
+        "{'variable': 'parcel_type', 'operator': '=', 'value': 'prairie permanente/temporaire'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c26_1> a core:Opportunity ;
+    rdfs:label "High Biological Value Meadow MAEC - MC4"@en,
+        "MAEC Prairie à haute valeur biologique - MC4"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Targeted measure with reinforced requirements for meadows in Natura 2000 habitats or high nature value areas, requiring expert opinion."@en ;
+    core:hasTag "Biodiversity"@en,
+        "High Nature Value"@en,
+        "Natura 2000"@en,
+        "Prairie"@en ;
+    core:requiresCriterion "{'variable': 'expert_opinion', 'operator': '=', 'value': 'required'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'EU 2021/2115 Art 3 §1'}",
+        "{'variable': 'parcel_type', 'operator': '=', 'value': 'prairie haute valeur biologique'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c26_2> a core:Opportunity ;
+    rdfs:label "Soil MAEC - MR14"@en,
+        "MAEC Sol - MR14"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Voluntary measure compensating costs to improve and maintain soil organic carbon levels based on COT/clay indicator analysis."@en ;
+    core:hasTag "Carbon"@en,
+        "Organic Matter"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'arable_land_ratio', 'operator': '>', 'value': '30%'}",
+        "{'variable': 'eco_regime', 'operator': '=', 'value': 'Couverture longue du sol 70%'}",
+        "{'variable': 'engagement_surface', 'operator': '>=', 'value': '90% admissible'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'EU 2021/2115 Art 3 §1'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c27_0> a core:Opportunity ;
+    rdfs:label "MAEC Soils (COT/clay indicator)"@en,
+        "MAEC Sols (Indicateur COT/argile)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Annual payment based on soil parcel classification by COT/clay indicator, with result-based remuneration and evolution premium, plus flat-rate for sampling costs. Requires activation of 'couverture longue du sol' eco-regime."@en ;
+    core:hasTag "Arable Land"@en,
+        "Carbon"@en,
+        "Organic Matter"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'arable_land_proportion', 'operator': '<=', 'value': '60'}",
+        "{'variable': 'arable_land_proportion', 'operator': '>=', 'value': '30'}",
+        "{'variable': 'engaged_surface', 'operator': '>=', 'value': '90'}",
+        "{'variable': 'sampled_surface_proportion', 'operator': '>=', 'value': '25'}",
+        "{'variable': 'samples', 'operator': '>=', 'value': '5'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c28_0> a core:Opportunity ;
+    rdfs:label "MAEC Soils"@en,
+        "MAEC Sols"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Agro-environmental scheme supporting soil analysis and improvement of COT/clay indicator through base payments for transition/favorable hectares and final year bonuses, with soil sampling forfait."@en ;
+    core:hasTag "Carbon"@en,
+        "Eco-Regime"@en,
+        "Organic Matter"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'arable_land_pct', 'operator': 'variable', 'value': 'TA factor (0 if <=30%, 1 if >=60%, linear between)'}",
+        "{'variable': 'exclude_recent_permanent_pasture', 'operator': '=', 'value': 'yes (within 5 years, with tolerance <50a <10% parcel)'}",
+        "{'variable': 'min_surface', 'operator': '>=', 'value': '1'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c28_1> a core:Opportunity ;
+    rdfs:label "MAEC Herbaceous Field Margins - MB5"@en,
+        "MAEC Tournières enherbées - MB5"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Measure converting arable field margins (10-20m wide) into low-intensity herbaceous cover (grasses/legumes) with late summer mowing and refuge zone."@en ;
+    core:hasTag "Arable Land"@en,
+        "Biodiversity"@en,
+        "Field Margins"@en,
+        "Low Input"@en ;
+    core:requiresCriterion "{'variable': 'arable_land', 'operator': '=', 'value': 'yes (no recent permanent pasture conversion)'}",
+        "{'variable': 'max_cumulative_pct_arable', 'operator': '<=', 'value': '25 (with MC7/MB12)'}",
+        "{'variable': 'min_surface_per_engagement', 'operator': '>=', 'value': '0.20'}",
+        "{'variable': 'min_surface_per_margin', 'operator': '>=', 'value': '0.02'}",
+        "{'variable': 'width', 'operator': 'between', 'value': '10-20'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c29_0> a core:Opportunity ;
+    rdfs:label "Natura 2000 Payment in Agricultural Area"@en,
+        "Paiement Natura 2000 en zone agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Indemnity for agricultural parcels in Natura 2000 zones with strong constraints (UG2, UG3, UG temp1, UG temp2) or extensive buffer strips along watercourses (UG4)."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Natura 2000"@en,
+        "Prairie"@en ;
+    core:requiresCriterion "{'variable': 'agriculturist', 'operator': '=', 'value': 'registered SIGEC'}",
+        "{'variable': 'culture', 'operator': '=', 'value': 'prairie'}",
+        "{'variable': 'parcel', 'operator': 'in', 'value': 'UG2 OR UG3 OR UG temp1 OR UG temp2 OR UG4'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c29_1> a core:Opportunity ;
+    rdfs:label "Natura 2000 Payment in Forested Area"@en,
+        "Paiement Natura 2000 en zone forestière"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Indemnity for forest owners managing parcels in Natura 2000 zones (UG6-UG9, UG Temp 01/03) subject to specific forestry constraints."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Forest"@en,
+        "Natura 2000"@en ;
+    core:requiresCriterion "{'variable': 'owner', 'operator': '=', 'value': 'private forest owner'}",
+        "{'variable': 'parcel', 'operator': 'in', 'value': 'UG6 OR UG7 OR UG8 OR UG9 OR UG Temp 01 OR UG Temp 03'}",
+        "{'variable': 'parcel_size', 'operator': '<=', 'value': '30'}",
+        "{'variable': 'parcel_size', 'operator': '>', 'value': '0.1'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c29_2> a core:Opportunity ;
+    rdfs:label "Redistributive Income Support"@en,
+        "Aide redistributive au revenu"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Annual decoupled payment per eligible hectare to support small and medium-sized farms, limited to first 30 ha (or per physical person under conditions)."@en ;
+    core:hasTag "Redistribution"@en,
+        "Small Farm"@en ;
+    core:requiresCriterion "{'variable': 'agriculturist', 'operator': '=', 'value': 'eligible base payment'}",
+        "{'variable': 'hectares', 'operator': '<=', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c2_0> a core:Opportunity ;
+    rdfs:label "Aids for knowledge transfer and information actions in the agricultural sector"@en,
+        "Aides au transfert de connaissances et aux actions d'information dans le secteur agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aides couvrant formation professionnelle, acquisition de compétences, cours, ateliers, conférences, encadrement, démonstrations, actions d'information et promotion de l'innovation dans les secteurs agricole, apicole et horticole wallons."@en ;
+    core:hasTag "Apiculture"@en,
+        "Horticulture"@en,
+        "Innovation"@en,
+        "Training"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c2_1> a core:Opportunity ;
+    rdfs:label "Aids for knowledge transfer and information actions in the Walloon beekeeping sector"@en,
+        "Aides au transfert de connaissances et aux actions d’information dans le secteur apicole wallon"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Régime pour formation apicole responsable, crédible, moderne et durable, incluant cours de base, spécialisation et conférences, avec objectif de former 450-500 apiculteurs annuellement."@en ;
+    core:hasTag "Apiculture"@en,
+        "Formation"@en,
+        "Training"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c2_2> a core:Opportunity ;
+    rdfs:label "Aids for investments in rural health infrastructures"@en,
+        "Aides aux investissements dans des infrastructures de santé en zone rurale"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien à 100% des coûts pour investissements en infrastructures et équipements de santé pour Associations de Santé Intégrée (ASI) en zones rurales, répondant à besoins identifiés dans plans PCDR, PST ou PCS."@en ;
+    core:hasTag "Health"@en,
+        "Investment"@en,
+        "Rural"@en ;
+    core:requiresCriterion "{'variable': 'employment', 'operator': '<=', 'value': '20'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'rural_zone'}",
+        "{'variable': 'structure', 'operator': '=', 'value': 'ASI_agreee'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c2_3> a core:Opportunity ;
+    rdfs:label "Aids for investments in forestry infrastructures related to climate change (forest roads)"@en,
+        "Aides aux investissements dans des infrastructures sylvicoles liés au changement climatique (dessertes forestières)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien à 100% des coûts pour aménagements de voiries forestières visant à augmenter résilience au climat, prévenir érosion et inondations, incluant places de dépôt, retournement et adaptations viaires."@en ;
+    core:hasTag "Climate"@en,
+        "Erosion"@en,
+        "Forestry"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'forest_area_private', 'operator': '>', 'value': '5'}",
+        "{'variable': 'forest_management_plan', 'operator': 'required', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c2_4> a core:Opportunity ;
+    rdfs:label "Aids for non-productive investments in agricultural holdings"@en,
+        "Aides aux investissements non-productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien aux investissements non productifs pour améliorer environnement, réduire érosion et renforcer cadre hydraulique sur terres agricoles, comme éléments d'hydraulique douce."@en ;
+    core:hasTag "Environment"@en,
+        "Erosion"@en,
+        "Hydraulic"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'active_farmer', 'operator': '=', 'value': 'yes'}",
+        "{'variable': 'farmer_status', 'operator': '>=', 'value': 'complementary'}",
+        "{'variable': 'sigec_identified', 'operator': '=', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c30_0> a core:Opportunity ;
+    rdfs:label "Natura 2000 Payments in Forest Areas"@en,
+        "Paiements au titre de Natura 2000 en zone forestière"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Indemnité pour propriétaires forestiers subissant des contraintes dues à Natura 2000, couvrant pertes de revenus et coûts supplémentaires liés à des pratiques sylvicoles modifiées."@en ;
+    core:hasTag "Environment"@en,
+        "Forestry"@en,
+        "Natura 2000"@en ;
+    core:requiresCriterion "{'variable': 'parcels', 'operator': 'in', 'value': 'Natura 2000 forest zones'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c30_1> a core:Opportunity ;
+    rdfs:label "331 – Payments for Areas Facing Natural or Specific Constraints - ANC"@en,
+        "331 – Indemnités dans les zones soumises à des contraintes naturelles et spécifiques - IZCNS"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Compensation partielle des coûts supplémentaires et pertes de revenus pour agriculteurs actifs dans zones à contraintes pédoclimatiques (pente, sol, etc.), pour maintenir activités agricoles favorables à l'environnement."@en ;
+    core:hasTag "Grassland"@en,
+        "Mountainous areas"@en,
+        "Natural constraints"@en ;
+    core:requiresCriterion "{'variable': 'identification', 'operator': '=', 'value': 'SIGEC'}",
+        "{'variable': 'parcels', 'operator': 'in', 'value': 'ANC or specific constraint communes'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'active farmer'}",
+        "{'variable': 'total_aid', 'operator': '>=', 'value': '100 EUR'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c30_2> a core:Opportunity ;
+    rdfs:label "Aid Programme for Farmers' Participation in Quality Systems"@en,
+        "Programme d’aide en faveur de la participation des agriculteurs à des systèmes de qualité"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide couvrant partie des frais de contrôle et certification pour agriculteurs participant à cahiers des charges éligibles (bio, AOP, IGP, qualité différenciée)."@en ;
+    core:hasTag "Certification"@en,
+        "Livestock"@en,
+        "Organic"@en,
+        "PDO"@en,
+        "PGI"@en,
+        "Quality"@en ;
+    core:requiresCriterion "{'variable': 'compliance', 'operator': '=', 'value': 'eligible quality scheme'}",
+        "{'variable': 'controls', 'operator': '=', 'value': 'certified organism'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonia farm seat'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'SIGEC identified'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_0> a core:Opportunity ;
+    rdfs:label "Framework scheme for compensation to pig farmers affected by the repopulation ban in farms located in the African Swine Fever infected zone"@en,
+        "Régime cadre relatif aux indemnisations aux éleveurs de porcs affectés par l’interdiction de repeuplement des exploitations porcines situées dans la zone infectée par la peste porcine africaine"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Compensation for loss of income due to quarantine obligations and herd reconstitution difficulties caused by African Swine Fever measures."@en ;
+    core:hasTag "Livestock"@en,
+        "Pigs"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_1> a core:Opportunity ;
+    rdfs:label "Aid scheme for storage potato producers holding owned stocks of free sale potatoes"@en,
+        "Régime d’aide octroyant aux producteurs de pommes de terre de conservation détenteurs en propriété d’un stock de pommes de terre en vente libre"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aid to potato producers affected by COVID-19 market disruptions leading to unsold stocks and financial losses."@en ;
+    core:hasTag "Potatoes"@en,
+        "Storage"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_2> a core:Opportunity ;
+    rdfs:label "Aid scheme for milk producers' participation in mandatory milk composition certification"@en,
+        "Régime d'aides en faveur de la participation des producteurs de lait à la certification obligatoire de la composition du lait"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Support for milk producers participating in mandatory quality certification of milk composition supplied to Walloon dairies."@en ;
+    core:hasTag "Certification"@en,
+        "Dairy"@en,
+        "Quality"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_3> a core:Opportunity ;
+    rdfs:label "Regional aid scheme for farmers for the processing and marketing of agricultural products"@en,
+        "Régime d’aides régionales aux agriculteurs pour la transformation et la commercialisation de produits agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Capital subsidy up to 2,000 EUR to address price drops or exceptional events through processing and marketing support."@en ;
+    core:hasTag "Investment"@en,
+        "Marketing"@en,
+        "Processing"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_4> a core:Opportunity ;
+    rdfs:label "Aid schemes for financing and managing the collection and destruction of dead livestock in Wallonia"@en,
+        "Régimes d’aides organisant le financement et la gestion de la collecte et de la destruction des animaux d’élevage trouvés morts en Wallonie"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Financing for collection, transformation, and management of dead livestock to protect environment and health."@en ;
+    core:hasTag "Environment"@en,
+        "Livestock"@en,
+        "Waste Management"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c31_5> a core:Opportunity ;
+    rdfs:label "Coupled support for meat female cattle"@en,
+        "Soutien couplé aux bovins femelles viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Coupled income support to improve competitiveness and sustainability of beef cattle farming, max 145 eligible animals per farmer."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en,
+        "Meat"@en ;
+    core:requiresCriterion "{'variable': 'animals', 'operator': '<=', 'value': '145'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c32_0> a core:Opportunity ;
+    rdfs:label "Coupled support for beef cows"@en,
+        "Soutien couplé aux bovins femelles viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Income support for eligible beef female bovines, calculated based on retention, calvings, and calves, with reductions for livestock density and caps per farm or holder."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'livestock_density', 'operator': '<=', 'value': '5'}",
+        "{'variable': 'max_animals_per_holder', 'operator': '<=', 'value': '145'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c32_1> a core:Opportunity ;
+    rdfs:label "Coupled support for protein crops"@en,
+        "Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Support for growing eligible protein vegetable crops in pure or predominant mixtures to increase protein autonomy, minimum 0.5 ha."@en ;
+    core:hasTag "Crops"@en,
+        "Protein crops"@en ;
+    core:requiresCriterion "{'variable': 'location', 'operator': 'in', 'value': 'Wallonia'}",
+        "{'variable': 'min_area', 'operator': '>', 'value': '0.5'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c32_2> a core:Opportunity ;
+    rdfs:label "Coupled support for dairy cows"@en,
+        "Soutien couplé aux vaches laitières"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Income support for eligible dairy cows during retention period, with minimum threshold and maximum cap per farm or holder."@en ;
+    core:hasTag "Dairy"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'max_animals_per_holder', 'operator': '<=', 'value': '50'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c32_3> a core:Opportunity ;
+    rdfs:label "Coupled support for dual-purpose cows"@en,
+        "Soutien couplé aux vaches mixtes"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Income support for eligible dual-purpose (mixed) cows during retention period, with minimum threshold and maximum cap per farm or holder."@en ;
+    core:hasTag "Dual-purpose"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'max_animals_per_holder', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c33_0> a core:Opportunity ;
+    rdfs:label "Coupled aid 'mixed cows'"@en,
+        "Aide couplée « vaches mixtes »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide couplée pour vaches mixtes avec plafond de 100 animaux par membre et paiement variable autour de 150 € par animal admissible."@en ;
+    core:hasTag "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'animals', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'animals_group', 'operator': '>', 'value': '0'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c33_1> a core:Opportunity ;
+    rdfs:label "Coupled support for ewes"@en,
+        "Soutien couplé à la brebis"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien couplé pour brebis avec minimum 30 animaux, maximum 400 par exploitation ou titulaire, paiement autour de 27 € par animal."@en ;
+    core:hasTag "Livestock"@en,
+        "Sheep"@en ;
+    core:requiresCriterion "{'variable': 'animals', 'operator': '<=', 'value': '400'}",
+        "{'variable': 'animals', 'operator': '>', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c33_2> a core:Opportunity ;
+    rdfs:label "Support for organic agriculture"@en,
+        "Soutien à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Paiements annuels par ha pour agriculture biologique certifiée, différenciés par groupes de cultures avec dégressivité, majorations conversion et zone vulnérable."@en ;
+    core:hasTag "Organic"@en ;
+    core:requiresCriterion "{'variable': 'certification', 'operator': '=', 'value': 'organic'}",
+        "{'variable': 'livestock_density', 'operator': '>=', 'value': '0.6'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c34_0> a core:Opportunity ;
+    rdfs:label "high biological value meadows"@en,
+        "prairies de haute valeur biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Agro-environmental and climate measure for permanent meadows of high biological value, allowing recognition as permanent prairies even if herbaceous cover is below 90%."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Permanent Grassland"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c3_0> a core:Opportunity ;
+    rdfs:label "Non-productive investments aid in rural areas"@en,
+        "Aides aux investissements non-productifs en zone rurale"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subvention covering 100% of eligible costs for restoration of habitats in SEP zones and strengthening ecosystem services in forests to reduce flood risks and improve water infiltration."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Ecosystem services"@en,
+        "Environment"@en,
+        "Flood risk"@en,
+        "Restoration"@en ;
+    core:requiresCriterion "{'variable': 'biological_potential', 'operator': '=', 'value': 'favorable'}",
+        "{'variable': 'location', 'operator': 'in', 'value': 'SEP zones'}",
+        "{'variable': 'project_type', 'operator': 'one_of', 'value': 'restoration or ecosystem services'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c3_1> a core:Opportunity ;
+    rdfs:label "Aid for anti-runoff structures"@en,
+        "Aides aux aménagements anti-ruissellement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subvention en capital up to 100% of forfaitaire eligible expenses for structures like fascines, ditches, buffer ponds, etc., to reduce runoff, with max 30,000 € per beneficiary 2023-2027."@en ;
+    core:hasTag "Hydrology"@en,
+        "Investment"@en,
+        "Runoff"@en,
+        "Water management"@en ;
+    core:requiresCriterion "{'variable': 'proximity', 'operator': '<', 'value': '50m to habitation (risk analysis)'}",
+        "{'variable': 'study', 'operator': 'required', 'value': 'hydrological study or LIDAXES cartography'}",
+        "{'variable': 'total_aid', 'operator': '<=', 'value': '30000 EUR (2023-2027)'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c3_2> a core:Opportunity ;
+    rdfs:label "Aid for investments in processing/commercialization and non-agricultural diversification"@en,
+        "Aides aux investissements pour le secteur de la transformation/commercialisation et diversification non-agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subvention en capital up to 40% of forfaitaire investment costs for farmers, SCTC, or agro-food SMEs transforming agricultural products or diversifying, with max 200,000 € for farmers and 500,000 € for others over 2023-2027."@en ;
+    core:hasTag "Commercialization"@en,
+        "Diversification"@en,
+        "Organic"@en,
+        "Processing"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'company_size', 'operator': 'one_of', 'value': 'farmer/SCTC/SME'}",
+        "{'variable': 'environment_permit', 'operator': 'not', 'value': 'class 1'}",
+        "{'variable': 'pbs', 'operator': 'between', 'value': '12500-425000 EUR'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c4_0> a core:Opportunity ;
+    rdfs:label "Investment aids for forestry works and forest exploitation companies"@en,
+        "Aides aux investissements pour les entreprises de travaux forestiers et d’exploitation forestière"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Supports investments in forestry exploitation and works companies for more efficient techniques, environmental and climate objectives, rural development, and crisis management support."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Forestry"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'activity', 'operator': '=', 'value': 'forestry exploitation or works (NACE codes)'}",
+        "{'variable': 'enterprise_type', 'operator': 'in', 'value': 'micro, small, medium enterprise or group'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonia'}",
+        "{'variable': 'status', 'operator': '!=', 'value': 'enterprise in difficulty'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c4_1> a core:Opportunity ;
+    rdfs:label "Aids for productive investments in agricultural holdings"@en,
+        "Aides aux investissements productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Supports productive investments in agricultural holdings targeting green architecture practices, economic resilience, competitiveness, and animal welfare improvements."@en ;
+    core:hasTag "Agriculture"@en,
+        "Economic Resilience"@en,
+        "Green Architecture"@en,
+        "Investment"@en,
+        "Organic"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'acisee', 'operator': '=', 'value': 'has ACISEE'}",
+        "{'variable': 'env_permit', 'operator': '!=', 'value': 'class 1'}",
+        "{'variable': 'pbs', 'operator': 'between', 'value': '12500-425000'}",
+        "{'variable': 'qualification', 'operator': '=', 'value': 'required qualification'}",
+        "{'variable': 'soil_link', 'operator': '<=', 'value': '1'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c5_0> a core:Opportunity ;
+    rdfs:label "Aids to cover the costs of prevention, control and eradication of animal diseases"@en,
+        "Aides visant à couvrir les coûts de prévention, de contrôle et d’éradication des maladies animales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aides aux associations de lutte contre les maladies animales pour couvrir les coûts de prévention, contrôle et éradication, incluant analyses, autopsies, biosécurité et vaccins."@en ;
+    core:hasTag "Animal Health"@en,
+        "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c5_1> a core:Opportunity ;
+    rdfs:label "Aids for the installation of young farmers"@en,
+        "Aides à l'installation des jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien à l'installation des jeunes agriculteurs (max 40 ans) par reprise ou création d'exploitation, avec plan d'entreprise à 5 ans et objectif de revenu minimum de 15.000 €."@en ;
+    core:hasTag "Installation"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<=', 'value': '40'}",
+        "{'variable': 'pbs', 'operator': 'between', 'value': '12500-425000'}",
+        "{'variable': 'revenue_final', 'operator': '>=', 'value': '15000'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c5_2> a core:Opportunity ;
+    rdfs:label "Call for projects intervention 357 - Investment in forestry infrastructures related to climate change (forest tracks)"@en,
+        "Appel à projets intervention 357 - Investissement dans des infrastructures sylvicoles liés au changement climatique (dessertes forestières)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subventions pour création de places de dépôt, retournement, adaptation du réseau viaire forestier pour réduire compaction, érosion et impacts climatiques."@en ;
+    core:hasTag "Climate"@en,
+        "Forestry"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'project_max', 'operator': '<=', 'value': '450000'}",
+        "{'variable': 'project_min', 'operator': '>=', 'value': '5000'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c5_3> a core:Opportunity ;
+    rdfs:label "Call for projects intervention 373 - Cooperation in the health sector"@en,
+        "Appel à projets intervention 373 - Coopération dans le domaine de la santé"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Soutien à projets d'agriculture sociale en partenariat avec agriculteurs et structures d'insertion sociale, assuétudes, handicap, santé mentale."@en ;
+    core:hasTag "Cooperation"@en,
+        "Health"@en,
+        "Social Farming"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c6_0> a core:Opportunity ;
+    rdfs:label "Intervention 374 - Cooperation for Innovation/PEI"@en,
+        "Intervention 374 - Coopération pour l'innovation/PEI"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Call for projects to select operational groups (GO) for collaborative innovation projects in applied research, prioritising Wallonia-Luxembourg partnerships under PAC 2023-2027. Walloon-only projects also accepted. Maximum 4 projects selected."@en ;
+    core:hasTag "Agricultural Production"@en,
+        "Cooperation"@en,
+        "Innovation"@en,
+        "Research"@en,
+        "Sylviculture"@en ;
+    core:requiresCriterion "{'variable': 'collaboration', 'operator': 'preferred', 'value': 'Luxembourg actors'}",
+        "{'variable': 'participants', 'operator': 'includes', 'value': 'research organisms, technical centers, agricultural/sylvicultural producers'}",
+        "{'variable': 'project_type', 'operator': '=', 'value': 'operational group (GO)'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c8_0> a core:Opportunity ;
+    rdfs:label "Agricultural Calamities"@en,
+        "Calamités agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Indemnisation pour agriculteurs sinistrés par pluies abondantes (1er oct. 2023 - 15 juin 2024), via Pac-on-Web avec PV de dégâts et contrat d'assurance si applicable."@en ;
+    core:hasTag "Compensation"@en,
+        "Disaster"@en,
+        "Insurance"@en ;
+    core:requiresCriterion "{'variable': 'damage_report', 'operator': 'exists', 'value': 'PV de constat des dégâts'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme Permanent Grasslands (ER PP)"@en,
+        "Éco-régime Prairies Permanentes (ER PP)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide de base et supplémentaire pour les prairies permanentes, avec prise en compte des contrats de pâturage pour le calcul de la charge en bétail chez cédants et preneurs."@en ;
+    core:hasTag "Environment"@en,
+        "Grasslands"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'prairies_permanentes', 'operator': '>', 'value': '0'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_1> a core:Opportunity ;
+    rdfs:label "Coupled aid for beef cows"@en,
+        "Aide couplée à la vache viandeuse"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide couplée prenant en compte les contrats de pâturage dans le calcul de la charge en bétail pour cédants et preneurs."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_2> a core:Opportunity ;
+    rdfs:label "Support for organic agriculture"@en,
+        "Soutien à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Aide pour l'agriculture biologique prenant en compte les contrats de pâturage dans le calcul de la charge en bétail."@en ;
+    core:hasTag "Organic"@en ;
+    core:requiresCriterion "{'variable': 'certification_bio', 'operator': '=', 'value': 'oui'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_3> a core:Opportunity ;
+    rdfs:label "MAEC Forage Autonomy"@en,
+        "MAEC Autonomie Fourragère (MAEC AF)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Mesure agro-environnementale climat pour l'autonomie fourragère; parcelles sous contrat de pâturage non payées et déduites de la surface fourragère."@en ;
+    core:hasTag "Autonomy"@en,
+        "Forage"@en ;
+    core:requiresCriterion "{'variable': 'surface_fourragere', 'operator': '>', 'value': '0'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_4> a core:Opportunity ;
+    rdfs:label "374 – European Innovation Partnership Cooperation"@en,
+        "374 – Coopération PEI - innovation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subvention pour groupes opérationnels (GO) développant projets innovants en agriculture/sylviculture via innovation interactive."@en ;
+    core:hasTag "Cooperation"@en,
+        "Innovation"@en,
+        "Research"@en ;
+    core:requiresCriterion "{'variable': 'membres_go', 'operator': '>=', 'value': '5'}",
+        "{'variable': 'producteurs', 'operator': '>=', 'value': '2'}" .
+
+<http://example.org/opportunity/be/wal/all_extra_measures_md_c9_5> a core:Opportunity ;
+    rdfs:label "373 – Cooperation in the health sector"@en,
+        "373 – Coopération dans le domaine de la santé"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/all_extra_measures_md> ;
+    core:description "Subvention pour projets innovants d'insertion sociale via agriculteurs/forestiers comme accueillants pour publics fragilisés."@en ;
+    core:hasTag "Cooperation"@en,
+        "Health"@en,
+        "Social"@en ;
+    core:requiresCriterion "{'variable': 'agrement_sante_sociale', 'operator': '=', 'value': 'oui'}",
+        "{'variable': 'partenariat', 'operator': '>=', 'value': '2'}" .
+
 <http://example.org/opportunity/be/wal/bio_2019_pdf_c0_0> a core:Opportunity ;
     rdfs:label "Organic Agriculture Aid Scheme - Maintenance Aid"@en,
         "Régime des aides à l’agriculture biologique - Aide au maintien"@fr ;
@@ -1571,6 +2334,270 @@
     core:description "Encourages extended soil coverage to protect and enrich soils, benefiting wintering wildlife."@en ;
     core:hasTag "Soil Cover"@en .
 
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'Premium for permanent pasture' (PP)"@en,
+        "Eco-régime « Primes à la prairie permanente » (PP)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Reduces livestock density to avoid ammonia volatilization losses, decrease livestock effluents, and reduce NH3, methane, and nitrogen oxide emissions."@en ;
+    core:hasTag "Climate"@en,
+        "Livestock"@en,
+        "Permanent Pasture"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_1> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'Environmentally friendly crops' (CFE)"@en,
+        "Éco-régime « cultures favorables à l’environnement » (CFE)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports cultivation of plants more resistant to climate hazards, requiring fewer inputs, reducing GHG, NH3 emissions, and aiding climate change adaptation."@en ;
+    core:hasTag "Climate Adaptation"@en,
+        "Crops"@en,
+        "Low Inputs"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_10> a core:Opportunity ;
+    rdfs:label "Aids for non-productive investments in agricultural holdings"@en,
+        "Aides aux investissements non productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports restoration and management of habitats in key ecological structures including Natura 2000, and hydraulic soft engineering works to prevent erosion."@en ;
+    core:hasTag "Environmental"@en,
+        "Erosion Control"@en,
+        "Investment"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_11> a core:Opportunity ;
+    rdfs:label "Direct coupled aid to protein crop cultivation"@en,
+        "Aide directe couplée aux cultures de protéines végétales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports increased autonomy in animal feed production, especially protein crops, reducing nitrogen/phosphorus imports and mineral fertilizer use."@en ;
+    core:hasTag "Protein Crops"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_2> a core:Opportunity ;
+    rdfs:label "MAEC 'Natural meadows' (PN)"@en,
+        "MAEC « Prairies naturelles » (PN)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Limits inputs on areas, significantly reducing fertilizer and pesticide use compared to reference, with delayed intervention reducing nitrogen inputs."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Low Inputs"@en,
+        "Permanent Pasture"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_3> a core:Opportunity ;
+    rdfs:label "MAEC 'Natural meadows of high biological value' (PNHVB)"@en,
+        "MAEC « Prairies naturelles à haute valeur biologique » (PNHVB)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Prohibits all inputs on areas, significantly reducing fertilizer and pesticide consumption compared to reference situation."@en ;
+    core:hasTag "Biodiversity"@en,
+        "High Biological Value"@en,
+        "No Inputs"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_4> a core:Opportunity ;
+    rdfs:label "MAEC Forage autonomy"@en,
+        "MAEC Autonomie fourragère"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Encourages reduction in livestock density, reducing enteric CH4 emissions, nitrogen oxides from effluents, and mineral fertilizers."@en ;
+    core:hasTag "Livestock"@en,
+        "Low Stocking Density"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_5> a core:Opportunity ;
+    rdfs:label "Aids for productive investments in agricultural holdings"@en,
+        "Aides aux investissements productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports precision agriculture (rapid incorporation spreading systems), covering livestock effluent storage structures, and livestock building equipment (ventilation, mechanical/hydraulic evacuation)."@en ;
+    core:hasTag "Investment"@en,
+        "Livestock"@en,
+        "Precision Agriculture"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_6> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'Reduction of inputs'"@en,
+        "Eco-régime « réduction d’intrants »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Prohibits certain phytosanitary products to preserve air quality, improve soil biogeochemical cycles, sequester atmospheric carbon, and reduce GHG emissions."@en ;
+    core:hasTag "Climate"@en,
+        "Low Inputs"@en,
+        "No Pesticides"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_7> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'Ecological network' (ME)"@en,
+        "ER « Maillage Ecologique » (ME)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Encourages maintenance of extensive pastures via better financial valorization, maintains landscape elements beneficial to biodiversity and carbon storage."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Extensive Pasture"@en,
+        "Landscape Elements"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_8> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'Long soil cover' (CLS)"@en,
+        "ER « Couverture longue du sol » (CLS)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Encourages better soil coverage during winter on permanent pastures, arable land, and permanent crops, increasing soil structural stability and carbon sequestration."@en ;
+    core:hasTag "Carbon Sequestration"@en,
+        "Soil Cover"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c27_9> a core:Opportunity ;
+    rdfs:label "Intervention 'Support for organic agriculture'"@en,
+        "Intervention « soutien à l’agriculture biologique »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports radical reduction of inputs through certified organic farming, improving soil biogeochemical cycles and carbon sequestration, reducing GHG emissions."@en ;
+    core:hasTag "Organic"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_0> a core:Opportunity ;
+    rdfs:label "Premium for diversified organic market gardening"@en,
+        "Prime pour maraîchage diversifié bio"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide majorée pour le soutien des maraîchers bio diversifiés sur de petites surfaces."@en ;
+    core:hasTag "Horticulture"@en,
+        "Organic"@en,
+        "Small Farms"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '3'}",
+        "{'variable': 'practice', 'operator': '=', 'value': 'maraîchage diversifié bio'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_1> a core:Opportunity ;
+    rdfs:label "Aid for young farmers' installation"@en,
+        "Aide à l’installation des jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Forfait pour soutenir l'installation des jeunes agriculteurs, y compris à titre complémentaire."@en ;
+    core:hasTag "Installation"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '40'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'first installation'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_2> a core:Opportunity ;
+    rdfs:label "Young farmer payment"@en,
+        "Paiement jeune agriculteur"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement complémentaire à la superficie pour les jeunes agriculteurs, avec paliers pour favoriser les petites exploitations."@en ;
+    core:hasTag "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '40'}",
+        "{'variable': 'area', 'operator': '<=', 'value': '100'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_3> a core:Opportunity ;
+    rdfs:label "Redistributive payment"@en,
+        "Paiement redistributif"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement redistributif limité aux 30 premiers hectares pour favoriser les petites et moyennes exploitations."@en ;
+    core:hasTag "Small Farms"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_4> a core:Opportunity ;
+    rdfs:label "Coupled support for beef cows"@en,
+        "Soutien couplé bovins femelles viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé au revenu pour l'élevage bovin viandeux avec limitation de densité."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'density', 'operator': '<=', 'value': '5'}",
+        "{'variable': 'unit', 'operator': '=', 'value': 'UGB herbivore/SF'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c28_5> a core:Opportunity ;
+    rdfs:label "Coupled support for protein crops"@en,
+        "Soutien couplé protéagineux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé pour les protéagineux afin d'améliorer l'autonomie protéique."@en ;
+    core:hasTag "Protein Crops"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_0> a core:Opportunity ;
+    rdfs:label "ADVIBEES (55(1)(a)) - Advisory services, technical assistance, training"@en,
+        "ADVIBEES (55(1)(a))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Services de conseil, assistance technique, formation, information et échange de bonnes pratiques pour apiculteurs et organisations."@en ;
+    core:hasTag "Apiculture"@en,
+        "Technical Assistance"@en,
+        "Training"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_1> a core:Opportunity ;
+    rdfs:label "ACTLAB (55(1)(c)) - Laboratory analysis support"@en,
+        "ACTLAB (55(1)(c))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Actions soutenant les laboratoires d’analyses des produits apicoles, déclin des abeilles et substances toxiques."@en ;
+    core:hasTag "Analysis"@en,
+        "Apiculture"@en,
+        "Quality"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_10> a core:Opportunity ;
+    rdfs:label "Coupled support animal sector (sheep)"@en,
+        "Soutien couplé secteur animal (ovin)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé par tête d’ovin, minimum 30 brebis >6 mois."@en ;
+    core:hasTag "Livestock"@en,
+        "Sheep"@en ;
+    core:requiresCriterion "{'variable': 'headcount', 'operator': '>', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_11> a core:Opportunity ;
+    rdfs:label "Eco-scheme permanent grassland premium"@en,
+        "Éco-régime prime à la prairie permanente"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Prime à la prairie permanente basée sur charge UGB/superficie fourragère, dégressive selon charge."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Grassland"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_2> a core:Opportunity ;
+    rdfs:label "PRESBEEHIVES (55(1)(d)) - Hive preservation"@en,
+        "PRESBEEHIVES (55(1)(d))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Actions pour préserver ou accroître le nombre de ruches, incluant élevage d’abeilles et conservation génétique."@en ;
+    core:hasTag "Apiculture"@en,
+        "Biodiversity"@en,
+        "Conservation"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_3> a core:Opportunity ;
+    rdfs:label "COOPAPI (55(1)(e)) - Research cooperation"@en,
+        "COOPAPI (55(1)(e))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Coopération pour programmes de recherche en apiculture, tests VSH, formation."@en ;
+    core:hasTag "Apiculture"@en,
+        "Research"@en,
+        "VSH Resistance"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_4> a core:Opportunity ;
+    rdfs:label "MARCHEBEES (55(1)(f)) - Market monitoring"@en,
+        "MARCHEBEES (55(1)(f))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Promotion, communication, commercialisation et surveillance du marché des produits apicoles."@en ;
+    core:hasTag "Apiculture"@en,
+        "Market"@en,
+        "Promotion"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_5> a core:Opportunity ;
+    rdfs:label "ACTQUAL (55(1)(g)) - Quality improvement"@en,
+        "ACTQUAL (55(1)(g))"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Actions pour améliorer la qualité des produits apicoles et valoriser leur image."@en ;
+    core:hasTag "Apiculture"@en,
+        "Quality"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_6> a core:Opportunity ;
+    rdfs:label "Article 73 - Apiculture Investments"@en,
+        "Article 73 - Investissements apicoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aides à l’investissement pour agriculteurs/apiculteurs: construction bâtiments, achat matériel apicole (ruches, centrifugeuses)."@en ;
+    core:hasTag "Apiculture"@en,
+        "Equipment"@en,
+        "Investment"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_7> a core:Opportunity ;
+    rdfs:label "Coupled support animal sector (beef cattle)"@en,
+        "Soutien couplé secteur animal (bovin viande)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé par tête de bovin viande, limité à 145 animaux, critères productivité (vêlages/veaux)."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'headcount', 'operator': '<=', 'value': '145'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_8> a core:Opportunity ;
+    rdfs:label "Coupled support animal sector (mixed cattle)"@en,
+        "Soutien couplé secteur animal (bovin mixte)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé par tête de bovin mixte, limité à 100 animaux."@en ;
+    core:hasTag "Livestock"@en,
+        "Mixed Cattle"@en ;
+    core:requiresCriterion "{'variable': 'headcount', 'operator': '<=', 'value': '100'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c29_9> a core:Opportunity ;
+    rdfs:label "Coupled support animal sector (dairy cattle)"@en,
+        "Soutien couplé secteur animal (bovin laitier)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien couplé par tête de bovin laitier, limité à 50 animaux."@en ;
+    core:hasTag "Dairy"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'headcount', 'operator': '<=', 'value': '50'}" .
+
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c2_0> a core:Opportunity ;
     rdfs:label "CIS-YF - Complementary income support for young farmers"@en,
         "CIS-YF(30) - Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
@@ -1767,6 +2794,381 @@
     core:description "Soutien couplé au revenu pour les vaches mixtes."@en ;
     core:hasTag "Livestock"@en .
 
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c30_0> a core:Opportunity ;
+    rdfs:label "Basic premium for permanent grassland"@en,
+        "Prime de base à la prairie permanente"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supports permanent grasslands with degressive aid based on herbivore livestock density (UGB) to reduce stocking rates, maintain biodiversity, and store carbon."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Livestock"@en,
+        "Permanent grassland"@en ;
+    core:requiresCriterion "{'variable': 'grassland_area', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'stocking_density', 'operator': '<=', 'value': 'degressive'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c30_1> a core:Opportunity ;
+    rdfs:label "Coupled support for protein crops"@en,
+        "Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Forfaitaire payment to encourage production of protein crops like soy, peas, beans, and lupins to improve protein autonomy."@en ;
+    core:hasTag "Fèves"@en,
+        "Lupin"@en,
+        "Pois protéagineux"@en,
+        "Protein crops"@en,
+        "Soja"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>', 'value': '0'}",
+        "{'variable': 'crop_type', 'operator': 'in', 'value': 'soja, pois protéagineux, fèves, fèveroles, lupin'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c30_2> a core:Opportunity ;
+    rdfs:label "Eco-scheme environmentally friendly crops"@en,
+        "Éco-régime cultures favorables à l’environnement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensates low-input crops like forage legumes, cereal-legume mixtures, spring cereals, and others, or additional environmental actions in conventional crops."@en ;
+    core:hasTag "Environment"@en,
+        "Legumes"@en,
+        "Low-input"@en,
+        "Protein-rich forages"@en ;
+    core:requiresCriterion "{'variable': 'crop_type', 'operator': 'in', 'value': 'légumineuses fourragères, mélanges céréales-légumineuses, céréales printemps, orge brasserie, sarrasin, quinoa, chanvre'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c30_3> a core:Opportunity ;
+    rdfs:label "Annual MRC premium"@en,
+        "Prime annuelle MRC"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subsidy for multi-risk climate insurance premiums covering storm, hail, frost, rain, drought; 65% of annual premium for 2024-2026."@en ;
+    core:hasTag "Climate risk"@en,
+        "Insurance"@en,
+        "Multi-risk"@en ;
+    core:requiresCriterion "{'variable': 'contract_duration', 'operator': '>=', 'value': '12 months'}",
+        "{'variable': 'damage_threshold', 'operator': '>=', 'value': '20%'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_0> a core:Opportunity ;
+    rdfs:label "Intervention 351"@en,
+        "Intervention 351"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aides pour investissements en biosécurité dans les exploitations porcines, incluant clôtures contre peste porcine africaine avec majoration du taux d'aide pour renforcer la résilience économique."@en ;
+    core:hasTag "Biosecurity"@en,
+        "Investment"@en,
+        "Livestock"@en,
+        "Pigs"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_1> a core:Opportunity ;
+    rdfs:label "Eco-scheme 'ecological network'"@en,
+        "Éco-régime « maillage écologique »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Contribue au bien-être animal via ombrage contre chaleur, résistance des prairies à la sécheresse et ressources fourragères alternatives."@en ;
+    core:hasTag "Animal Welfare"@en,
+        "Biodiversity"@en,
+        "Climate"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_2> a core:Opportunity ;
+    rdfs:label "Measure 'cooperation for innovation'"@en,
+        "Mesure « coopération pour l’innovation »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien à la coopération pour développer pratiques respectueuses de l'environnement, biodiversité et bien-être animal."@en ;
+    core:hasTag "Animal Welfare"@en,
+        "Biodiversity"@en,
+        "Environment"@en,
+        "Innovation"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_3> a core:Opportunity ;
+    rdfs:label "Support for organic farming"@en,
+        "Soutien à l’agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien imposant surfaces minimales par animal et conditions de logement bio strictes, limitant antibiotiques à usage curatif."@en ;
+    core:hasTag "Livestock"@en,
+        "Organic"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_4> a core:Opportunity ;
+    rdfs:label "Productive investments in agricultural holdings"@en,
+        "Investissements productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Investissements améliorant bien-être animal pour secteur porcin, avec majoration de 10% pour dépassement des normes en vigueur."@en ;
+    core:hasTag "Animal Welfare"@en,
+        "Investment"@en,
+        "Pigs"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_5> a core:Opportunity ;
+    rdfs:label "MAEC 'Holding of threatened local breeds'"@en,
+        "MAEC « Détention de races locales menacées »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Préserve races locales rustiques nécessitant moins d'intrants et antibiotiques, comme ovins rustiques et bovins à deux fins."@en ;
+    core:hasTag "Antibiotic Reduction"@en,
+        "Livestock"@en,
+        "Local Breeds"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c31_6> a core:Opportunity ;
+    rdfs:label "Investment aids (organic bonus)"@en,
+        "Aides aux investissements (majoration bio)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Majoration des aides aux investissements pour exploitations en agriculture biologique ou conversion, favorisant réduction antibiotiques."@en ;
+    core:hasTag "Investment"@en,
+        "Organic"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c32_0> a core:Opportunity ;
+    rdfs:label "ER Long Soil Cover"@en,
+        "ER Couverture longue des sols"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Incentive for farmers to cover at least 70% of arable land until 15 February, with levels at 80% and 90%, complementing BCAE 6."@en ;
+    core:hasTag "Erosion"@en,
+        "Soil Cover"@en ;
+    core:requiresCriterion "{'variable': 'arable_land_coverage', 'operator': '>=', 'value': '70'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c33_0> a core:Opportunity ;
+    rdfs:label "Natura 2000 Indemnities"@en,
+        "Indemnités Natura 2000"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Indemnities for managing and protecting priority habitats in Natura 2000 zones, now applicable to parcels with low grass cover (codes 600, 608) and full eligibility for codes 670, 678."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Natura 2000"@en,
+        "Permanent Pasture"@en ;
+    core:requiresCriterion "{'variable': 'parcel_code', 'operator': 'in', 'value': ['600', '608', '670', '678']}",
+        "{'variable': 'zone', 'operator': '=', 'value': 'Natura 2000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c33_1> a core:Opportunity ;
+    rdfs:label "Agro-Environmental Measures"@en,
+        "MAEC"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental and climate measures applicable to minor importance prairies outside Natura 2000, potentially supported even on non-agricultural surfaces."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "High Biological Value"@en ;
+    core:requiresCriterion "{'variable': 'prairie_type', 'operator': '=', 'value': 'importance mineure'}",
+        "{'variable': 'zone', 'operator': 'not', 'value': 'Natura 2000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c34_0> a core:Opportunity ;
+    rdfs:label "BIO Group Grassland Aid"@en,
+        "Aide BIO groupe prairie"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aid for BIO group in grassland under specific conditions."@en ;
+    core:hasTag "Grassland"@en,
+        "Organic"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c34_1> a core:Opportunity ;
+    rdfs:label "BIO Group Arboriculture Aid"@en,
+        "Aide BIO groupe « arboriculture »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aid for BIO group in arboriculture (fruit trees like hazelnuts, walnuts, pistachios, almonds) conditional on minimum densities: noyers >50 arbres/ha, noisetiers >250 pieds/ha."@en ;
+    core:hasTag "Arboriculture"@en,
+        "Organic"@en,
+        "Trees"@en ;
+    core:requiresCriterion "{'variable': 'density_noisetier', 'operator': '>', 'value': '250'}",
+        "{'variable': 'density_noyer', 'operator': '>', 'value': '50'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_0> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Long soil cover"@en,
+        "Eco-régimes - Couverture longue du sol"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement supplémentaire en faveur de l’aide de base au revenu pour couverture longue du sol."@en ;
+    core:hasTag "Environment"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_1> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Environmentally friendly crops"@en,
+        "Eco-régimes - Cultures favorables à l’environnement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement compensatoire pour cultures favorables à l’environnement."@en ;
+    core:hasTag "Environment"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_2> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Ecological network"@en,
+        "Eco-régimes - Maillage écologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement supplémentaire en faveur de l’aide de base au revenu pour maillage écologique."@en ;
+    core:hasTag "Biodiversity"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_3> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Reduction of inputs"@en,
+        "Eco-régimes - Réduction d'intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement compensatoire pour réduction d'intrants."@en ;
+    core:hasTag "Environment"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_4> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Permanent pastures conditioned on livestock load"@en,
+        "Eco-régimes - Prairies permanentes conditionnée à la charge en bétail"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement compensatoire pour prairies permanentes avec condition de charge en bétail."@en ;
+    core:hasTag "Environment"@en,
+        "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_5> a core:Opportunity ;
+    rdfs:label "MAEC - Support for organic farming"@en,
+        "MAEC - Soutien à l'agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien à l'agriculture biologique dans le cadre des mesures agro-environnementales et climatiques."@en ;
+    core:hasTag "Organic"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c35_6> a core:Opportunity ;
+    rdfs:label "IZCNS - Compensatory allowances in areas with natural and specific constraints"@en,
+        "IZCNS - Indemnités compensatoires dans les zones à contraintes naturelles et spécifiques"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Indemnités compensatoires pour zones à contraintes naturelles et spécifiques."@en ;
+    core:hasTag "Natural constraints"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c36_0> a core:Opportunity ;
+    rdfs:label "Basic Income Support for Sustainability - Rights"@en,
+        "BISS_Droits"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement de base au revenu découplé par droit, avec montants unitaires variant annuellement autour de 110 EUR par droit pour compenser les différences de revenu agricole."@en ;
+    core:hasTag "Income Support"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c36_1> a core:Opportunity ;
+    rdfs:label "Complementary Redistributive Income Support for Sustainability (CRISS)"@en,
+        "Aide redistributive complémentaire au revenu pour un développement durable"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement redistributif limité aux 30 premiers hectares pour soutenir les petites et moyennes exploitations agricoles en Région wallonne."@en ;
+    core:hasTag "Redistribution"@en,
+        "Small Farms"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c36_2> a core:Opportunity ;
+    rdfs:label "Complementary Income Support for Young Farmers (CIS-YF)"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide annuelle découplée par hectare pour jeunes agriculteurs installés récemment, en deux paliers pour renforcer le soutien aux exploitations de taille moyenne, maximum 5 ans."@en ;
+    core:hasTag "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age_group', 'operator': '=', 'value': 'young_farmer'}",
+        "{'variable': 'area', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'installation_years', 'operator': '<=', 'value': '5'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c36_3> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Long Soil Cover"@en,
+        "Eco-régimes - Couverture longue du sol"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Éco-régime pour la couverture longue du sol visant à contribuer à l’atténuation du changement climatique, la gestion des ressources naturelles et la protection de la biodiversité."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Soil"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c37_0> a core:Opportunity ;
+    rdfs:label "Eco-scheme Long Soil Cover"@en,
+        "Éco-régime Couverture longue des sols"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Voluntary scheme encouraging soil cover from January to mid-February through winter crops, temporary/permanent meadows, and long intercrops to improve soil fertility, reduce erosion, enhance water quality, and provide ecosystem services."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Carbon"@en,
+        "Climate"@en,
+        "Soil"@en,
+        "Water"@en ;
+    core:requiresCriterion "{'variable': 'beneficiary_status', 'operator': '=', 'value': 'active farmer in SIGEC, Wallonia territory'}",
+        "{'variable': 'chemical_destruction', 'operator': '=', 'value': 'prohibited until 15 Feb (full ban from 2027)'}",
+        "{'variable': 'period', 'operator': 'during', 'value': '1 Jan to 15 Feb'}",
+        "{'variable': 'soil_coverage_ratio', 'operator': '>=', 'value': '70% + 0.1 * proportion_permanent_temporary_meadows'}",
+        "{'variable': 'soil_coverage_ratio', 'operator': '>=', 'value': '80% + 0.1 * proportion_permanent_temporary_meadows'}",
+        "{'variable': 'soil_coverage_ratio', 'operator': '>=', 'value': '90% + 0.05 * proportion_permanent_temporary_meadows'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c37_1> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Environmentally Favourable Crops"@en,
+        "Éco-régimes - Cultures favorables à l’environnement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Replaces former MAEC method to promote low-input crops and legumes in rotations for water protection, soil quality, nutrient management, farm autonomy, and biodiversity support."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Crops"@en,
+        "Low-input"@en,
+        "Soil"@en,
+        "Water"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c38_0> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Environmentally Friendly Crops - Variant 1A"@en,
+        "Eco-Régime Cultures favorables à l’environnement - Variante 1A"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for predominant forage legumes (luzerne, luzerne lupuline, sainfoin, esparcette, lotier, vesce) with minimum 10% refuge zone at each harvest and full cut allowed from October 1st. Insecticide ban."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Forage"@en,
+        "Legumes"@en,
+        "Low-input"@en ;
+    core:requiresCriterion "{'variable': 'insecticides', 'operator': '=', 'value': 'prohibited'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'surface', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c38_1> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Environmentally Friendly Crops - Variant 1B"@en,
+        "Eco-Régime Cultures favorables à l’environnement - Variante 1B"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Forage legumes as in 1A, but refuge zone replaced by adjacent field border band (min 10% of parcel area) in eco-scheme ecological network. Full harvest allowed each cut. Insecticide ban."@en ;
+    core:hasTag "Ecological network"@en,
+        "Environment"@en,
+        "Forage"@en,
+        "Legumes"@en ;
+    core:requiresCriterion "{'variable': 'insecticides', 'operator': '=', 'value': 'prohibited'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'surface', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c38_2> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Environmentally Friendly Crops - Variant 2"@en,
+        "Eco-Régime Cultures favorables à l’environnement - Variante 2"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Less intensive crops: spring cereals (froment/orge/triticale/avoine/seigle/épeautre de printemps, orge brassicole, millet, engrain, sorgho) sown after Feb 15 (exceptions orge brassicole/avoine from Nov 1), or others (chanvre, sarrasin, quinoa, caméline, tournesol, moutarde). Insecticide ban."@en ;
+    core:hasTag "Diversification"@en,
+        "Drought-resistant"@en,
+        "Low-intensive crops"@en,
+        "Spring cereals"@en ;
+    core:requiresCriterion "{'variable': 'insecticides', 'operator': '=', 'value': 'prohibited'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'surface', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c38_3> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Environmentally Friendly Crops - Variant 3A"@en,
+        "Eco-Régime Cultures favorables à l’environnement - Variante 3A"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Crop mixtures: cereals (avoine/épeautre/froment/orge/seigle/triticale) + legumes/protéagineux (feverole/lentille/pois protéagineux/pois fourrager/vesce) with legumes >=20%, cereals >=50%; or caméline+lentille; or cereals + caméline/lentilles (>=20%). No harvest before May 31. Insecticide ban."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Cereals"@en,
+        "Crop mixtures"@en,
+        "Legumes"@en ;
+    core:requiresCriterion "{'variable': 'insecticides', 'operator': '=', 'value': 'prohibited'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'surface', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c38_4> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Environmentally Friendly Crops - Variant 3B"@en,
+        "Eco-Régime Cultures favorables à l’environnement - Variante 3B"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Crop mixtures as in 3A. No harvest before June 15. Insecticide ban."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Cereals"@en,
+        "Crop mixtures"@en,
+        "Legumes"@en ;
+    core:requiresCriterion "{'variable': 'insecticides', 'operator': '=', 'value': 'prohibited'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'surface', 'operator': '>=', 'value': '1'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonia'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c39_0> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Ecological Network"@en,
+        "Eco-Régime Maillage Écologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement pour les services écosystémiques fournis par des éléments du maillage écologique tels que haies, arbres, mares, jachères, bandes enherbées et prairies Natura 2000, convertis en Hectares Environnementaux (HE) avec coefficients et bonus SEP."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Carbon Sequestration"@en,
+        "Landscape Features"@en,
+        "Non-Productive Areas"@en ;
+    core:requiresCriterion "{'variable': 'bcrae_compliance', 'operator': '=', 'value': 'BCAE 8, ERMG 4'}",
+        "{'variable': 'farmer_status', 'operator': 'active', 'value': 'true'}",
+        "{'variable': 'he_limit', 'operator': '<=', 'value': '40% SAU'}",
+        "{'variable': 'payment_base', 'operator': 'has_access', 'value': 'true'}",
+        "{'variable': 'register', 'operator': 'mandatory', 'value': 'true'}",
+        "{'variable': 'territory', 'operator': 'in', 'value': 'Wallonie'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c39_1> a core:Opportunity ;
+    rdfs:label "Eco-Scheme Reduction of Inputs"@en,
+        "Eco-Régime Réduction d'Intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Paiement pour la non-utilisation de molécules phytopharmaceutiques prohibées ou l'application de désherbage mécanique (minimum 2 passages) sur terres arables et cultures permanentes."@en ;
+    core:hasTag "Arable Land"@en,
+        "Mechanical Weeding"@en,
+        "Permanent Crops"@en,
+        "Pesticide Reduction"@en ;
+    core:requiresCriterion "{'variable': 'crop_type', 'operator': 'in', 'value': 'terres arables (non prairies temporaires), cultures permanentes (sauf sapins)'}",
+        "{'variable': 'min_area', 'operator': '>=', 'value': '1 ha'}",
+        "{'variable': 'option', 'operator': 'one_of', 'value': 'no_prohibited_molecules OR mechanical_weeding_2_passes'}",
+        "{'variable': 'register', 'operator': 'mandatory', 'value': 'true'}" .
+
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c3_0> a core:Opportunity ;
     rdfs:label "MAEC - Holding of threatened local breeds"@en,
         "MAEC - Détention de races locales menacées"@fr ;
@@ -1854,6 +3256,281 @@
     core:hasTag "Environment"@en,
         "Natura 2000"@en .
 
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c40_0> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Reduction of Inputs"@en,
+        "Eco-régimes - Réduction d'intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual payment per eligible hectare for reducing use of specific phytopharmaceutical products (insecticides from approved list), compensating for income losses due to non-use of certain active substances."@en ;
+    core:hasTag "Arable Land"@en,
+        "Environment"@en,
+        "Pesticides"@en ;
+    core:requiresCriterion "{'variable': 'exploitation_area', 'operator': 'in', 'value': 'Wallonia agricultural lands'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'active farmer'}",
+        "{'variable': 'land_type', 'operator': 'in', 'value': 'arable lands (TA) excluding temporary meadows (PT 62, 623), permanent crops (CP) excluding Christmas trees (962)'}",
+        "{'variable': 'non_cumulative', 'operator': 'not with', 'value': 'BIO, MAEC parcels, Natura 2000 indemnities, ER Cultures favorables à l’environnement on same parcels for listed insecticides'}",
+        "{'variable': 'production_unit', 'operator': 'in', 'value': 'Belgium territory'}",
+        "{'variable': 'sigec_identified', 'operator': '=', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c40_1> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Permanent Grasslands Conditioned on Livestock Load"@en,
+        "Eco-régimes - Prairies permanentes conditionnée à la charge en bétail"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Two sub-measures: base aid for maintaining permanent prairies (80% non-ploughed ratio) and additional aid based on low livestock load (UGB herbivore per forage area), promoting climate mitigation, resource protection, and biodiversity."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Grassland"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'exploitation_area', 'operator': 'in', 'value': 'Wallonia agricultural lands'}",
+        "{'variable': 'farmer_status', 'operator': '=', 'value': 'active farmer'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'prairie (permanent or becoming permanent, excluding temporary; min 1 ha per farm)'}",
+        "{'variable': 'livestock_load_base', 'operator': '<', 'value': '3 UGB/SF (degressive above thresholds; min 0.6 UGB/SF or 0.4 for ovins/caprins)'}",
+        "{'variable': 'phytopharma', 'operator': '=', 'value': 'no use except localized treatments'}",
+        "{'variable': 'prairie_maintenance', 'operator': '>=', 'value': \"80% of previous year's prairies non-ploughed (excluding BCAE2/Natura 2000)\"}",
+        "{'variable': 'production_unit', 'operator': 'in', 'value': 'Belgium territory'}",
+        "{'variable': 'register', 'operator': '=', 'value': 'maintain operations register'}",
+        "{'variable': 'sigec_identified', 'operator': '=', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c41_0> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Basic aid for meadows"@en,
+        "Eco-régimes - Aide de base à la prairie"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual basic payment per hectare of permanent prairie to maintain permanent meadows."@en ;
+    core:hasTag "Environment"@en,
+        "Livestock"@en,
+        "Prairie"@en ;
+    core:requiresCriterion "{'variable': 'UGB_per_SF', 'operator': '>=', 'value': '0.6'}",
+        "{'variable': 'prairie_surface', 'operator': '>=', 'value': '1'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c41_1> a core:Opportunity ;
+    rdfs:label "Eco-schemes - Aid for meadows based on herbivore UGB load"@en,
+        "Eco-régimes - Aide à la prairie en fonction de la charge en UGB herbivore"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Supplementary degressive payment per hectare of prairie based on reduction in livestock density (UGB/SF) from 3 to 2, encouraging forage autonomy."@en ;
+    core:hasTag "Autonomy"@en,
+        "Livestock"@en,
+        "Prairie"@en ;
+    core:requiresCriterion "{'variable': 'UGB_per_SF', 'operator': '>=', 'value': '0.6'}",
+        "{'variable': 'prairie_surface', 'operator': '>=', 'value': '1'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c41_2> a core:Opportunity ;
+    rdfs:label "CIS(32) - Coupled support for protein crops"@en,
+        "CIS(32) - Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Coupled income support for growing protein crops like soy, peas, beans, lupins to enhance protein autonomy and competitiveness."@en ;
+    core:hasTag "Legumes"@en,
+        "Protein crops"@en,
+        "Sustainability"@en ;
+    core:requiresCriterion "{'variable': 'protein_crop_surface', 'operator': '>=', 'value': '0.5'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c42_0> a core:Opportunity ;
+    rdfs:label "Protein Crops Scheme"@en,
+        "SC_Proteines"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for establishing protein crops to compensate for income loss and encourage transition, with uniform payment of 375 EUR/ha."@en ;
+    core:hasTag "Cultures de protéagineux"@en,
+        "Protein crops"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>', 'value': '0'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c42_1> a core:Opportunity ;
+    rdfs:label "Coupled Support for Meat Breeding Female Cattle"@en,
+        "Soutien couplé aux bovins femelles viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Coupled income support for active farmers holding eligible meat breeding female cattle to support viable incomes and maintain production in Wallonia."@en ;
+    core:hasTag "Beef cattle"@en,
+        "Livestock"@en,
+        "Meat breeding females"@en ;
+    core:requiresCriterion "{'variable': 'age_months', 'operator': '<=', 'value': '120'}",
+        "{'variable': 'age_months', 'operator': '>=', 'value': '18'}",
+        "{'variable': 'density_UGB', 'operator': '<=', 'value': '5'}",
+        "{'variable': 'max_animals', 'operator': '<=', 'value': '145'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'active farmer'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c43_0> a core:Opportunity ;
+    rdfs:label "Coupled Support for Meat Cows"@en,
+        "SC_Bovins_Femelles_Viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide couplée au revenu pour vaches femelles viandeuses en Wallonie."@en ;
+    core:hasTag "Livestock"@en,
+        "Meat"@en ;
+    core:requiresCriterion "{'variable': 'max_animals', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c43_1> a core:Opportunity ;
+    rdfs:label "Coupled Support for Dairy Cows"@en,
+        "Soutien couplé aux vaches laitières"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide couplée au revenu pour vaches laitières en Wallonie, soutenant les revenus et la résilience du secteur laitier."@en ;
+    core:hasTag "Dairy"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'max_animals', 'operator': '<=', 'value': '50'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c43_2> a core:Opportunity ;
+    rdfs:label "Coupled Support for Mixed Cows"@en,
+        "Soutien couplé aux vaches mixtes"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide couplée au revenu pour vaches mixtes (lait et viande) en Wallonie, favorisant la diversité et la résilience."@en ;
+    core:hasTag "Livestock"@en,
+        "Mixed"@en ;
+    core:requiresCriterion "{'variable': 'max_animals', 'operator': '<=', 'value': '100'}",
+        "{'variable': 'min_animals', 'operator': '>', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c44_0> a core:Opportunity ;
+    rdfs:label "Coupled Support for Mixed Cows"@en,
+        "SC-vaches mixtes"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide couplée au revenu pour les vaches mixtes (au moins 25% de vaches mixtes), soutenant la diversité génétique, la résilience et les systèmes herbagers à faibles intrants."@en ;
+    core:hasTag "Beef"@en,
+        "Dairy"@en,
+        "Livestock"@en,
+        "Sustainability"@en ;
+    core:requiresCriterion "{'variable': 'animals', 'operator': '>=', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c44_1> a core:Opportunity ;
+    rdfs:label "Coupled Support for Ewes"@en,
+        "Soutien couplé à la brebis"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide couplée au revenu pour les brebis, encourageant la diversification, l'auto-approvisionnement en viande ovine et la gestion des prairies."@en ;
+    core:hasTag "Diversification"@en,
+        "Livestock"@en,
+        "Sheep"@en ;
+    core:requiresCriterion "{'variable': 'animals', 'operator': '<=', 'value': '400'}",
+        "{'variable': 'animals', 'operator': '>=', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c45_0> a core:Opportunity ;
+    rdfs:label "155 - Coupled Support for Ewes"@en,
+        "155 - SC_brebis"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Prime couplée PAC pour les ateliers d’au moins 30 brebis âgées de 6 mois et plus, soutenant le développement de la filière ovine en Wallonie."@en ;
+    core:hasTag "Livestock"@en,
+        "Ovine"@en,
+        "Sheep"@en ;
+    core:requiresCriterion "{'variable': 'brebis', 'operator': '>=', 'value': '30'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c46_0> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Training"@en,
+        "Intervention sectorielle F&L - Formation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for training, coaching and exchange of best practices in sustainable pest control, phytosanitary product use, climate adaptation and mitigation, and market platforms for recognized fruit and vegetable producer organizations."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Fruits and Vegetables"@en,
+        "Pest Control"@en,
+        "Training"@en ;
+    core:requiresCriterion "{'variable': 'min_actions', 'operator': '>=', 'value': '3 actions liées aux objectifs 46(d) et e)'}",
+        "{'variable': 'organization_type', 'operator': '=', 'value': 'OP fruits et légumes reconnue (Règlement 1308/2013)'}",
+        "{'variable': 'spending_environment', 'operator': '>=', 'value': '15% des dépenses PO'}",
+        "{'variable': 'spending_research', 'operator': '>=', 'value': '2% des dépenses PO'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c46_1> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Organic or Integrated"@en,
+        "Intervention sectorielle F&L - Bio ou intégrée"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for organic or integrated production in fruit and vegetable sector, covering specific costs like biological phytosanitary materials, seeds, and practices reducing chemical inputs for recognized producer organizations."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Environment"@en,
+        "Fruits and Vegetables"@en,
+        "Integrated Production"@en,
+        "Organic"@en ;
+    core:requiresCriterion "{'variable': 'certification', 'operator': '=', 'value': 'obligatoire par organisme agréé'}",
+        "{'variable': 'engagement_duration', 'operator': '>=', 'value': '5 ans (production bio)'}",
+        "{'variable': 'organization_type', 'operator': '=', 'value': 'OP fruits et légumes reconnue (Règlement 1308/2013)'}",
+        "{'variable': 'spending_environment', 'operator': '>=', 'value': '15% des dépenses PO'}",
+        "{'variable': 'spending_research', 'operator': '>=', 'value': '2% des dépenses PO'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c47_0> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Transport and Storage"@en,
+        "Intervention sectorielle F&L - Transport et stockage"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide pour les actions visant à accroître la durabilité et l’efficacité du transport et du stockage des produits fruits et légumes via programmes opérationnels des OP reconnues."@en ;
+    core:hasTag "Durabilité"@en,
+        "Fruits et Légumes"@en,
+        "Investissement"@en,
+        "Stockage"@en,
+        "Transport"@en ;
+    core:requiresCriterion "{'variable': 'op_recognized', 'operator': '=', 'value': 'yes'}",
+        "{'variable': 'sector', 'operator': '=', 'value': 'fruits_et_legumes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c47_1> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Promotion"@en,
+        "Intervention sectorielle F&L - Promotion"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien à la promotion, communication et commercialisation des produits fruits et légumes, y compris sensibilisation aux systèmes de qualité et alimentation saine."@en ;
+    core:hasTag "Commercialisation"@en,
+        "Communication"@en,
+        "Fruits et Légumes"@en,
+        "Promotion"@en,
+        "Qualité"@en ;
+    core:requiresCriterion "{'variable': 'op_recognized', 'operator': '=', 'value': 'yes'}",
+        "{'variable': 'sector', 'operator': '=', 'value': 'fruits_et_legumes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c47_2> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Quality"@en,
+        "Intervention sectorielle F&L - Qualité"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide à la mise en œuvre des systèmes de qualité nationaux et de l’Union pour les produits fruits et légumes dans les programmes opérationnels des OP."@en ;
+    core:hasTag "AOP"@en,
+        "Fruits et Légumes"@en,
+        "IGP"@en,
+        "Qualité"@en,
+        "Systèmes de qualité"@en ;
+    core:requiresCriterion "{'variable': 'op_recognized', 'operator': '=', 'value': 'yes'}",
+        "{'variable': 'sector', 'operator': '=', 'value': 'fruits_et_legumes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c48_0> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Traceability"@en,
+        "Intervention sectorielle F&L - Traçabilité"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for implementing traceability and certification systems, particularly quality control of products sold to final consumers, through operational programmes for fruit and vegetable producer organisations."@en ;
+    core:hasTag "Certification"@en,
+        "Quality"@en,
+        "Traceability"@en ;
+    core:requiresCriterion "{'variable': 'organisation_type', 'operator': '=', 'value': 'OP reconnue secteur fruits et légumes (Règlement 1308/2013)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c48_1> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Climate"@en,
+        "Intervention sectorielle F&L - Climat"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Actions to mitigate climate change and adapt to it, including environmental practices, research, and resilience measures in fruit and vegetable operational programmes."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "GHG Reduction"@en ;
+    core:requiresCriterion "{'variable': 'organisation_type', 'operator': '=', 'value': 'OP reconnue secteur fruits et légumes (Règlement 1308/2013)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c48_2> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Mutualisation"@en,
+        "Intervention sectorielle F&L - Mutualisation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Creation, provisioning, and re-provisioning of mutualisation funds by recognised producer organisations and associations in the fruit and vegetable sector for crisis prevention and risk management."@en ;
+    core:hasTag "Mutualisation"@en,
+        "Risk Management"@en ;
+    core:requiresCriterion "{'variable': 'organisation_type', 'operator': '=', 'value': 'OP ou association reconnue (Règlement 1308/2013)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c49_0> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention API – Technical Assistance"@en,
+        "Intervention sectorielle API – Assistance technique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide sectorielle pour services de conseil, assistance technique, formation et échange de bonnes pratiques pour apiculteurs et organisations d’apiculteurs en Wallonie et Bruxelles."@en ;
+    core:hasTag "Apiculture"@en,
+        "Assistance technique"@en,
+        "Changement climatique"@en,
+        "Formation"@en,
+        "Varroase"@en ;
+    core:requiresCriterion "{'variable': 'region', 'operator': 'in', 'value': 'BE3,BE1'}",
+        "{'variable': 'structure', 'operator': 'exists', 'value': 'publique,privée ou mixte avec capacité technique'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c49_1> a core:Opportunity ;
+    rdfs:label "Sectoral Intervention F&L - Communication"@en,
+        "Intervention sectorielle F&L - Communication"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Actions de communication pour sensibiliser et informer les consommateurs, y compris en situation de crise, pour organisations de producteurs (OP) dans les fruits et légumes."@en ;
+    core:hasTag "Communication"@en,
+        "Crise"@en,
+        "Fruits et légumes"@en ;
+    core:requiresCriterion "{'variable': 'entity', 'operator': '=', 'value': 'OP reconnue secteur fruits et légumes'}" .
+
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c4_0> a core:Opportunity ;
     rdfs:label "Coupled support for meat cows"@en,
         "Soutien couplé aux bovins femelles viandeux"@fr ;
@@ -1906,6 +3583,292 @@
     core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
     core:description "Correction du tableau de conversion des animaux en UGB."@en ;
     core:hasTag "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c50_0> a core:Opportunity ;
+    rdfs:label "222 - Honey Laboratory"@en,
+        "222 - Laboratoire Miel"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for laboratory analyses (physico-chemical, pollen, organoleptic) of hive products, inter-laboratory tests, training, and information transfer to beekeepers."@en ;
+    core:hasTag "Analysis"@en,
+        "Apiculture"@en,
+        "Laboratory"@en,
+        "Training"@en ;
+    core:requiresCriterion "{'variable': 'accreditation', 'operator': 'has', 'value': 'ISO 17025'}",
+        "{'variable': 'accreditation', 'operator': 'has', 'value': 'ISO 9001'}",
+        "{'variable': 'documents', 'operator': 'provide', 'value': 'CV, lab equipment, procedures'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c50_1> a core:Opportunity ;
+    rdfs:label "223 - Sectoral Intervention API – Black Bee Chimay"@en,
+        "223 - Intervention sectorielle API – Abeille Noire_Chimay"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Preservation and increase of black bee populations in Chimay area through lineage creation, genetic studies, beekeeper training, awarded to asbl Mellifica."@en ;
+    core:hasTag "Apiculture"@en,
+        "Biodiversity"@en,
+        "Black Bee"@en,
+        "Preservation"@en,
+        "Training"@en ;
+    core:requiresCriterion "{'variable': 'organization', 'operator': 'is', 'value': 'asbl Mellifica'}",
+        "{'variable': 'procedure', 'operator': 'via', 'value': 'negotiated procedure or framework convention'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c50_2> a core:Opportunity ;
+    rdfs:label "224 - Sectoral Intervention API - VSH Research and Development Cooperation"@en,
+        "224 - Intervention Sectorielle API - Cooperation recherche et developpement VSH"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Research and development for Varroa resistance testing, resistant lineages, documentation, and training for beekeepers via public procurement."@en ;
+    core:hasTag "Apiculture"@en,
+        "Research"@en,
+        "Training"@en,
+        "VSH"@en,
+        "Varroa"@en ;
+    core:requiresCriterion "{'variable': 'documents', 'operator': 'provide', 'value': 'CV, experience in apiculture/VSH, testing equipment'}",
+        "{'variable': 'procedure', 'operator': 'via', 'value': 'public market or framework convention'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c50_3> a core:Opportunity ;
+    rdfs:label "225 - Sectoral Intervention API – Market Monitoring"@en,
+        "225 - Intervention sectorielle API – suivi des marches"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual monitoring of honey and hive product production, prices, societal expectations, and international trade via surveys and reports."@en ;
+    core:hasTag "Apiculture"@en,
+        "Market"@en,
+        "Monitoring"@en,
+        "Promotion"@en ;
+    core:requiresCriterion "{'variable': 'procedure', 'operator': 'via', 'value': 'public market or framework convention'}",
+        "{'variable': 'reporting', 'operator': 'provide', 'value': 'quarterly follow-up and annual declaration'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c51_0> a core:Opportunity ;
+    rdfs:label "225 - MARKETBEES_Market Monitoring"@en,
+        "225 - MARCHEBEES_Suivi_Marché"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Sectoral intervention for monitoring the apiculture market, providing services via public procurement with reimbursement of eligible costs."@en ;
+    core:hasTag "Apiculture"@en,
+        "Market Monitoring"@en,
+        "Promotion"@en ;
+    core:requiresCriterion "{'variable': 'rapports', 'operator': '>=', 'value': '3'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c51_1> a core:Opportunity ;
+    rdfs:label "226 - QUALIBEES_Product Quality"@en,
+        "226 - QUALIBEES_Qualité_Produits"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Sectoral intervention to improve apiculture product quality through analyses at reduced prices, promotion, and quality assessments for Walloon and Brussels beekeepers."@en ;
+    core:hasTag "Analysis"@en,
+        "Apiculture"@en,
+        "Product Quality"@en ;
+    core:requiresCriterion "{'variable': 'laboratoire', 'operator': '=', 'value': 'certified'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c51_2> a core:Opportunity ;
+    rdfs:label "311 - MAEC - Holding of Threatened Local Breeds"@en,
+        "311 - MAEC - Détention de races locales menacées"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental scheme supporting detention of threatened local breeds of cattle, sheep, horses, and pigs to preserve genetic heritage."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Livestock"@en,
+        "Local Breeds"@en ;
+    core:requiresCriterion "{'variable': 'animal_age', 'operator': '>=', 'value': '2 years (cattle/horses)'}",
+        "{'variable': 'registry', 'operator': '=', 'value': 'main section herdbook'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c52_0> a core:Opportunity ;
+    rdfs:label "Payment equines and bovines"@en,
+        "Paiement équins et bovins"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for holding and conserving individuals of local threatened races (equines and bovines) less productive than standards, covering partial income losses and additional costs."@en ;
+    core:hasTag "Livestock"@en,
+        "Local Breeds"@en,
+        "Threatened Races"@en ;
+    core:requiresCriterion "{'variable': 'race', 'operator': 'in', 'value': 'races locales menacées (équins et bovins)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c52_1> a core:Opportunity ;
+    rdfs:label "Payment ovines"@en,
+        "Paiement ovins"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for holding and conserving individuals of local threatened ovine races less productive than standards, covering partial income losses and additional costs."@en ;
+    core:hasTag "Livestock"@en,
+        "Local Breeds"@en,
+        "Threatened Races"@en ;
+    core:requiresCriterion "{'variable': 'race', 'operator': 'in', 'value': 'races locales menacées (ovins)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c52_2> a core:Opportunity ;
+    rdfs:label "Payment pigs"@en,
+        "Paiement porcs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for holding and conserving individuals of local threatened porcine races (e.g., Piétrain) less productive than standards, covering partial income losses and additional costs."@en ;
+    core:hasTag "Livestock"@en,
+        "Local Breeds"@en,
+        "Piétrain"@en,
+        "Threatened Races"@en ;
+    core:requiresCriterion "{'variable': 'race', 'operator': 'in', 'value': 'races locales menacées (porcs)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c52_3> a core:Opportunity ;
+    rdfs:label "Payment sows with litter"@en,
+        "Paiement truies avec nichée"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for sows of local threatened porcine races with at least one litter registered in the main section of the herd book, covering partial income losses and additional costs."@en ;
+    core:hasTag "Livestock"@en,
+        "Local Breeds"@en,
+        "Piétrain"@en,
+        "Threatened Races"@en ;
+    core:requiresCriterion "{'variable': 'nichée', 'operator': '>=', 'value': '1 enregistrée'}",
+        "{'variable': 'race', 'operator': 'in', 'value': 'races locales menacées (truies porcs)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c53_0> a core:Opportunity ;
+    rdfs:label "MAEC - Arranged Parcel"@en,
+        "MAEC - Parcelle aménagée"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental scheme for establishing permanent, diverse, no-input cover on arable land to enhance environmental protection, exceeding basic conditionality requirements."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Soil Protection"@en,
+        "Water Quality"@en ;
+    core:requiresCriterion "{'variable': 'expert_opinion', 'operator': '=', 'value': 'favorable'}",
+        "{'variable': 'prior_permanent_pasture', 'operator': 'not', 'value': '5 years'}",
+        "{'variable': 'surface_type', 'operator': '=', 'value': 'terre arable'}",
+        "{'variable': 'tournières_parcelles_céréales', 'operator': '<=', 'value': '25% of arable area'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c54_0> a core:Opportunity ;
+    rdfs:label "MAEC 'High Biological Value Meadows'"@en,
+        "MAEC « Prairies à haute valeur biologique »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Measure for the management of high biological value meadows with extensive practices to protect water, soils, biodiversity, and habitats. Includes no phytosanitary treatments or fertilizers, late mowing, 10% refuge zones, and expert advice."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Livestock"@en,
+        "Organic"@en,
+        "Prairies"@en ;
+    core:requiresCriterion "{'variable': 'beneficiary', 'operator': '=', 'value': 'Farmer per Reg. (EU) 2021/2115'}",
+        "{'variable': 'expert_advice', 'operator': 'required', 'value': 'yes'}",
+        "{'variable': 'parcel_type', 'operator': '=', 'value': 'prairie permanente (SIGeC)'}",
+        "{'variable': 'surface', 'operator': '>', 'value': '0'}",
+        "{'variable': 'zone', 'operator': 'not', 'value': 'Natura 2000 bandes extensives (reduced aid)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c55_0> a core:Opportunity ;
+    rdfs:label "MAEC - High Biological Value Meadow"@en,
+        "MAEC - Prairie à haute valeur biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for income losses due to management constraints on high biological value meadows, including late mowing and refuge zones."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Meadow"@en,
+        "Natura 2000"@en ;
+    core:requiresCriterion "{'variable': 'prairie_type', 'operator': '=', 'value': 'PHVB'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c55_1> a core:Opportunity ;
+    rdfs:label "MAEC - Natural Meadows"@en,
+        "MAEC - Prairies naturelles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for extensive management of natural meadows through late mowing or grazing, refuge zones, and limited inputs to protect biodiversity."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Extensive management"@en,
+        "Meadow"@en ;
+    core:requiresCriterion "{'variable': 'max_engagement', 'operator': '<=', 'value': '50% of farm SAU (first 10 ha exempt)'}",
+        "{'variable': 'min_payment', 'operator': '>=', 'value': '100'}",
+        "{'variable': 'prairie_type', 'operator': '=', 'value': 'prairie naturelle'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c56_0> a core:Opportunity ;
+    rdfs:label "Natural Meadows Payment"@en,
+        "Paiement prairies naturelles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "MAEC method compensating losses from extensive management of natural meadows: no intervention Nov 1-Jun 15, 5% refuge zone, no mineral fertilizers or pesticides, late mowing."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Meadows"@en,
+        "Prairies naturelles"@en ;
+    core:requiresCriterion "{'variable': 'land_type', 'operator': '=', 'value': 'prairies naturelles'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c56_1> a core:Opportunity ;
+    rdfs:label "MAEC - Herbaceous Field Margins"@en,
+        "MAEC - Tournières enherbées"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "MAEC method for narrow herbaceous field margins (10-20m) with low-intensity management, no inputs, late summer mowing, refuge zone."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Field margins"@en,
+        "No inputs"@en ;
+    core:requiresCriterion "{'variable': 'land_type', 'operator': '=', 'value': 'tournières enherbées'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c57_0> a core:Opportunity ;
+    rdfs:label "MAEC 'Herbaceous Headland'"@en,
+        "MAEC « Tournière enherbée »"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental and climate commitment (MAEC) for establishing herbaceous headlands on arable land to enhance biodiversity, soil fertility, and ecological services through specific management practices."@en ;
+    core:hasTag "Arable Land"@en,
+        "Biodiversity"@en,
+        "Ecological"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'adjacent_arable', 'operator': 'yes', 'value': 'true'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'min_area_per_engagement', 'operator': '>=', 'value': '2000 m²'}",
+        "{'variable': 'min_area_per_headland', 'operator': '>=', 'value': '200 m²'}",
+        "{'variable': 'not_on_permanent_pasture', 'operator': 'last_5_years', 'value': 'no'}",
+        "{'variable': 'total_headlands_max', 'operator': '<=', 'value': '25% of arable area'}",
+        "{'variable': 'width', 'operator': 'between', 'value': '10-20'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c58_0> a core:Opportunity ;
+    rdfs:label "315_a - Grassy Headland Payment 2023"@en,
+        "315_a - Paiement tournière enherbée 2023"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for maintaining grassy headlands on arable land to enhance ecological connectivity."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Eco-scheme"@en,
+        "Ecological network"@en ;
+    core:requiresCriterion "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c58_1> a core:Opportunity ;
+    rdfs:label "315_b - Grassy Headland Payment 2024"@en,
+        "315_b - Paiement tournière enherbée 2024"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for grassy headlands, with harmonized rate across all areas including along watercourses, targeting productive arable lands."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Eco-scheme"@en,
+        "Ecological network"@en,
+        "Watercourses"@en ;
+    core:requiresCriterion "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c58_2> a core:Opportunity ;
+    rdfs:label "316 - Standing Cereals Payment"@en,
+        "316 - Paiement céréales sur pied"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental commitment to leave eligible cereals standing until end of February to provide winter food for threatened birds in arable plains."@en ;
+    core:hasTag "Arable"@en,
+        "Biodiversity"@en,
+        "Birds"@en,
+        "Ecological network"@en ;
+    core:requiresCriterion "{'variable': 'distance_wooded', 'operator': '>', 'value': '50'}",
+        "{'variable': 'land_type', 'operator': '=', 'value': 'arable'}",
+        "{'variable': 'no_permanent_pasture', 'operator': '=', 'value': '5 years'}",
+        "{'variable': 'parcel_distance', 'operator': '>', 'value': '100'}",
+        "{'variable': 'parcel_size', 'operator': '<=', 'value': '1'}",
+        "{'variable': 'surface', 'operator': 'between', 'value': '0.5-10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c58_3> a core:Opportunity ;
+    rdfs:label "317 - MAEC - Forage Autonomy"@en,
+        "317 - MAEC - Autonomie fourragère"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental measure to promote forage self-sufficiency, reduce livestock numbers, maintain permanent pastures, and lower GHG emissions."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "GHG reduction"@en,
+        "Livestock"@en,
+        "Soil"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c59_0> a core:Opportunity ;
+    rdfs:label "MAEC Forage Autonomy"@en,
+        "MAEC Autonomie fourragère"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Agro-environmental measure supporting low livestock density on forage areas to promote extensive grazing, maintain permanent prairies, enhance carbon storage, reduce GHG emissions, and improve environmental resilience."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Extensive Farming"@en,
+        "Livestock"@en,
+        "Permanent Grassland"@en,
+        "Water Quality"@en ;
+    core:requiresCriterion "{'variable': 'forage_area', 'operator': 'min_payment', 'value': '100 EUR total'}",
+        "{'variable': 'livestock_density', 'operator': '<=', 'value': '1.4 UGB/ha'}",
+        "{'variable': 'min_livestock_density', 'operator': '>=', 'value': '0.6 UGB/ha'}",
+        "{'variable': 'organic_spreading', 'operator': '=', 'value': 'own effluents only (BIO derogation)'}",
+        "{'variable': 'phytosanitary_products', 'operator': '=', 'value': 'none (localized exceptions allowed)'}" .
 
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c5_0> a core:Opportunity ;
     rdfs:label "Eco-scheme Permanent Grasslands Conditioned to Livestock Load"@en,
@@ -1971,6 +3934,359 @@
     core:hasTag "Installation"@en,
         "Young Farmer"@en ;
     core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '40'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c60_0> a core:Opportunity ;
+    rdfs:label "Forage Autonomy - Payment 1.4 LSU/ha"@en,
+        "Autonomie fourragère - Paiement 1,4 UGB/ha"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation de la réduction de revenus pour réduction de charge en bétail afin d'augmenter l'autonomie fourragère pour herbivores."@en ;
+    core:hasTag "Forage"@en,
+        "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c60_1> a core:Opportunity ;
+    rdfs:label "Forage Autonomy - Payment 1.8 LSU/ha"@en,
+        "Autonomie fourragère - Paiement 1,8 UGB/ha"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation de la réduction de revenus pour réduction de charge en bétail afin d'augmenter l'autonomie fourragère pour herbivores."@en ;
+    core:hasTag "Forage"@en,
+        "Livestock"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c60_2> a core:Opportunity ;
+    rdfs:label "Support for Organic Farming"@en,
+        "Soutien à l'agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aide pour la conversion (150 €/ha, 200 €/ha à partir de 2026) et le maintien en agriculture biologique, durée d'engagement 5 ans, certification requise."@en ;
+    core:hasTag "Organic"@en ;
+    core:requiresCriterion "{'variable': 'certification', 'operator': '=', 'value': 'organic'}",
+        "{'variable': 'livestock_density', 'operator': '>=', 'value': '0.6'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_0> a core:Opportunity ;
+    rdfs:label "Prairies Payment"@en,
+        "Paiement prairies"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual payment per ha for permanent/temporary prairies, with degressivity after 60 ha and majorations for conversion and vulnerable zones."@en ;
+    core:hasTag "Grasslands"@en,
+        "Livestock"@en,
+        "Organic"@en ;
+    core:requiresCriterion "{'variable': 'area_group', 'operator': '<=', 'value': '60'}",
+        "{'variable': 'culture', 'operator': 'in', 'value': 'prairies'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_1> a core:Opportunity ;
+    rdfs:label "Forage Crops Payment"@en,
+        "Paiement cultures fourragères"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual payment per ha for forage crops like legumes, clover, alfalfa, with degressivity after 60 ha and majorations."@en ;
+    core:hasTag "Forage"@en,
+        "Organic"@en ;
+    core:requiresCriterion "{'variable': 'area_group', 'operator': '<=', 'value': '60'}",
+        "{'variable': 'culture', 'operator': 'in', 'value': 'cultures fourragères'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_2> a core:Opportunity ;
+    rdfs:label "Annual Crops Payment"@en,
+        "Paiement autres cultures annuelles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual payment per ha for annual crops (cereals, oilseeds, protein crops, beets, potatoes), degressivity after 60 ha."@en ;
+    core:hasTag "Cereals"@en,
+        "Organic"@en,
+        "Potatoes"@en,
+        "Protein Crops"@en ;
+    core:requiresCriterion "{'variable': 'area_group', 'operator': '<=', 'value': '60'}",
+        "{'variable': 'culture', 'operator': 'in', 'value': 'autres cultures annuelles'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_3> a core:Opportunity ;
+    rdfs:label "Orchard, Market Gardening and Seeds Payment"@en,
+        "Paiement arboriculture, maraîchage et semences"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Annual payment per ha for orchards, market gardening, seeds with tiered degressivity and vulnerable zone majoration."@en ;
+    core:hasTag "Horticulture"@en,
+        "Organic"@en,
+        "Seeds"@en ;
+    core:requiresCriterion "{'variable': 'area_group', 'operator': '<=', 'value': '3'}",
+        "{'variable': 'culture', 'operator': 'in', 'value': 'arboriculture maraîchage semences'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_4> a core:Opportunity ;
+    rdfs:label "Diversified Market Gardening Payment"@en,
+        "Paiement Maraîchage diversifié"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Fixed payment for diversified organic market gardening on small surfaces (max 3 ha, total farm max 10 ha all organic)."@en ;
+    core:hasTag "Market Gardening"@en,
+        "Organic"@en,
+        "Small Scale"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '3'}",
+        "{'variable': 'culture_code', 'operator': '=', 'value': 'petit maraîchage diversifié en bio'}",
+        "{'variable': 'diversity', 'operator': '>=', 'value': 'minimum categories'}",
+        "{'variable': 'total_farm_area', 'operator': '<=', 'value': '10'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_5> a core:Opportunity ;
+    rdfs:label "Conversion Payment 2023-2025"@en,
+        "Paiement conversion 2023-2025"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Majoration for parcels in conversion to organic (2 years, all groups except diversified market gardening)."@en ;
+    core:hasTag "Conversion"@en,
+        "Organic"@en ;
+    core:requiresCriterion "{'variable': 'duration', 'operator': '=', 'value': '2 years'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'conversion'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c61_6> a core:Opportunity ;
+    rdfs:label "Conversion Payment 2026"@en,
+        "Paiement conversion 2026"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Increased majoration for parcels in conversion to organic starting 2026 (all groups except diversified market gardening)."@en ;
+    core:hasTag "Conversion"@en,
+        "Organic"@en ;
+    core:requiresCriterion "{'variable': 'duration', 'operator': '=', 'value': '2 years'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'conversion'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c62_0> a core:Opportunity ;
+    rdfs:label "Payment for Natural Constraints Areas"@en,
+        "Paiement ZCN"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for additional costs and income losses in areas subject to natural constraints other than mountains in Wallonia."@en ;
+    core:hasTag "Environment"@en,
+        "Grassland"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '75 ha'}",
+        "{'variable': 'beneficiary', 'operator': 'is', 'value': 'active farmer'}",
+        "{'variable': 'land', 'operator': 'in', 'value': 'zones soumises à des contraintes naturelles (art. 32 §1 b) RUE 1305/2013'}",
+        "{'variable': 'total_aid', 'operator': '>', 'value': '100 EUR'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c62_1> a core:Opportunity ;
+    rdfs:label "Payment for Specific Constraints Areas"@en,
+        "Paiement ZCS"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for additional costs and income losses in areas subject to specific constraints in Wallonia."@en ;
+    core:hasTag "Environment"@en,
+        "Grassland"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '<=', 'value': '75 ha'}",
+        "{'variable': 'beneficiary', 'operator': 'is', 'value': 'active farmer'}",
+        "{'variable': 'land', 'operator': 'in', 'value': 'zones soumises à des contraintes spécifiques (art. 32 §1 c) RUE 1305/2013'}",
+        "{'variable': 'total_aid', 'operator': '>', 'value': '100 EUR'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c62_2> a core:Opportunity ;
+    rdfs:label "Natura 2000 Payment in Agricultural Areas"@en,
+        "Paiement au titre de Natura 2000 en zone agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Indemnities for agricultural parcels in Natura 2000 zones facing strong constraints from prairies or extensive riparian buffer strips."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "Grassland"@en,
+        "Water Protection"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>', 'value': '0.01 ha'}",
+        "{'variable': 'beneficiary', 'operator': 'is', 'value': 'active farmer'}",
+        "{'variable': 'land', 'operator': 'in', 'value': 'Natura 2000 agricultural zones (UG2, UG3, UG temp 1/2 or UG4)'}",
+        "{'variable': 'land_type', 'operator': 'is', 'value': 'prairie'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c63_0> a core:Opportunity ;
+    rdfs:label "N2000 Payment for strongly constrained meadows"@en,
+        "Paiement N2000 prairies à contraintes fortes"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Indemnity for agricultural land in Natura 2000 sites with strong constraints on inputs, usage, and management to favor biodiversity."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Livestock"@en,
+        "Natura 2000"@en,
+        "Prairies"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>', 'value': '0.1'}",
+        "{'variable': 'zone', 'operator': 'in', 'value': 'Surface agricole du réseau Natura 2000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c63_1> a core:Opportunity ;
+    rdfs:label "N2000 Payment for extensive meadow strips along watercourses"@en,
+        "Paiement N2000 bandes de prairies extensives le long des cours d'eau"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Indemnity for extensive 12m-wide buffer strips along watercourses in Natura 2000, replacing productive crops or meadows with no inputs and late mowing."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Buffer strips"@en,
+        "Natura 2000"@en,
+        "Watercourses"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>', 'value': '0.1'}",
+        "{'variable': 'zone', 'operator': 'in', 'value': 'Surface agricole du réseau Natura 2000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c64_0> a core:Opportunity ;
+    rdfs:label "Natura 2000 Forest Payment"@en,
+        "Paiement N2000 forêt"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Compensation for additional costs and income losses due to Natura 2000 constraints in eligible forests, covering measures like senescence islands, no exotic replanting along watercourses, no conifer replanting in external edges, maintenance of biological interest trees and dead wood, and ban on habitat conversion."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Conservation"@en,
+        "Forest"@en,
+        "Natura 2000"@en ;
+    core:requiresCriterion "{'variable': 'area', 'operator': '>=', 'value': '1.25'}",
+        "{'variable': 'forest_type', 'operator': 'in', 'value': 'Natura 2000 sites'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c65_0> a core:Opportunity ;
+    rdfs:label "Small productive investments for natural persons"@en,
+        "Petits investissements productifs pour les personnes physiques"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention for small productive investments (PI) for persons physiques (PP) with median cost ≤16,000 euros."@en ;
+    core:hasTag "Investment"@en,
+        "Productive"@en ;
+    core:requiresCriterion "{'variable': 'cost', 'operator': '≤', 'value': '16000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c65_1> a core:Opportunity ;
+    rdfs:label "Large productive investments for natural persons"@en,
+        "Grands investissements productifs pour les personnes physiques"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention for large productive investments (GI) for persons physiques (PP) with median cost >16,000 euros."@en ;
+    core:hasTag "Investment"@en,
+        "Productive"@en ;
+    core:requiresCriterion "{'variable': 'cost', 'operator': '>', 'value': '16000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c65_2> a core:Opportunity ;
+    rdfs:label "Small productive investments CUMA"@en,
+        "Petits investissements productifs CUMA"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention for small productive investments (PI) for CUMA with median cost ≤14,000 euros."@en ;
+    core:hasTag "CUMA"@en,
+        "Investment"@en,
+        "Productive"@en ;
+    core:requiresCriterion "{'variable': 'cost', 'operator': '≤', 'value': '14000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c65_3> a core:Opportunity ;
+    rdfs:label "Large productive investments CUMA"@en,
+        "Grands investissements productifs CUMA"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention for large productive investments (GI) for CUMA with median cost >14,000 euros."@en ;
+    core:hasTag "CUMA"@en,
+        "Investment"@en,
+        "Productive"@en ;
+    core:requiresCriterion "{'variable': 'cost', 'operator': '>', 'value': '14000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c65_4> a core:Opportunity ;
+    rdfs:label "Aid for non-productive investments in agricultural holdings"@en,
+        "Aides aux investissements non-productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subventions pour investissements non-productifs visant à améliorer l'environnement (réduction érosion, hydraulique douce) sur terres agricoles."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Investment"@en,
+        "Non-productive"@en ;
+    core:requiresCriterion "{'variable': 'beneficiary', 'operator': '=', 'value': 'agriculteur actif'}",
+        "{'variable': 'study', 'operator': '=', 'value': 'étude hydrologique requise'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c66_0> a core:Opportunity ;
+    rdfs:label "352 - Non-productive Investments"@en,
+        "352 - Investissements non-productifs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour investissements non-productifs liés à la gestion intégrée sol-érosion-ruissellement, nécessitant une étude hydrologique."@en ;
+    core:hasTag "Erosion"@en,
+        "Hydrology"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'study', 'operator': 'required', 'value': 'étude hydrologique'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c66_1> a core:Opportunity ;
+    rdfs:label "353_a - Investments in Forestry Works"@en,
+        "353_a - Investissements travaux forestiers"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aides aux investissements pour entreprises de travaux forestiers (sylviculture-reboisement) visant efficacité et objectifs environnementaux."@en ;
+    core:hasTag "Environment"@en,
+        "Forestry"@en,
+        "Investment"@en,
+        "Sylviculture"@en ;
+    core:requiresCriterion "{'variable': 'enterprise_type', 'operator': 'in', 'value': 'micro/petite/moyenne entreprise travaux forestiers'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonie'}",
+        "{'variable': 'status', 'operator': 'not', 'value': 'en difficulté'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c66_2> a core:Opportunity ;
+    rdfs:label "353_b - Investments in Forestry Exploitation"@en,
+        "353_b - Investissements exploitation forestière"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aides aux investissements pour entreprises d'exploitation forestière (première transformation du bois) pour améliorer performance et durabilité."@en ;
+    core:hasTag "Bois"@en,
+        "Environment"@en,
+        "Exploitation"@en,
+        "Forestry"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'enterprise_type', 'operator': 'in', 'value': 'micro/petite/moyenne entreprise exploitation forestière'}",
+        "{'variable': 'location', 'operator': '=', 'value': 'Wallonie'}",
+        "{'variable': 'status', 'operator': 'not', 'value': 'en difficulté'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c66_3> a core:Opportunity ;
+    rdfs:label "354 - Investments in Processing/Commercialization of Agricultural Products and Non-Agricultural Diversification"@en,
+        "354 - Investissements dans le secteur de la transformation/commercialisation des produits agricoles et dans la diversification non agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien aux investissements pour transformation/commercialisation de produits agricoles et diversification non agricole des agriculteurs."@en ;
+    core:hasTag "Commercialisation"@en,
+        "Diversification"@en,
+        "Investment"@en,
+        "Transformation"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c67_0> a core:Opportunity ;
+    rdfs:label "Aid for investments in processing and marketing"@en,
+        "Aides aux investissements dans la transformation et la commercialisation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention en capital pour investissements dans la transformation/commercialisation de produits agricoles et diversification non agricole par agriculteurs et SCTCs."@en ;
+    core:hasTag "Diversification"@en,
+        "Investment"@en,
+        "Organic"@en,
+        "Processing"@en,
+        "Quality"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'active_farmer', 'operator': '=', 'value': 'yes'}",
+        "{'variable': 'enterprise_size', 'operator': 'in', 'value': 'micro,small,medium'}",
+        "{'variable': 'pbs', 'operator': 'between', 'value': '12500-425000'}",
+        "{'variable': 'pbs_max_young', 'operator': '<=', 'value': '750000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c67_1> a core:Opportunity ;
+    rdfs:label "Aid for non-productive investments in rural areas (restoration of SEP sites and ecosystem services)"@en,
+        "Aides aux investissements non productifs en zone rurale (restauration de sites en zone SEP et restauration des services écosystémiques)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Soutien à la restauration d'habitats en structure écologique principale et renforcement des services écosystémiques forestiers."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Environment"@en,
+        "Restoration"@en ;
+    core:requiresCriterion "{'variable': 'location', 'operator': '=', 'value': 'zone_SEP'}",
+        "{'variable': 'potential_biologique', 'operator': '>', 'value': 'minimum'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c68_0> a core:Opportunity ;
+    rdfs:label "Investments restoration SEP zone (part a)"@en,
+        "Investissements restauration zone SEP (volet a)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour la restauration et gestion d'habitats naturels en zone SEP (Structure Ecologique Principale), remboursement des coûts éligibles à 100%."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Ecosystem"@en,
+        "Forest"@en,
+        "Restoration"@en ;
+    core:requiresCriterion "{'variable': 'evaluation', 'operator': 'required', 'value': 'favorable biological potential'}",
+        "{'variable': 'location', 'operator': 'in', 'value': 'SEP zone'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c68_1> a core:Opportunity ;
+    rdfs:label "Investments strengthening ecosystem services in forest (part b)"@en,
+        "Investissements renforcement des services écosystémiques en forêt (volet b)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour renforcer les services écosystémiques en forêt, remboursement des coûts éligibles à 100%."@en ;
+    core:hasTag "Ecosystem"@en,
+        "Forest"@en,
+        "Restoration"@en ;
+    core:requiresCriterion "{'variable': 'plan', 'operator': 'required', 'value': 'aménagement forestier ou simple gestion (excepté <5ha privés)'}",
+        "{'variable': 'project', 'operator': 'in', 'value': 'P.A.R.I.S. application'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c69_0> a core:Opportunity ;
+    rdfs:label "Aid for investments in forestry infrastructure related to climate change (forest roads)"@en,
+        "Aides aux investissements dans des infrastructures sylvicoles liés au changement climatique (dessertes forestières)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention covering 100% of eligible costs for investments improving forest road resilience to erosion, flooding, and climate change, including drainage, stabilization, and loading areas."@en ;
+    core:hasTag "Climate Change"@en,
+        "Forestry"@en,
+        "Investment"@en,
+        "Sustainable"@en ;
+    core:requiresCriterion "{'variable': 'forest_area', 'operator': '>', 'value': '0'}",
+        "{'variable': 'investment_amount', 'operator': '>=', 'value': '5000'}",
+        "{'variable': 'plan', 'operator': 'exists', 'value': 'forestry management plan (exempt <5ha private)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c69_1> a core:Opportunity ;
+    rdfs:label "Aid for the installation of young farmers"@en,
+        "Aides à l'installation des jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Forfaitaire grant for young farmers setting up their first farm, with business plan requirements and viability thresholds."@en ;
+    core:hasTag "Agriculture"@en,
+        "Installation"@en,
+        "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'age', 'operator': '<', 'value': '40'}",
+        "{'variable': 'first_installation', 'operator': 'yes', 'value': 'true'}",
+        "{'variable': 'pbs', 'operator': '<=', 'value': '425000'}",
+        "{'variable': 'pbs', 'operator': '>=', 'value': '12500'}",
+        "{'variable': 'sigec_identified', 'operator': 'yes', 'value': 'true'}" .
 
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c6_0> a core:Opportunity ;
     rdfs:label "Coupled support for beef cows"@en,
@@ -2047,6 +4363,352 @@
     core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
     core:description "Encourage l’autonomie protidique via soutien couplé aux protéagineux."@en ;
     core:hasTag "Crops"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c70_0> a core:Opportunity ;
+    rdfs:label "LEADER"@en,
+        "371 - LEADER"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour la mise en œuvre des stratégies de développement local (SDL) par les Groupes d'Action Locale (GAL) dans les zones rurales wallonnes, soutenant des projets multisectoriels pour le développement socio-économique."@en ;
+    core:hasTag "Cooperation"@en,
+        "Local Strategy"@en,
+        "Rural Development"@en ;
+    core:requiresCriterion "{'variable': 'communes', 'operator': '>', 'value': '3'}",
+        "{'variable': 'population', 'operator': 'between', 'value': '20000-80000'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c70_1> a core:Opportunity ;
+    rdfs:label "Installation (measure 6.1 PwDR)"@en,
+        "361_b - Installation (mesure 6.1 PwDR)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour l'installation de jeunes agriculteurs dans le cadre de la mesure 6.1 du Programme wallon de développement rural."@en ;
+    core:hasTag "Installation"@en,
+        "Young Farmer"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c70_2> a core:Opportunity ;
+    rdfs:label "Cooperation in the tourism sector"@en,
+        "372 - Coopération dans le domaine du tourisme"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour des projets de coopération visant le développement du tourisme rural, améliorant les services touristiques liés au patrimoine naturel et culturel en Wallonie."@en ;
+    core:hasTag "Cooperation"@en,
+        "Rural Development"@en,
+        "Tourism"@en ;
+    core:requiresCriterion "{'variable': 'structure', 'operator': 'recognized', 'value': 'transcommunale'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c71_0> a core:Opportunity ;
+    rdfs:label "Cooperation in the tourism sector"@en,
+        "Coopération dans le domaine du tourisme"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour financer des projets de coopération dans le domaine du tourisme rural en Wallonie, avec un budget de 4.000.000 EUR pour 12 opérations en 2024."@en ;
+    core:hasTag "Cooperation"@en,
+        "Rural Development"@en,
+        "Tourism"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c71_1> a core:Opportunity ;
+    rdfs:label "Cooperation in the health sector"@en,
+        "Coopération dans le domaine de la santé"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour projets innovants impliquant agriculteurs et forestiers comme 'accueillants' pour l'insertion sociale de publics fragilisés via activités agricoles, avec budget de 3.500.000 EUR pour 9 opérations en 2025."@en ;
+    core:hasTag "Agriculture"@en,
+        "Cooperation"@en,
+        "Health"@en,
+        "Livestock"@en,
+        "Social Inclusion"@en ;
+    core:requiresCriterion "{'variable': 'beneficiary', 'operator': 'in', 'value': 'approved social/health services (asbl, CPAS, etc.)'}",
+        "{'variable': 'partnership', 'operator': 'min', 'value': '2 entities'}",
+        "{'variable': 'project', 'operator': 'include', 'value': 'at least one farmer/forester'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c71_2> a core:Opportunity ;
+    rdfs:label "PEI Cooperation - Innovation"@en,
+        "Coopération PEI - Innovation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention pour groupes opérationnels (GO) du Partenariat Européen d'Innovation (PEI) visant l'innovation en agriculture et sylviculture durable via projets collaboratifs, budget temporaire de 2.251.000 EUR pour 9 projets."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Climate"@en,
+        "Cooperation"@en,
+        "Digital"@en,
+        "Environment"@en,
+        "Innovation"@en ;
+    core:requiresCriterion "{'variable': 'group_members', 'operator': 'min', 'value': '5'}",
+        "{'variable': 'plan_duration', 'operator': '<=', 'value': '4 years'}",
+        "{'variable': 'producers', 'operator': 'min', 'value': '2 (agriculteurs/forestiers avec majorité des voix)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_0> a core:Opportunity ;
+    rdfs:label "Basic Income Support for Sustainability (BISS)"@en,
+        "Aide de base au revenu pour un développement durable"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Basic direct payment per hectare for sustainable agricultural development."@en ;
+    core:hasTag "Sustainable Development"@en ;
+    core:requiresCriterion "{'variable': 'hectares', 'operator': '>', 'value': '0'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_1> a core:Opportunity ;
+    rdfs:label "Complementary Redistributive Income Support for Sustainability (CRISS)"@en,
+        "Aide redistributive complémentaire au revenu pour un développement durable"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Redistributive payment targeting first hectares to support smaller farms."@en ;
+    core:hasTag "Redistributive"@en,
+        "Small Farms"@en ;
+    core:requiresCriterion "{'variable': 'hectares', 'operator': '<=', 'value': '100'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_10> a core:Opportunity ;
+    rdfs:label "Agri-environment-climate scheme - Holding of threatened local breeds"@en,
+        "MAEC - Détention de races locales menacées"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for maintaining threatened local animal breeds under agri-environment measures."@en ;
+    core:hasTag "Environment"@en,
+        "Livestock"@en,
+        "Local Breeds"@en ;
+    core:requiresCriterion "{'variable': 'animal_type', 'operator': '=', 'value': 'threatened local breeds'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_2> a core:Opportunity ;
+    rdfs:label "Complementary Income Support for Young Farmers (CIS-YF)"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Additional income support for young farmers, tiered by farm size."@en ;
+    core:hasTag "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'farmer_type', 'operator': '=', 'value': 'young'}",
+        "{'variable': 'hectares', 'operator': '<=', 'value': '50'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_3> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Long-term soil cover"@en,
+        "Eco-régimes - Couverture longue du sol"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for maintaining long-term soil cover in tiers based on coverage levels."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Soil"@en ;
+    core:requiresCriterion "{'variable': 'soil_cover', 'operator': '>=', 'value': '1st threshold'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_4> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Environmentally friendly crops"@en,
+        "Eco-régimes - Cultures favorables à l’environnement"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for growing environmentally beneficial crops in various variants."@en ;
+    core:hasTag "Crops"@en,
+        "Environment"@en ;
+    core:requiresCriterion "{'variable': 'crop_type', 'operator': '=', 'value': 'environmentally friendly'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_5> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Ecological network"@en,
+        "Eco-régimes Maillage écologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for maintaining ecological infrastructure on farmland."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en ;
+    core:requiresCriterion "{'variable': 'ecological_features', 'operator': 'exists', 'value': 'true'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_6> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Reduction of inputs"@en,
+        "Eco-régimes - Réduction d'intrants"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for reducing use of fertilizers and pesticides."@en ;
+    core:hasTag "Environment"@en,
+        "Inputs Reduction"@en ;
+    core:requiresCriterion "{'variable': 'inputs_reduction', 'operator': 'true', 'value': 'yes'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_7> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Permanent pastures conditioned on livestock density"@en,
+        "Eco-régimes - Prairies permanentes conditionnée à la charge en bétail"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Tiered support for permanent pastures based on livestock units per surface area."@en ;
+    core:hasTag "Environment"@en,
+        "Livestock"@en,
+        "Pastures"@en ;
+    core:requiresCriterion "{'variable': 'land_type', 'operator': '=', 'value': 'permanent pasture'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_8> a core:Opportunity ;
+    rdfs:label "Coupled support for protein crops"@en,
+        "Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Coupled income support for growing protein vegetable crops."@en ;
+    core:hasTag "Crops"@en,
+        "Protein Crops"@en ;
+    core:requiresCriterion "{'variable': 'crop_type', 'operator': '=', 'value': 'protein crops'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c72_9> a core:Opportunity ;
+    rdfs:label "Coupled support for meat cows"@en,
+        "Soutien couplé aux bovins femelles viandeux"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Coupled support for female beef cattle."@en ;
+    core:hasTag "Beef"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'animal_type', 'operator': '=', 'value': 'female beef cattle'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_0> a core:Opportunity ;
+    rdfs:label "MAEC - Developed Plots"@en,
+        "312 MAEC - Parcelles aménagées"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for developed plots under MAEC eco-scheme, with variants for different years and BCAE 8 accounting."@en ;
+    core:hasTag "Environment"@en,
+        "Management"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_1> a core:Opportunity ;
+    rdfs:label "MAEC - High Biological Value Meadow"@en,
+        "313 MAEC - Prairie à haute valeur biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for high biological value prairies (PHVB), including N2000 variant."@en ;
+    core:hasTag "Biodiversity"@en,
+        "Environment"@en,
+        "N2000"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_10> a core:Opportunity ;
+    rdfs:label "Aid for Young Farmers Installation"@en,
+        "361 Aides à l'installation des jeunes agriculteurs"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Installation grants for young farmers."@en ;
+    core:hasTag "Young Farmer"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Bénéficiaires'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_2> a core:Opportunity ;
+    rdfs:label "MAEC - Natural Meadows"@en,
+        "314 MAEC - Prairies naturelles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for natural prairies."@en ;
+    core:hasTag "Environment"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_3> a core:Opportunity ;
+    rdfs:label "MAEC - Grassed Fallow Land"@en,
+        "315 MAEC - Tournières enherbées"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for grassed fallow land in 2023 and 2024."@en ;
+    core:hasTag "Environment"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_4> a core:Opportunity ;
+    rdfs:label "MAEC - Standing Cereals"@en,
+        "316 MAEC - Céréales sur pied"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for standing cereals, including transferred variants."@en ;
+    core:hasTag "Environment"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_5> a core:Opportunity ;
+    rdfs:label "MAEC - Fodder Autonomy"@en,
+        "317 MAEC - Autonomie fourragère"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payment for fodder autonomy based on UGB/ha (livestock units per hectare)."@en ;
+    core:hasTag "Fodder"@en,
+        "Livestock"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_6> a core:Opportunity ;
+    rdfs:label "Support for Organic Farming"@en,
+        "321 Soutien à l'agriculture biologique"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payments for organic farming by crop type: prairies, fodder crops, annual crops, arboriculture, market gardening."@en ;
+    core:hasTag "Organic"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_7> a core:Opportunity ;
+    rdfs:label "Compensatory Allowances in Areas with Natural Constraints - ANC"@en,
+        "331 Indemnités compensatoires dans les zones à contraintes naturelles et spécifiques - IZCNS"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payments for ZCN and ZCS zones."@en ;
+    core:hasTag "Natural Constraints"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_8> a core:Opportunity ;
+    rdfs:label "Natura 2000 Payment in Agricultural Areas"@en,
+        "341 Paiement au titre de Natura 2000 en zone agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Payments for Natura 2000 prairies with strong constraints and riparian grass strips."@en ;
+    core:hasTag "Environment"@en,
+        "Natura2000"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Hectares'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c73_9> a core:Opportunity ;
+    rdfs:label "Aid for Productive Investments in Agricultural Holdings"@en,
+        "351 Aides aux investissements productifs dans les exploitations agricoles"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Grants for small and large productive investments for individuals and CUMA."@en ;
+    core:hasTag "Investment"@en ;
+    core:requiresCriterion "{'variable': 'unit', 'operator': '=', 'value': 'Operations'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c74_0> a core:Opportunity ;
+    rdfs:label "Cooperation in the Health Sector"@en,
+        "Coopération dans le domaine de la santé"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention moyenne pour la coopération dans le domaine de la santé animale ou végétale, avec montants unitaires moyens prévus de 427 778 EUR par opération et dotation indicative annuelle de 3 500 000 EUR total public (1 297 800 EUR contribution UE)."@en ;
+    core:hasTag "Cooperation"@en,
+        "Health"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c74_1> a core:Opportunity ;
+    rdfs:label "PEI Cooperation - Innovation"@en,
+        "Coopération PEI - Innovation"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention moyenne pour la coopération en innovation (PEI), avec montants unitaires prévus de 250 111 EUR et maximaux de 275 122 EUR par projet, dotation indicative totale de 2 250 999 EUR public (834 670 EUR UE) pour 9 projets."@en ;
+    core:hasTag "Cooperation"@en,
+        "Innovation"@en,
+        "PEI"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c76_0> a core:Opportunity ;
+    rdfs:label "Regional Centers of Reference and Experimentation"@en,
+        "Centres régionaux de référence et d’expérimentation (CRE)"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subvention octroyée par l’administration aux centres reconnus pour diffuser recherches, expérimentations et innovations agricoles, y compris techniques respectueuses de l'environnement comme la production intégrée ou biologique."@en ;
+    core:hasTag "Environmentally friendly"@en,
+        "Innovation"@en,
+        "Organic"@en,
+        "Research"@en ;
+    core:requiresCriterion "{'variable': 'practices', 'operator': 'includes', 'value': 'innovation, supervision, appropriate equipment, transferable know-how'}",
+        "{'variable': 'status', 'operator': '=', 'value': 'active farm manager in eligible domains (vegetable/fruit, ornamental, mushrooms, etc.)'}" .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c77_0> a core:Opportunity ;
+    rdfs:label "Subsidize 30 small-scale infrastructures and four emerging sectors"@en,
+        "Subventionner 30 infrastructures à petite échelle et quatre filières émergentes"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Subsidies for production, storage, transport, micro-transformation, distribution, valorization of by-products, and local commercialization in fruits, vegetables, cereals, and proteins sectors."@en ;
+    core:hasTag "Cereals"@en,
+        "Fruits"@en,
+        "Investment"@en,
+        "Proteins"@en,
+        "Vegetables"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c77_1> a core:Opportunity ;
+    rdfs:label "Build five key infrastructures"@en,
+        "Construire cinq infrastructures névralgiques"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Funding for key infrastructures to deploy sustainable agro-food sector, linking actors, logistics hubs, and consumers."@en ;
+    core:hasTag "Agroalimentaire"@en,
+        "Investment"@en,
+        "Sustainable"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c77_2> a core:Opportunity ;
+    rdfs:label "Support diversification through renewable energies"@en,
+        "Soutenir la diversification par les énergies renouvelables"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Support for diversification via renewable energies in agriculture."@en ;
+    core:hasTag "Diversification"@en,
+        "Renewable Energy"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c77_3> a core:Opportunity ;
+    rdfs:label "Support actors in environmental and climate transition"@en,
+        "Accompagner et soutenir les acteurs de la transition environnementale"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Consolidation of DECIDE tool for transition support."@en ;
+    core:hasTag "Climate"@en,
+        "Environment"@en,
+        "Transition"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c77_4> a core:Opportunity ;
+    rdfs:label "Increase digital maturity of agricultural sector"@en,
+        "Augmenter la maturité numérique du secteur agricole"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Projects for digital sensitization, training, calls for projects, and smart farming diffusion."@en ;
+    core:hasTag "Digital"@en,
+        "Innovation"@en,
+        "Smart Farming"@en .
+
+<http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c78_0> a core:Opportunity ;
+    rdfs:label "Enhanced investment aids from the second pillar of the CAP"@en,
+        "Aides majorées à l’investissement du deuxième pilier de la PAC"@fr ;
+    core:definedBy <http://example.org/doc/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf> ;
+    core:description "Aides majorées prévues pour faciliter l’acquisition d’outils numériques par les agriculteurs afin de lever le frein lié au coût."@en ;
+    core:hasTag "Agriculture"@en,
+        "Digital"@en,
+        "Investment"@en ;
+    core:requiresCriterion "{'variable': 'sector', 'operator': '=', 'value': 'agriculture'}" .
 
 <http://example.org/opportunity/be/wal/plan_stratégique_wallon_pac_version_4_2_pdf_c7_0> a core:Opportunity ;
     rdfs:label "Basic Income Support for Sustainability (BISS)"@en,
