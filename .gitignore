@@ -23,6 +23,10 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+*/markdown/
+*/docx/
+*/pdf/
+*/extra/
 
 # Secrets
 secret/
@@ -36,3 +40,4 @@ knowledge_base/request_rates.csv
 # OS
 .DS_Store
 Thumbs.db
+
