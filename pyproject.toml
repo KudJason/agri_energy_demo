@@ -1,4 +1,5 @@
 [tool.poetry]
+package-mode = false
 name = "agri-energy-demo"
 version = "0.1.0"
 description = "MVP for Agri-Energy Intelligence Platform using RDF and Streamlit"
