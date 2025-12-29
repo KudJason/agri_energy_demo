@@ -9,9 +9,7 @@ CORE = Namespace("http://example.org/agri-energy/core#")
 # Paths
 # Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RULES_BELGIUM = os.path.join(BASE_DIR, "knowledge_base/rules_belgium.ttl")
-RULES_FRANCE = os.path.join(BASE_DIR, "knowledge_base/rules_france.ttl")
-RULES_ENRICHED = os.path.join(BASE_DIR, "knowledge_base/rules_enriched.ttl")
+RULES_COMBINED = os.path.join(BASE_DIR, "knowledge_base/rules_combined.ttl")
 ONTOLOGY_TTL = os.path.join(BASE_DIR, "knowledge_base/ontology/business_core.ttl")
 LOCATIONS_TTL = os.path.join(BASE_DIR, "knowledge_base/data/locations.ttl")
 
@@ -27,50 +25,45 @@ def load_graph():
     if os.path.exists(LOCATIONS_TTL):
         g.parse(LOCATIONS_TTL, format="turtle")
 
-    # Load Enriched Rules (Preference)
-    # if os.path.exists(RULES_ENRICHED):
-    #      print(f"Loading Enriched Rules from {RULES_ENRICHED}")
-    #      g.parse(RULES_ENRICHED, format="turtle")
-    # else:
-    
-    # Fallback to raw files (NOW containing LIVE tags from extraction)
-    for rules_file in [RULES_BELGIUM, RULES_FRANCE]:
-        if os.path.exists(rules_file):
-            try:
-                g.parse(rules_file, format="turtle")
-            except Exception as e:
-                 print(f"Error loading {rules_file}: {e}")
-        else:
-            print(f"Warning: Rules file not found at {rules_file}")
+    # Load Combined Rules (The Source of Truth)
+    if os.path.exists(RULES_COMBINED):
+        try:
+            g.parse(RULES_COMBINED, format="turtle")
+        except Exception as e:
+            print(f"Error loading {RULES_COMBINED}: {e}")
+    else:
+        print(f"Warning: Rules file not found at {RULES_COMBINED}")
         
     return g
 
-def match_criteria(farm_profile, criteria_list, opp_uri=None):
+def match_criteria(farm_profile, criteria_list, opp_region=None):
     """
     Evaluates if a farm profile meets a list of criteria.
     Returns (True, []) if all pass, or (False, [failed_reasons]).
     """
     failed_reasons = []
     
-    # 0. Global Region Check (Implied by URI/Source)
-    if opp_uri:
-        uri_str = str(opp_uri).lower()
-        user_region = farm_profile.get("region", "").lower()
+    # 0. Global Region Check (Explicit from RDF)
+    if opp_region:
+        user_region = farm_profile.get("region", "")
+        opp_region_str = str(opp_region).lower()
         
-        # 1. Broad Country Check
-        is_be_opp = "/be/" in uri_str or "wallonia" in uri_str or "flanders" in uri_str
-        is_fr_opp = "/fr/" in uri_str or "decree" in uri_str or "hve" in uri_str # Heuristic
+        # Mapping UI selection to Knowledge Base region strings
+        # UI: ["France", "Belgium (Flanders)", "Belgium (Wallonia)", "Germany"]
+        # KB: ["France", "Flanders", "Wallonia"]
         
-        if "belgium" in user_region and is_fr_opp:
-             return (False, [f"Region Mismatch: Opportunity is for France."])
-        if "france" in user_region and is_be_opp:
-             return (False, [f"Region Mismatch: Opportunity is for Belgium."])
-             
-        # 2. Sub-Region Check (Flanders vs Wallonia)
-        if "flanders" in user_region and ("/wal/" in uri_str or "wallonia" in uri_str):
-             return (False, ["Region Mismatch: Opportunity is for Wallonia."])
-        if "wallonia" in user_region and ("/fla/" in uri_str or "flanders" in uri_str):
-             return (False, ["Region Mismatch: Opportunity is for Flanders."])
+        if user_region == "Belgium (Flanders)":
+            if opp_region_str != "flanders":
+                 return (False, [f"Region Mismatch: User is in Flanders, Opportunity is for {opp_region}."])
+        elif user_region == "Belgium (Wallonia)":
+            if opp_region_str != "wallonia":
+                 return (False, [f"Region Mismatch: User is in Wallonia, Opportunity is for {opp_region}."])
+        elif user_region == "France":
+            if opp_region_str != "france":
+                 return (False, [f"Region Mismatch: User is in France, Opportunity is for {opp_region}."])
+        elif user_region == "Germany":
+            if opp_region_str != "germany":
+                 return (False, [f"Region Mismatch: User is in Germany, Opportunity is for {opp_region}."])
     
     for crit in criteria_list:
         var_name = str(crit['variable'])
@@ -182,14 +175,30 @@ def get_available_tags():
     g = load_graph()
     query = """
     PREFIX core: <http://example.org/agri-energy/core#>
-    SELECT DISTINCT ?tag WHERE {
-        ?opp core:hasTag ?tag .
+    SELECT DISTINCT ?type WHERE {
+        ?opp core:eligibleFarmerType ?type .
     }
-    ORDER BY ?tag
+    ORDER BY ?type
     """
     results = g.query(query)
-    tags = [str(r.tag) for r in results]
-    return tags
+    
+    # Map URIs to UI Strings
+    refined_tags = set()
+    for r in results:
+        uri = str(r.type)
+        if "YoungFarmer" in uri:
+            refined_tags.add("Young Farmer")
+        elif "Organic" in uri:
+            refined_tags.add("Organic (AB)")
+        elif "NewEntrant" in uri:
+            refined_tags.add("New Entrant")
+        elif "ActiveFarmer" in uri:
+            # ActiveFarmer is usually a baseline, maybe not a specific filter?
+            # User wants "relevant interactive", keeping plain ActiveFarmer might be noise if everyone has it.
+            # But let's add it for completeness if they want to toggle it.
+            pass 
+            
+    return sorted(list(refined_tags))
 
 def match_tags(farm_profile, opp_tags_str):
     """
@@ -268,9 +277,25 @@ def find_matching_opportunities(farm_profile):
             
         valid_from = row.validFrom
         source_doc = row.sourceDoc
+
+        # Helper to map URIs to Tags
+        derived_tags = []
+        if row.farmerTypes:
+            f_types = str(row.farmerTypes).split(", ")
+            for ft in f_types:
+                if "YoungFarmer" in ft:
+                    derived_tags.append("Young Farmer")
+                elif "Organic" in ft:
+                    derived_tags.append("Organic") # Internal matching logic uses "Organic"
+                elif "NewEntrant" in ft:
+                    derived_tags.append("New Entrant")
+        
+        # Combine with explicit tags
+        opp_tags_list = [t.strip() for t in str(opp_tags).split(",")] if opp_tags else []
+        combined_tags = opp_tags_list + derived_tags
         
         # --- NEW: Tag Matching First (Fast Fail) ---
-        is_tag_eligible, tag_reasons = match_tags(farm_profile, opp_tags)
+        is_tag_eligible, tag_reasons = match_tags(farm_profile, ", ".join(set(combined_tags)))
         if not is_tag_eligible:
             continue # Skip fetching criteria if tags mismatch
         
@@ -298,7 +323,7 @@ def find_matching_opportunities(farm_profile):
                 })
             
         # 3. Match
-        is_eligible, reasons = match_criteria(farm_profile, criteria_list, opp_uri=opp_uri)
+        is_eligible, reasons = match_criteria(farm_profile, criteria_list, opp_region=row.region)
         
         if is_eligible:
             # 4. Get Payment Info (if any)
@@ -322,14 +347,43 @@ def find_matching_opportunities(farm_profile):
             valid_from_str = str(valid_from) if valid_from else "Unknown"
             
             # Add Source metadata
-            source_slug = str(source_doc).split("/")[-1] if source_doc else "Unknown" # e.g. "bio_2019_pdf" 
+            source_slug = str(source_doc).split("/")[-1] if source_doc else "Unknown" 
             
+            # Rich Data Fields
+            benefit_amount = str(row.benefitAmount) if row.benefitAmount else "See Details"
+            
+            # Structured Payment
+            payment_rate = str(row.paymentRate) if row.paymentRate else None
+            payment_unit = str(row.paymentUnit) if row.paymentUnit else None
+            payment_limit = str(row.paymentLimit) if row.paymentLimit else None
+            
+            calc_logic = str(row.calculationLogic) if row.calculationLogic else None
+            app_rule = str(row.applicationRule) if row.applicationRule else None
+            app_start = str(row.appStartDate) if row.appStartDate else None
+            app_end = str(row.appEndDate) if row.appEndDate else None
+            
+            desc = str(row.description) if row.description else f"Valid from {valid_from_str}"
+
+            implicit_criteria_count = 0
+            if row.region:
+                implicit_criteria_count += 1
+            implicit_criteria_count += len(combined_tags)
+
             opportunities.append({
                 "name": str(label),
                 "type": "LLM Extracted Rule",
-                "description": f"Valid from {valid_from_str}. Source: {source_slug}",
-                "revenue_text": revenue_text,
-                "criteria_count": len(criteria_list),
+                "description": desc,
+                "source": source_slug,
+                "revenue_text": revenue_text, # Legacy field, keeping for fallback
+                "benefit_amount": benefit_amount,
+                "payment_rate": payment_rate,
+                "payment_unit": payment_unit,
+                "payment_limit": payment_limit,
+                "calculation_logic": calc_logic,
+                "application_rule": app_rule,
+                "app_start_date": app_start,
+                "app_end_date": app_end,
+                "criteria_count": len(criteria_list) + implicit_criteria_count,
                 "uri": str(opp_uri)
             })
             

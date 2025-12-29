@@ -6,9 +6,9 @@ from rdflib import Graph, Namespace, Literal
 from rdflib.plugins.sparql import prepareQuery
 
 # Paths
+# Paths
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-RULES_BELGIUM = os.path.join(BASE_DIR, "knowledge_base/rules_belgium.ttl")
-RULES_FRANCE = os.path.join(BASE_DIR, "knowledge_base/rules_france.ttl")
+RULES_COMBINED = os.path.join(BASE_DIR, "knowledge_base/rules_combined.ttl")
 LOCATIONS_FILE = os.path.join(BASE_DIR, "knowledge_base/data/locations.ttl")
 ONTOLOGY_FILE = os.path.join(BASE_DIR, "knowledge_base/ontology/business_core.ttl")
 MMD_FILE = os.path.join(BASE_DIR, "knowledge_base/kg_belgium.mmd")
@@ -26,10 +26,10 @@ def load_graph():
     try:
         g.parse(ONTOLOGY_FILE, format="turtle")
         g.parse(LOCATIONS_FILE, format="turtle")
-        if os.path.exists(RULES_BELGIUM):
-            g.parse(RULES_BELGIUM, format="turtle")
-        if os.path.exists(RULES_FRANCE):
-            g.parse(RULES_FRANCE, format="turtle")
+        if os.path.exists(RULES_COMBINED):
+            g.parse(RULES_COMBINED, format="turtle")
+        else:
+            st.warning("Combined rules file not found.")
     except Exception as e:
         st.error(f"Error loading graph: {e}")
     return g

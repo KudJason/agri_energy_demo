@@ -1,0 +1,1036 @@
+@prefix core: <http://example.org/agri-energy/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/opportunity/annexe_-_la_transparence_gaec_3> a core:Opportunity ;
+    rdfs:label "Application of GAEC Transparency to Young Farmer Aid"@en,
+        "Application de la transparence GAEC à l'ACJA"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "The flat-rate aid amount is multiplied by the number of eligible associates." ;
+    core:calculationLogic "Aid amount for code 30 * Number of eligible Young Farmer associates in the GAEC." ;
+    core:definedBy <http://example.org/doc/annexe_-_la_transparence_gaec> ;
+    core:description "For GAEC (Groupement Agricole d'Exploitation en Commun) societies where several associates meet the Young Farmer definition, the transparency principle allows the total young farmer aid to be multiplied by the number of eligible associates."@en ;
+    core:eligibleFarmerType core:YoungFarmer ;
+    core:hasRegion "France" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "N/A" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/bio.2019_0> a core:Opportunity ;
+    rdfs:label "Organic farming maintenance aid – Group 1: Pastures and forage crops"@en,
+        "Aide au maintien à l’agriculture biologique – Groupe 1: Prairies et cultures fourragères"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "150 EUR/ha for maintenance." ;
+    core:calculationLogic "Flat rate of 150 EUR/ha for maintaining organic practices on pastures and forage crops." ;
+    core:definedBy <http://example.org/doc/plan_stratégique_wallon_pac_version_4.2> ;
+    core:description "Aid for maintaining organic certification on pastures and forage crop areas (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Degressive scales may apply in sensitive zones." ;
+    core:paymentRate "150.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/bio.2019_1> a core:Opportunity ;
+    rdfs:label "Organic farming conversion aid – Group 1: Pastures and forage crops"@en,
+        "Aide à la conversion à l’agriculture biologique – Groupe 1: Prairies et cultures fourragères"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "370 EUR/ha for conversion (150 maintenance + 220 top-up)." ;
+    core:calculationLogic "Fixed premium of 150 EUR/ha (maintenance) plus 220 EUR/ha (conversion top-up for 2 years)." ;
+    core:definedBy <http://example.org/doc/plan_stratégique_wallon_pac_version_4.2> ;
+    core:description "Aid for converting to organic certification on pastures and forage crop areas (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max 2 years for conversion top-up." ;
+    core:paymentRate "370.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/bio.2019_2> a core:Opportunity ;
+    rdfs:label "Organic farming maintenance aid – Group 2: Arboriculture, horticulture, seed production"@en,
+        "Aide au maintien à l’agriculture biologique – Groupe 2: Arboriculture, horticulture, production de semences"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "150 EUR/ha (first 3 ha), then degressive." ;
+    core:calculationLogic "Tiered maintenance aid starting at 150 EUR/ha for the first 3 hectares of arboriculture, horticulture, or seed production." ;
+    core:definedBy <http://example.org/doc/plan_stratégique_wallon_pac_version_4.2> ;
+    core:description "Aid for maintaining organic certification on areas dedicated to arboriculture, horticulture, and seed production (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Degressive scales apply after 3 ha." ;
+    core:paymentRate "150.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/bio.2019_3> a core:Opportunity ;
+    rdfs:label "Organic farming conversion aid – Group 2: Arboriculture, horticulture, seed production"@en,
+        "Aide à la conversion à l’agriculture biologique – Groupe 2: Arboriculture, horticulture, production de semences"@fr ;
+    core:applicationEndDate "2018-10-31"^^xsd:date ;
+    core:benefitAmount "Subsidy for converting to organic farming practices in arboriculture, horticulture, and seed production." ;
+    core:calculationLogic "For 0-3 ha: 1050 EUR/ha; for 3-14 ha: 900 EUR/ha; for areas beyond 14 ha: 550 EUR/ha." ;
+    core:definedBy <http://example.org/doc/bio.2019> ;
+    core:description "Aid for converting to organic certification on areas dedicated to arboriculture (low-stem orchards >250 trees/ha), horticulture, and seed production."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max 3 ha" ;
+    core:paymentRate "1050.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/bio.2019_4> a core:Opportunity ;
+    rdfs:label "Organic Farming Aid"@en,
+        "Organic farming maintenance aid – Group 3: Other crops and high-stem orchards"@en,
+        "Aide au maintien à l’agriculture biologique – Groupe 3: Autres cultures et vergers hautes tiges"@fr,
+        "Aide à l'agriculture biologique"@fr ;
+    core:applicationEndDate "2018-10-31"^^xsd:date ;
+    core:benefitAmount "Subsidy for maintaining organic farming practices on other crops and high-stem orchards.",
+        "Varies by crop group and hectare tranche." ;
+    core:calculationLogic "For the first 60 hectares: 400 EUR/ha. For each hectare beyond 60: 240 EUR/ha.",
+        "Maintenance: Group1: 200€/ha (0-60ha), 120€/ha (>60ha). Group2: 900€/ha (0-3ha), 750€/ha (3-14ha), 400€/ha (>14ha). Group3: 400€/ha (0-60ha), 240€/ha (>60ha). Conversion: Higher rates apply." ;
+    core:definedBy <http://example.org/doc/bio.2019> ;
+    core:description "Aid for maintaining organic certification on areas dedicated to other annual crops and high-stem orchards (50-250 trees/ha)."@en,
+        "Aid for maintenance or conversion to organic farming. Different payment rates for grassland/forage, arboriculture/horticulture/seeds, and other crops/high-stem orchards."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max 60 ha",
+        "Tranches: 0-60 ha, >60 ha. Group 2 also: 0-3 ha, 3-14 ha, >14 ha." ;
+    core:paymentRate "400.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/bio.2019_5> a core:Opportunity ;
+    rdfs:label "Organic farming conversion aid – Group 3: Other crops and high-stem orchards"@en,
+        "Aide à la conversion à l’agriculture biologique – Groupe 3: Autres cultures et vergers hautes tiges"@fr ;
+    core:applicationEndDate "2018-10-31"^^xsd:date ;
+    core:benefitAmount "Subsidy for converting to organic farming practices on other crops and high-stem orchards." ;
+    core:calculationLogic "For the first 60 hectares: 550 EUR/ha. For each hectare beyond 60: 390 EUR/ha." ;
+    core:definedBy <http://example.org/doc/bio.2019> ;
+    core:description "Aid for converting to organic certification on areas dedicated to other annual crops and high-stem orchards (50-250 trees/ha)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max 60 ha" ;
+    core:paymentRate "550.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/code/1_1> a core:Opportunity ;
+    rdfs:label "Basic Income Support for Sustainability"@en,
+        "Basisinkomenssteun voor duurzaamheid"@fr ;
+    core:benefitAmount "Average ~155-185 EUR per hectare (converging to avg 180-185 by 2026)" ;
+    core:calculationLogic "Paid via payment rights (entitlements) subject to a convergence process. Minimum ~155 EUR/ha, maximum 1500 EUR/ha." ;
+    core:definedBy <http://example.org/doc/maatregelen_gemeenschappelijk_landbouwbeleid_2023-2027__landbouw_en_zeevisserij> ;
+    core:description "Basic income support under Pillar 1 of the CAP. Replaces the former basic payment scheme with a focus on sustainability."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "1.1" ;
+    core:hasRegion "Flanders" ;
+    core:paymentRate "155.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (indicative average)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/1_3> a core:Opportunity ;
+    rdfs:label "Additional Income Support for Young Farmers"@en,
+        "Aanvullende inkomenssteun voor jonge landbouwers"@fr ;
+    core:benefitAmount "200 EUR/ha (first 45 ha), 160 EUR/ha (next 45 ha)" ;
+    core:calculationLogic "Tiered payment: 200 EUR per hectare for the first 45 hectares, and 160 EUR per hectare for the next 45 hectares." ;
+    core:definedBy <http://example.org/doc/maatregelen_gemeenschappelijk_landbouwbeleid_2023-2027__landbouw_en_zeevisserij> ;
+    core:description "Additional direct payment for young farmers (under 40) for a maximum of 5 years."@en ;
+    core:eligibleFarmerType core:YoungFarmer ;
+    core:hasInterventionCode "1.3" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/1_9> a core:Opportunity ;
+    rdfs:label "Continuation of Organic Farming (Bio-agreement)"@en,
+        "Voortzetting biologische landbouw (TBIO)"@fr ;
+    core:benefitAmount "Tiered: 200 EUR/ha (first 5 ha), 100 EUR/ha (next 70 ha), 50 EUR/ha (>75 ha)" ;
+    core:calculationLogic "Tiered annual payment: 200 EUR/ha for 0-5 ha, 100 EUR/ha for 6-75 ha, and 50 EUR/ha beyond 75 ha." ;
+    core:definedBy <http://example.org/doc/maatregelen_gemeenschappelijk_landbouwbeleid_2023-2027__landbouw_en_zeevisserij> ;
+    core:description "Eco-scheme providing support for farms that are already bio-certified to continue organic farming practices."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasInterventionCode "1.9" ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "Degressive after 5ha and 75ha" ;
+    core:paymentRate "200.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (first 5 ha)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/21> a core:Opportunity ;
+    rdfs:label "Basic Income Support for Sustainability"@en,
+        "Aide de base au revenu pour un développement durable"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "National budget envelope for the financial year 2023." ;
+    core:calculationLogic "Fund allocation from the FEAGA budget for Pillar 1." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "The main component of direct payments, forming the base level of income support."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "21" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "N/A" ;
+    core:paymentRate "125.0"^^xsd:float ;
+    core:paymentUnit "EUR/year (national envelope)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/29> a core:Opportunity ;
+    rdfs:label "Complementary Redistributive Income Support for Sustainability"@en,
+        "Aide redistributive complémentaire au revenu pour un développement durable"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Approximately 50.4 EUR/ha (indicative for 2023)" ;
+    core:calculationLogic "Paid for the first 52 eligible hectares of the farm, provided at least one Basic Payment Right (DPB) is activated." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "A redistributive payment providing extra support for the first hectares of a farm (up to 52 ha) to benefit smaller and medium-sized holdings."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:SmallFarmer ;
+    core:hasInterventionCode "29" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "Max 52 ha" ;
+    core:paymentRate "50.4"^^xsd:float ;
+    core:paymentUnit "EUR/ha (first 52 ha)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/30> a core:Opportunity ;
+    rdfs:label "Complementary Income Support for Young Farmers"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs (ACJA)"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Approximately 4,469 EUR per farm (for 2023)" ;
+    core:calculationLogic "Lump-sum payment per eligible farm. Paid for a maximum of 5 years." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "A top-up payment for young farmers (under 40) who are setting up for the first time. Paid as a flat-rate per exploitation."@en ;
+    core:eligibleFarmerType core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasInterventionCode "30" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "Max 5 years" ;
+    core:paymentRate "4469.0"^^xsd:float ;
+    core:paymentUnit "EUR/farm" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/31> a core:Opportunity ;
+    rdfs:label "Programmes for Climate and Environment (Eco-schemes)"@en,
+        "Programmes pour le climat et l'environnement (Écorégime)"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Tiered: Basic (~45-60 EUR/ha), Superior (~62-80 EUR/ha), Organic (~92-110 EUR/ha)" ;
+    core:calculationLogic "Annual payment based on one of three pathways: agricultural practices, environmental certification, or biodiversity elements. Three non-cumulative payment levels." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "Eco-schemes (Écorégime) providing annual payments for farmers who undertake agricultural practices beneficial for the climate and the environment."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasInterventionCode "31" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "N/A" ;
+    core:paymentRate "60.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (indicative Level 1)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/32> a core:Opportunity ;
+    rdfs:label "Coupled Income Support"@en,
+        "Aide couplée au revenu"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Varies by sector: Beef (60-110 EUR/UGB), Sheep (21-42 EUR/head), Protein crops (104-149 EUR/ha)" ;
+    core:calculationLogic "Sector-specific payments linked to production levels or livestock units. Aimed at sensitive sectors like beef, sheep, and vegetable proteins." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "Payments linked to the production of specific crops or animal sectors considered sensitive or important (e.g., beef, sheep, protein crops)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "32" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "Sector-specific limits apply (e.g. 120 UGB for beef)" ;
+    core:paymentRate "110.0"^^xsd:float ;
+    core:paymentUnit "EUR/UGB or EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/321> a core:Opportunity ;
+    rdfs:label "Conversion payment for organic farming"@en,
+        "Paiement conversion à l'agriculture biologique"@fr ;
+    core:benefitAmount "150 EUR per hectare (200 EUR per hectare from 2026)" ;
+    core:calculationLogic "Fixed premium of 150 EUR/ha (200 EUR/ha from 2026) added to the maintenance aid for parcels in transition (usually first 2 years)." ;
+    core:definedBy <http://example.org/doc/plan_stratégique_wallon_pac_version_4.2> ;
+    core:description "Financial support for farmers converting to organic agriculture. The conversion aid is a top-up on the maintenance aid."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasInterventionCode "321" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "150.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/3_3> a core:Opportunity ;
+    rdfs:label "Conversion to Organic Farming"@en,
+        "Omschakeling biologische landbouw"@fr ;
+    core:benefitAmount "Varies by crop: 390 to 1,700 EUR/ha" ;
+    core:calculationLogic "390 EUR/ha for grassland/forage, 900 EUR/ha for arable crops, 1,700 EUR/ha for fruit/vegetables/herbs." ;
+    core:definedBy <http://example.org/doc/maatregelen_gemeenschappelijk_landbouwbeleid_2023-2027__landbouw_en_zeevisserij> ;
+    core:description "Pillar 2 rural development measure supporting the transition to organic farming with specific rates per crop group."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:NewEntrant,
+        core:OrganicFarmer ;
+    core:hasInterventionCode "3.3" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/basisinkomenssteunduurzaamheid> a core:Opportunity ;
+    rdfs:label "Basic income support for sustainability"@en,
+        "Basisinkomenssteun voor duurzaamheid"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Basic income support linked to sustainability (conditionality)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "BasisinkomenssteunDuurzaamheid" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/eco_regime1> a core:Opportunity ;
+    rdfs:label "Long-term soil cover eco-scheme"@en,
+        "Eco-régime couverture longue du sol"@fr ;
+    core:benefitAmount "Tiered: 15, 30, or 45 EUR per hectare" ;
+    core:calculationLogic "15 EUR/ha for >=70% coverage, 30 EUR/ha for >=80%, 45 EUR/ha for >=90% (weighted SAU)." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "An eco-scheme rewarding practices that maintain soil cover for extended periods (Jan 1 to Feb 15)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Eco-regime1" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/eco_regime2> a core:Opportunity ;
+    rdfs:label "Environmentally favorable crop eco-scheme"@en,
+        "Eco-régime culture favorable à l'environnement"@fr ;
+    core:benefitAmount "Tiered: 60, 80, or 100 EUR per hectare" ;
+    core:calculationLogic "60 EUR/ha for basic, 80 EUR/ha for intermediate, 100 EUR/ha for superior environmental benefit (based on crop diversity and protein crops)." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "An eco-scheme incentivizing a diversified crop rotation and the cultivation of specific crops like legumes (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Eco-regime2" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/eco_regime3> a core:Opportunity ;
+    rdfs:label "Ecological network eco-scheme"@en,
+        "Eco-régime maillage écologique"@fr ;
+    core:benefitAmount "350 EUR per hectare (for 2024)" ;
+    core:calculationLogic "Fixed rate of 350 EUR/ha for the creation and maintenance of ecological elements (hedges, trees, ponds, etc.) within agricultural areas." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "An eco-scheme supporting the conservation and establishment of non-productive areas that enhance biodiversity and landscape connectivity. Integrates some former Natura 2000 payments (e.g. 180 EUR/ha for UG5)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Eco-regime3" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "350.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/eco_regime4> a core:Opportunity ;
+    rdfs:label "Input reduction eco-scheme"@en,
+        "Eco-régime réduction d'intrants"@fr ;
+    core:benefitAmount "80 EUR per hectare" ;
+    core:calculationLogic "Fixed rate of 80 EUR/ha for not using certain prohibited phytopharmaceutical products on arable land." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "An eco-scheme rewarding farmers who adopt practices leading to a substantial decrease in chemical inputs by avoiding specific active substances."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Eco-regime4" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "80.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/eco_regime5> a core:Opportunity ;
+    rdfs:label "Permanent grassland eco-scheme conditioned on livestock load"@en,
+        "Eco-régime prairies permanentes conditionnée à la charge en bétail"@fr ;
+    core:benefitAmount "Base aid of 40 EUR per hectare" ;
+    core:calculationLogic "Average livestock density must be between 0.6 and 5 UGB/ha (forage area). Additional degressive aid may apply based on density tiers." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "An eco-scheme that supports the maintenance of permanent grassland by linking the payment to an extensive or targeted livestock pressure (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Eco-regime5" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "40.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (base rate)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/ecoregime1> a core:Opportunity ;
+    rdfs:label "'Hedges' Bonus & Topographic Features Conversion for Eco-scheme"@en,
+        "Bonus 'Haies' & Conversion des Eléments Topographiques"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Payment based on the surface equivalent of beneficial features, contributing to the minimum percentage required for the 'Biodiversity' pathway of the eco-scheme." ;
+    core:calculationLogic "Linear meters or units are converted to surface area equivalents (e.g., 1m hedge = 20m², 1 tree = 30m², 1 pond = area * 1.5). This area counts towards the farm's required ratio of ecological focus areas." ;
+    core:definedBy <http://example.org/doc/annexe_-_les_éléments_topographiques_dans_la_pac> ;
+    core:description "Specific bonuses and area conversion factors for features like hedges, trees, ponds, etc., within the eco-scheme's 'Biodiversity' pathway. Their maintenance and presence can unlock higher-level eco-scheme payments."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Ecoregime1" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/ha (via surface equivalent)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/ecorégime> a core:Opportunity ;
+    rdfs:label "Eco-scheme - Biodiversity Elements Pathway"@en,
+        "Écorégime - Voie des éléments favorables à la biodiversité"@fr ;
+    core:benefitAmount "Payment for maintaining and developing landscape features that benefit biodiversity. Amount is part of the overall Eco-scheme payment envelope." ;
+    core:calculationLogic "Access to the scheme requires maintaining a minimum percentage of the farm's eligible agricultural area (SAU) as Biodiversity Elements (IAE - Infrastructures Agro-Écologiques). The area equivalent is calculated using specific conversion coefficients for each element type (e.g., 1m hedge = 20m²)." ;
+    core:definedBy <http://example.org/doc/dossier-pac-2025_notice_elements-biodiversite> ;
+    core:description "An eco-scheme that financially recognizes and encourages the maintenance and development of landscape features favorable to biodiversity, such as hedges, ponds, isolated trees, groves, non-reinforced ditches, and fallow land. Farmers choose this 'biodiversity elements' pathway."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "Ecorégime" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "N/A" ;
+    core:versionYear 2025 .
+
+<http://example.org/opportunity/code/eip_projectoproep> a core:Opportunity ;
+    rdfs:label "Project call for innovation within the EIP framework"@en,
+        "Projectoproep innovatie in kader van EIP"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Project calls to support innovation under the European Innovation Partnership (EIP)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "EIP-Projectoproep" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/gekoppeldeinkomenssteun> a core:Opportunity ;
+    rdfs:label "Couped income support"@en,
+        "Gekoppelde inkomenssteun"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "General couped (sector-specific) income support."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "GekoppeldeInkomenssteun" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/gekoppeldeinkomenssteunvleesvee> a core:Opportunity ;
+    rdfs:label "Couped income support – specialised beef farming"@en,
+        "Gekoppelde inkomenssteun – gespecialiseerde vleesveehouderij"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Couped (sector-specific) income support for specialised beef farmers."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "GekoppeldeInkomenssteunVleesvee" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/herverdelendeinkomenssteun> a core:Opportunity ;
+    rdfs:label "Additional redistributive income support for sustainability"@en,
+        "Aanvullende herverdelende inkomenssteun voor duurzaamheid"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Additional income support with a redistributive element for sustainability."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "HerverdelendeInkomenssteun" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/ichn> a core:Opportunity ;
+    rdfs:label "Compensatory Allowance for Natural Handicaps (ICHN)"@en,
+        "Indemnité Compensatoire de Handicaps Naturels (ICHN)"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Tiered by zone: High Mountain (~450 EUR/ha), Mountain (~380 EUR/ha), ZDS (~150 EUR/ha). Degressive after 25ha." ;
+    core:calculationLogic "Paid per hectare of forage area. Includes a fixed part (~70 EUR/ha) and a variable part depending on the zone and livestock density. Degressive beyond 25 and 50 hectares." ;
+    core:definedBy <http://example.org/doc/plan_financier_indicatif_détaillé> ;
+    core:description "Payment to farmers in mountain or other less-favoured areas to compensate for permanent natural handicaps. Requires a minimum of 5 UGB for the animal-based allowance."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "ICHN" ;
+    core:hasRegion "France" ;
+    core:paymentLimit "75 hectares (forage area)" ;
+    core:paymentRate "455.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (max rate in High Mountain)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/inkomenssteunjongelandbouwers> a core:Opportunity ;
+    rdfs:label "Additional income support for young farmers"@en,
+        "Aanvullende inkomenssteun voor jonge landbouwers"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Additional income support targeted at young farmers."@en ;
+    core:eligibleFarmerType core:YoungFarmer ;
+    core:hasInterventionCode "InkomenssteunJongeLandbouwers" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/leader> a core:Opportunity ;
+    rdfs:label "LEADER"@en,
+        "LEADER"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Community-led local development programme for rural areas."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "LEADER" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb11> a core:Opportunity ;
+    rdfs:label "AECM: Keeping local endangered breeds"@en,
+        "MAEC Détention d’animaux de races locales menacées"@fr ;
+    core:benefitAmount "Payment for maintaining herds/flocks of recognized local breeds at risk of genetic erosion." ;
+    core:calculationLogic "Payment per livestock unit (LU) of an eligible local endangered breed." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure to support the conservation of genetic resources in agriculture."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB11" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/head" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb12> a core:Opportunity ;
+    rdfs:label "AECM: Standing cereals"@en,
+        "MAEC Céréales sur pied"@fr ;
+    core:benefitAmount "Payment for leaving cereal crops unharvested in the field over winter to provide food for wildlife." ;
+    core:calculationLogic "Payment per hectare of cereal crop left standing as per contract specifications." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure to support farmland birds and other wildlife by providing winter food resources."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB12" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb13> a core:Opportunity ;
+    rdfs:label "AECM: Forage autonomy"@en,
+        "MAEC Autonomie fourragère"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "60 EUR/ha (if <1.4 UGB/ha) or 30 EUR/ha (if <1.8 UGB/ha)" ;
+    core:calculationLogic "Tiered payment based on livestock density: 60 EUR/ha for variant A (<1.4 UGB/ha), 30 EUR/ha for variant B (<1.8 UGB/ha)." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure supporting forage autonomy by rewarding lower livestock density on permanent pastures (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB13" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max density 1.8 UGB/ha" ;
+    core:paymentRate "60.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha (max rate)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb1_a> a core:Opportunity ;
+    rdfs:label "Hedges and Woody Strips"@en,
+        "Haies et bandes boisées"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "0.35 - 0.525 EUR per linear meter (2024)" ;
+    core:calculationLogic "Annual payment of 0.35 EUR/m (base) or 0.525 EUR/m (with 1.5 coefficient) for maintaining hedges and woody strips. Minimum length 10m." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Support for the maintenance of hedges and woody strips, now integrated into the 'Maillage écologique' eco-regime (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB1.a" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Minimum 10m segments" ;
+    core:paymentRate "0.35"^^xsd:float ;
+    core:paymentUnit "EUR/m" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb2> a core:Opportunity ;
+    rdfs:label "AECM: Natural grassland"@en,
+        "MAEC Prairies naturelles"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "220 EUR per hectare" ;
+    core:calculationLogic "Fixed annual payment of 220 EUR/ha for maintaining natural grasslands with environmental constraints (e.g. no fertilizers, delayed mowing)." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure supporting the maintenance of species-rich natural grasslands (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB2" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "220.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb5> a core:Opportunity ;
+    rdfs:label "AECM: Grassed margins"@en,
+        "MAEC Tournières enherbées"@fr ;
+    core:benefitAmount "1,100 EUR/ha (2023) or 1,200 EUR/ha (2024+)" ;
+    core:calculationLogic "Fixed annual payment of 1,100 EUR/ha for 2023, increasing to 1,200 EUR/ha from 2024 for maintaining grassed strips along arable fields." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure for establishing and maintaining grassed margins to protect water and enhance biodiversity (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB5" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "1200.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mb6> a core:Opportunity ;
+    rdfs:label "Environmentally Friendly Crop: Cereal-Legume Mixture"@en,
+        "Culture favorable à l'environnement : Mélange céréales légumineuses"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:benefitAmount "300 EUR per hectare (via Eco-regime ER-CFE)" ;
+    core:calculationLogic "Fixed rate of 300 EUR/ha for cereal-legume mixtures under variant 3 of the Eco-regime 'Cultures favorables à l'environnement'. Use of phytosanitary products is prohibited." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Support for growing mixtures of cereals and legumes (min. 20-50% legumes). Now part of the Eco-regime framework (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MB6" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentRate "300.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mc10> a core:Opportunity ;
+    rdfs:label "AECM: Agri-environmental action plan"@en,
+        "MAEC Plan d’action agro-environnemental"@fr ;
+    core:benefitAmount "Payment for developing and implementing a comprehensive, farm-level plan integrating multiple environmental actions." ;
+    core:calculationLogic "Lump-sum or calculated payment for the development and coordinated implementation of a suite of measures." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "A coordinated agri-environment-climate measure that rewards a systematic, whole-farm approach to environmental management."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MC10" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/farm" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mc4> a core:Opportunity ;
+    rdfs:label "AECM: High biological value grassland"@en,
+        "MAEC Prairies à haute valeur biologique"@fr ;
+    core:benefitAmount "470 EUR per hectare" ;
+    core:calculationLogic "Fixed annual payment of 470 EUR/ha for managing grasslands with exceptionally high biodiversity value, requiring strict management plans." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure for the conservation of very high biological value grasslands (2023-2027)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MC4" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentRate "470.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mc7> a core:Opportunity ;
+    rdfs:label "AECM: Fitted plots"@en,
+        "MAEC Parcelles aménagées"@fr ;
+    core:benefitAmount "Payment for managing plots with specific environmental features or under specific management for biodiversity." ;
+    core:calculationLogic "Payment per hectare of plot under a defined management contract." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure for the targeted management of plots to enhance their ecological value."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MC7" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/mr14> a core:Opportunity ;
+    rdfs:label "AECM: Soil"@en,
+        "MAEC Sol"@fr ;
+    core:benefitAmount "Payment for implementing soil conservation practices (e.g., cover crops, reduced tillage, organic amendments)." ;
+    core:calculationLogic "Payment per hectare under contract for implementing specific soil-improving practices." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Agri-environment-climate measure focused on enhancing soil health, structure, and carbon content."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "MR14" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/projectoproepsamenwerking> a core:Opportunity ;
+    rdfs:label "Project call for cooperation"@en,
+        "Projectoproep samenwerking"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Project calls to foster cooperation among actors."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "ProjectoproepSamenwerking" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/ug2_ug3_ugtemp> a core:Opportunity ;
+    rdfs:label "Natura 2000 Compensation - UG2/UG3/Temporary UG"@en,
+        "Indemnité Natura 2000 - UG2/UG3/UG temporaire"@fr ;
+    core:benefitAmount "440€ per hectare of grassland." ;
+    core:calculationLogic "Payment = Eligible grassland hectares in UG2/UG3/UGtemp * 440€." ;
+    core:definedBy <http://example.org/doc/natura.2019> ;
+    core:description "Higher compensation payment for grassland located in Natura 2000 Management Units with strong constraints (UG2, UG3, UG temp1, UG temp2)."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "UG2/UG3/UGtemp" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Min 100€ total payment." ;
+    core:paymentRate "440.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/code/ug5> a core:Opportunity ;
+    rdfs:label "Natura 2000 Compensation - UG5"@en,
+        "Indemnité Natura 2000 - UG5"@fr ;
+    core:benefitAmount "100€ per hectare of grassland." ;
+    core:calculationLogic "Payment = Eligible grassland hectares in UG5 * 100€." ;
+    core:definedBy <http://example.org/doc/natura.2019> ;
+    core:description "Compensation payment for grassland located in Natura 2000 Management Unit UG5."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "UG5" ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Min 100€ total payment." ;
+    core:paymentRate "100.0"^^xsd:float ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/code/vlif_innovatieveinvesteringen> a core:Opportunity ;
+    rdfs:label "VLIF - Innovative and productive investments on agricultural holdings"@en,
+        "VLIF – Innovatieve en productieve investeringen op landbouwbedrijven"@fr ;
+    core:benefitAmount "Subsidy rate: 15% to 50% (up to 65% for young farmers/specific stalls)" ;
+    core:calculationLogic "Investment subsidy based on a percentage of eligible costs. Young farmers receive a 10% bonus. Maximum 300,000 EUR per farm." ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support for innovative and productive investments on farms to improve sustainability and productivity."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "VLIF-InnovatieveInvesteringen" ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "300,000 EUR per farm" ;
+    core:paymentRate "30.0"^^xsd:float ;
+    core:paymentUnit "% (subsidy rate)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/vlif_innovatieveinvesteringen2> a core:Opportunity ;
+    rdfs:label "VLIF - Innovative investments on agricultural holdings"@en,
+        "VLIF – Innovatieve investeringen op landbouwbedrijven"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support for innovative investments."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "VLIF-InnovatieveInvesteringen2" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/vlif_nietproductieveinvesteringen> a core:Opportunity ;
+    rdfs:label "VLIF - Non-productive investments for environmental and climate goals"@en,
+        "VLIF – Niet-productieve investeringen voor milieu - en klimaatdoelen"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support for non-productive investments for environmental and climate objectives."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "VLIF-NietProductieveInvesteringen" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/vlif_opstartovernamejongelandbouwers> a core:Opportunity ;
+    rdfs:label "VLIF - Start and takeover by young farmers"@en,
+        "VLIF – Opstart en overname door jonge landbouwers"@fr ;
+    core:benefitAmount "Flat rate: 40k, 70k, or 100k EUR" ;
+    core:calculationLogic "One-off lump-sum payment for the start-up or takeover of a farm. Amount depends on the size of the holding and number of manager units." ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Forfaitaire support for business start-up and takeover by young farmers (under 40)."@en ;
+    core:eligibleFarmerType core:YoungFarmer ;
+    core:hasInterventionCode "VLIF-OpstartOvernameJongeLandbouwers" ;
+    core:hasRegion "Flanders" ;
+    core:paymentRate "70000.0"^^xsd:float ;
+    core:paymentUnit "EUR (lump sum)" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/vlif_opstarttoekomststrategie> a core:Opportunity ;
+    rdfs:label "VLIF - Start or conversion to a future-oriented sustainable business strategy on an agricultural holding"@en,
+        "VLIF – Opstart van of omschakeling naar een toekomstgerichte duurzame ondernemingsstrategie op een landbouwbedrijf"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support for starting or converting to a sustainable business strategy."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:YoungFarmer ;
+    core:hasInterventionCode "VLIF-OpstartToekomststrategie" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/code/vlif_verwerkingafzet> a core:Opportunity ;
+    rdfs:label "VLIF - Investments for sustainable processing and marketing of agricultural products"@en,
+        "VLIF – Investeringen voor duurzame verwerking en afzet van landbouwproducten"@fr ;
+    core:benefitAmount "N/A" ;
+    core:calculationLogic "N/A" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support for investments in sustainable processing and marketing."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasInterventionCode "VLIF-VerwerkingAfzet" ;
+    core:hasRegion "Flanders" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/izcns2019_5> a core:Opportunity ;
+    rdfs:label "Payment for Areas with Natural or Specific Constraints"@en,
+        "Indemnité en faveur des zones soumises à des contraintes naturelles ou spécifiques (IZCNS)"@fr ;
+    core:benefitAmount "Minimum 100€." ;
+    core:calculationLogic "50€/ha for the first 20 eligible ha, 30€/ha for subsequent eligible ha, up to 75 ha." ;
+    core:definedBy <http://example.org/doc/izcns2019> ;
+    core:description "Annual payment per hectare for farming in designated areas with natural or specific constraints."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "Max 75 eligible hectares." ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2019 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_0> a core:Opportunity ;
+    rdfs:label "Basic income support for sustainable development"@en,
+        "Complementary income support for young farmers"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr,
+        "Aide de base au revenu pour un développement durable"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Base payment per eligible hectare under the CAP's first pillar.",
+        "Narrative" ;
+    core:calculationLogic "Based on eligible hectares and regional entitlements.",
+        "Formula" ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Income support specifically for young farmers as part of the basic payment scheme."@en,
+        "The foundational direct payment within the CAP's first pillar for active farmers."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "N/A" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_1> a core:Opportunity ;
+    rdfs:label "Eco-schemes (set of measures)"@en,
+        "Redistributive payment"@en,
+        "Eco-régimes (ensemble)"@fr,
+        "Paiement redistributif"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Additional payment for the first hectares of an active farmer's holding.",
+        "Narrative" ;
+    core:calculationLogic "Complementary payment per hectare on a defined initial tranche of land.",
+        "Formula based on adherence to specific environmental practices" ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "A CAP payment intended to support smaller holdings by providing a higher payment rate on an initial number of hectares."@en,
+        "A set of five new agri-environmental schemes for 2026: long-term soil cover, environmentally favorable crops, ecological network, input reduction, and permanent grasslands conditioned on livestock density."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_10> a core:Opportunity ;
+    rdfs:label "Coupled support for dairy cows"@en,
+        "Soutien couplé aux vaches laitières"@fr ;
+    core:benefitAmount "Direct payment linked to the holding of dairy cows." ;
+    core:calculationLogic "Payment per eligible dairy cow." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Coupled support within the CAP to support dairy farming."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/head" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_11> a core:Opportunity ;
+    rdfs:label "Coupled support for mixed-purpose cows"@en,
+        "Soutien couplé aux vaches mixtes"@fr ;
+    core:benefitAmount "Direct payment linked to the holding of dual-purpose (milk and meat) cows." ;
+    core:calculationLogic "Payment per eligible mixed-purpose cow." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Coupled support within the CAP for breeds used for both milk and meat production."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/head" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_12> a core:Opportunity ;
+    rdfs:label "Coupled support for ewes"@en,
+        "Soutien couplé à la brebis"@fr ;
+    core:benefitAmount "Direct payment linked to the holding of breeding ewes." ;
+    core:calculationLogic "Payment per eligible breeding ewe." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Coupled support within the CAP to support sheep farming."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/head" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_2> a core:Opportunity ;
+    rdfs:label "Complementary income support for young farmers"@en,
+        "Coupled support for protein crops"@en,
+        "Aide complémentaire au revenu pour les jeunes agriculteurs"@fr,
+        "Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative",
+        "Top-up payment on top of the basic payment for qualifying young farmers." ;
+    core:calculationLogic "Additional payment per eligible hectare for farmers meeting the 'young farmer' definition.",
+        "Formula based on area cultivated" ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "A CAP payment providing enhanced support to farmers setting up for the first time or under a certain age."@en,
+        "Coupled income support for the cultivation of plant proteins."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:YoungFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_22> a core:Opportunity ;
+    rdfs:label "Support for organic farming"@en,
+        "Soutien à l'agriculture biologique"@fr ;
+    core:benefitAmount "Payment to support conversion to and maintenance of organic farming practices." ;
+    core:calculationLogic "Payment per hectare under organic certification (conversion and/or maintenance)." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "CAP support measure specifically for farms under organic certification, compensating for additional costs and efforts."@en ;
+    core:eligibleFarmerType core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_23> a core:Opportunity ;
+    rdfs:label "Payments for areas facing natural or other specific constraints"@en,
+        "Paiements en faveur des zones soumises à des contraintes naturelles ou spécifiques"@fr ;
+    core:benefitAmount "Compensatory payment for farming in areas where conditions are difficult due to natural handicaps (e.g., mountain areas, poor soils)." ;
+    core:calculationLogic "Payment per hectare of eligible agricultural land in a designated disadvantaged area." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "CAP payment (2nd pillar) aimed at ensuring continued agricultural activity and land management in less favoured areas."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_24> a core:Opportunity ;
+    rdfs:label "Natura 2000 payment in agricultural area"@en,
+        "Paiement Natura 2000 en zone agricole"@fr ;
+    core:benefitAmount "Payment compensating for costs and income foregone due to restrictions imposed by Natura 2000 site designations on agricultural land." ;
+    core:calculationLogic "Payment per hectare of agricultural land within a Natura 2000 site, subject to specific management obligations." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "CAP payment to support farmers in managing land within the EU's Natura 2000 ecological network."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_25> a core:Opportunity ;
+    rdfs:label "Installation aid for young farmers"@en,
+        "Aides à l'installation des jeunes agriculteurs"@fr ;
+    core:benefitAmount "Start-up grant or subsidized loan to facilitate the establishment of a young farmer." ;
+    core:calculationLogic "Lump-sum payment or capital grant based on a business plan and meeting eligibility criteria." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "National/regional aid under the CAP's 2nd pillar to encourage generational renewal by supporting new entrants into farming."@en ;
+    core:eligibleFarmerType core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/lump-sum" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_4> a core:Opportunity ;
+    rdfs:label "Support for organic farming"@en,
+        "Soutien à l'agriculture biologique"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Formula" ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Specific support scheme for organic farming practices."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_5> a core:Opportunity ;
+    rdfs:label "Aid for the installation of young farmers"@en,
+        "Aides à l'installation des jeunes agriculteurs"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Formula / Fixed amount" ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Standalone support program for the establishment of young farmers."@en ;
+    core:eligibleFarmerType core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "Lump sum / Grant" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_8> a core:Opportunity ;
+    rdfs:label "Coupled support for plant protein crops"@en,
+        "Soutien couplé aux cultures de protéines végétales"@fr ;
+    core:benefitAmount "Direct payment linked to the cultivation of specific plant protein crops (e.g., peas, beans, lentils)." ;
+    core:calculationLogic "Payment per hectare of eligible protein crop cultivated." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Coupled support within the CAP to encourage the production of plant proteins for food and feed."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne_9> a core:Opportunity ;
+    rdfs:label "Coupled support for beef cows"@en,
+        "Soutien couplé aux bovins femelles viandeux"@fr ;
+    core:benefitAmount "Direct payment linked to the holding of beef breeding cows." ;
+    core:calculationLogic "Payment per eligible beef breeding cow." ;
+    core:definedBy <http://example.org/doc/pac_2023-2027_-_description_des_interventions_-_portail_de_lagriculture_wallonne> ;
+    core:description "Coupled support within the CAP to maintain beef cattle herds."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Wallonia" ;
+    core:paymentUnit "EUR/head" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/vlaams_glb_strategisch_plan_2023-2027_6> a core:Opportunity ;
+    rdfs:label "Complementary income support for young farmers"@en,
+        "Aanvullende inkomenssteun voor jonge landbouwers"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Formula" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Income support specifically targeted at young farmers in Flanders."@en ;
+    core:eligibleFarmerType core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "N/A" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/vlaams_glb_strategisch_plan_2023-2027_7> a core:Opportunity ;
+    rdfs:label "Coupled income support – specialised beef farming"@en,
+        "Gekoppelde inkomenssteun – gespecialiseerde vleesveehouderij"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Formula" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Coupled support linked to the production in the specialised beef sector."@en ;
+    core:eligibleFarmerType core:ActiveFarmer ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/animal or EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/vlaams_glb_strategisch_plan_2023-2027_8> a core:Opportunity ;
+    rdfs:label "Organic farming"@en,
+        "Biologische landbouw"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Formula" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Support measures for conversion to and maintenance of organic farming."@en ;
+    core:eligibleFarmerType core:ActiveFarmer,
+        core:OrganicFarmer ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "EUR/ha" ;
+    core:versionYear 2024 .
+
+<http://example.org/opportunity/vlaams_glb_strategisch_plan_2023-2027_9> a core:Opportunity ;
+    rdfs:label "Flemish Investment Support – Start-up and takeover by young farmers"@en,
+        "VLIF – Opstart en overname door jonge landbouwers"@fr ;
+    core:applicationEndDate "N/A" ;
+    core:applicationStartDate "N/A" ;
+    core:benefitAmount "Narrative" ;
+    core:calculationLogic "Percentage of eligible investment" ;
+    core:definedBy <http://example.org/doc/vlaams_glb_strategisch_plan_2023-2027> ;
+    core:description "Investment support under the Flemish Rural Investment Fund (VLIF) for start-up and takeover by young farmers."@en ;
+    core:eligibleFarmerType core:NewEntrant,
+        core:YoungFarmer ;
+    core:hasRegion "Flanders" ;
+    core:paymentLimit "N/A" ;
+    core:paymentUnit "Grant / Subsidy" ;
+    core:versionYear 2024 .
+

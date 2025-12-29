@@ -1,15 +1,33 @@
 PREFIX core: <http://example.org/agri-energy/core#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?opp (SAMPLE(?label) as ?nameEn) (SAMPLE(?labelFr) as ?nameFr) ?validFrom ?sourceDoc (GROUP_CONCAT(DISTINCT ?tag_safe; separator=", ") as ?tags)
+SELECT DISTINCT ?opp ?region (SAMPLE(?nameEn) as ?nameEn) (SAMPLE(?nameFr) as ?nameFr) (SAMPLE(?validFrom) as ?validFrom) (SAMPLE(?sourceDoc) as ?sourceDoc) (SAMPLE(?code) as ?code) (SAMPLE(?benefitAmount) as ?benefitAmount) (SAMPLE(?paymentRate) as ?paymentRate) (SAMPLE(?paymentUnit) as ?paymentUnit) (SAMPLE(?paymentLimit) as ?paymentLimit) (SAMPLE(?calculationLogic) as ?calculationLogic) (SAMPLE(?applicationRule) as ?applicationRule) (SAMPLE(?appStartDate) as ?appStartDate) (SAMPLE(?appEndDate) as ?appEndDate) (SAMPLE(?description) as ?description) (GROUP_CONCAT(DISTINCT ?tag_safe; separator=", ") as ?tags) (GROUP_CONCAT(DISTINCT ?farmerType; separator=", ") as ?farmerTypes)
 WHERE {
     ?opp a core:Opportunity .
-    OPTIONAL { ?opp rdfs:label ?label . FILTER(lang(?label) = 'en') }
-    OPTIONAL { ?opp rdfs:label ?labelFr . FILTER(lang(?labelFr) = 'fr') }
+    OPTIONAL { ?opp core:hasRegion ?region }
+    OPTIONAL { ?opp core:hasInterventionCode ?code }
+    
     OPTIONAL { ?opp core:validFrom ?validFrom }
     OPTIONAL { ?opp core:definedBy ?sourceDoc }
+    OPTIONAL { ?opp rdfs:label ?nameEn . FILTER(lang(?nameEn) = "en") }
+    OPTIONAL { ?opp rdfs:label ?nameFr . FILTER(lang(?nameFr) = "fr") }
     
+    # New Fields
+    OPTIONAL { ?opp core:benefitAmount ?benefitAmount }
+    OPTIONAL { ?opp core:paymentRate ?paymentRate }
+    OPTIONAL { ?opp core:paymentUnit ?paymentUnit }
+    OPTIONAL { ?opp core:paymentLimit ?paymentLimit }
+    OPTIONAL { ?opp core:calculationLogic ?calculationLogic }
+    OPTIONAL { ?opp core:applicationRule ?applicationRule }
+    OPTIONAL { ?opp core:applicationStartDate ?appStartDate }
+    OPTIONAL { ?opp core:applicationEndDate ?appEndDate }
+    OPTIONAL { ?opp core:description ?description }
+    
+    # Aggregate Tags
     OPTIONAL { ?opp core:hasTag ?tag }
     BIND(COALESCE(?tag, "") AS ?tag_safe)
+
+    # Aggregate Farmer Types
+    OPTIONAL { ?opp core:eligibleFarmerType ?farmerType }
 }
-GROUP BY ?opp ?validFrom ?sourceDoc
+GROUP BY ?opp ?region
